@@ -26,20 +26,17 @@ After few clicks I ended in the
 
 It invite me to install
 [Racket/DrRacket installer](https://download.racket-lang.org/) (~175Mb)
-to be able to run the examples, so I do (choose CS Variant, the new recommended one).
+to be able to run the examples, so I do.
 A very simple and smooth process on Windows 10: let's open DrRacket now.
 
-It's a very simple interface with a menu,
-an empty document (named "definitions area")
-and a REPL ("interactions area") with some guidance.
+It's a clean interface with a menu, an empty document (named "definitions area")and a REPL ("interactions area") with some guidance.
 
-Introduction continue, and the documentation missed a little step:
-before copy/past the provided samples, I had to choose the "racket lang"
+Introduction continue, and the documentation missed a little step: before copy/past the provided samples, I had to choose the "racket lang"
 in the languages menu. Then I paste `#lang slideshow` in the def area, and run.
 
 ![Getting ready](/blog/2021-09-08-one_day_with_racket/img/01-getting_rdy.png)
 
-Our first lines of code will take place in the REPL.
+Our first lines of code will take place in the REPL part.
 Write `(circle 10)` and press enter draw a 10px circle in the same area.
 You can imagine what the following stuff will do:
 
@@ -56,7 +53,7 @@ So we can guess that
 - `#lang slideshow` contains stuff helpful to display some shapes
 - `circle`, `rectangle`, `arrow` are function names
 - we can execute thoses function by putting them between parenthesis, passing arguments separated by spaces inside the parens.
-- the REPL is sufficient to interpret directly those inputs, and ouputs the result
+- the REPL is sufficient to interpret directly those inputs, then ouputs the result
 
 !["REPL](/blog/2021-09-08-one_day_with_racket/img/02-repl.png)
 
@@ -83,7 +80,9 @@ Diving deeper, we discover that we can append several shapes on a line...
 ```
 
 I guess that `hc-append` stands for "horizontally centered append", but something blink in red here: naming function will be hard, since they are so important here...
+
 !["REPL](/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png)
+
 ... and it begins !
 
 The infamous-lisp-parenthesis-festival that show the order of function execution.
@@ -103,9 +102,9 @@ c10
 
 ![define](/blog/2021-09-08-one_day_with_racket/img/04-define.png)
 
-`define` acts as a function that takes 2 args: a variable name, and a value. Now, c10 is available as a variable.
+`define` acts as a function that takes 2 args: a variable name, and a value. Now, °`c10` is available as a variable.
 
-> 9:18 AM Because it feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down.
+> 9:18 AM It feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down: we hade the all day after all...
 
 We can now define a lot of stuff:
 
@@ -119,7 +118,7 @@ face
 ```
 
 But we reach the point where we loose some visiblity.
-So let's use the "def area" for define instructions, and keep the REPL for the used expressions...
+So let's use the "def area" for define instructions, and keep the REPL for executions...
 
 ![my stuff](/blog/2021-09-08-one_day_with_racket/img/05-my_stuff.png)
 
@@ -129,7 +128,7 @@ Here, definitions stays "pure", and the process of creating the program is REPL-
 
 Few remarks:
 
-- `ht-append` can take any number of args.If it begins by a number, this one will represent the white-space between picts; it reminds me the [overloading practice](https://www.w3schools.com/java/java_methods_overloading.asp) in OOP.
+- `ht-append` can take any number of args. If it begins by a number, this one will represent the white-space between picts; it reminds me the [overloading practice](https://www.w3schools.com/java/java_methods_overloading.asp) in OOP.
 - `vc-append` work for vertical-centered, and so on with `ht`, `hb`, `vt`...
 - when the mouse is over a defined name, DrRacket show an arrow to find the definition - I discover that by accident, and it's amazing
 - there is no fatality about parenthesis hell, if we define names smartly along the way

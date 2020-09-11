@@ -145,7 +145,7 @@
 	<span class='icon'>
 		<i class='fas fa-pencil-alt'></i>
 	</span>
-	5993 words
+	5991 words
 </p>
 
 					
@@ -193,16 +193,13 @@ After few clicks I ended in the
 <h2 id="quick-introduction">Quick Introduction</h2>
 <p>It invite me to install
 <a href="https://download.racket-lang.org/">Racket/DrRacket installer</a> (~175Mb)
-to be able to run the examples, so I do (choose CS Variant, the new recommended one).
+to be able to run the examples, so I do.
 A very simple and smooth process on Windows 10: let's open DrRacket now.</p>
-<p>It's a very simple interface with a menu,
-an empty document (named &quot;definitions area&quot;)
-and a REPL (&quot;interactions area&quot;) with some guidance.</p>
-<p>Introduction continue, and the documentation missed a little step:
-before copy/past the provided samples, I had to choose the &quot;racket lang&quot;
+<p>It's a clean interface with a menu, an empty document (named &quot;definitions area&quot;)and a REPL (&quot;interactions area&quot;) with some guidance.</p>
+<p>Introduction continue, and the documentation missed a little step: before copy/past the provided samples, I had to choose the &quot;racket lang&quot;
 in the languages menu. Then I paste <code>#lang slideshow</code> in the def area, and run.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/01-getting_rdy.png" alt="Getting ready" /></p>
-<p>Our first lines of code will take place in the REPL.
+<p>Our first lines of code will take place in the REPL part.
 Write <code>(circle 10)</code> and press enter draw a 10px circle in the same area.
 You can imagine what the following stuff will do:</p>
 <pre style="background-color:#2b303b;">
@@ -217,7 +214,7 @@ So we can guess that</p>
 <li><code>#lang slideshow</code> contains stuff helpful to display some shapes</li>
 <li><code>circle</code>, <code>rectangle</code>, <code>arrow</code> are function names</li>
 <li>we can execute thoses function by putting them between parenthesis, passing arguments separated by spaces inside the parens.</li>
-<li>the REPL is sufficient to interpret directly those inputs, and ouputs the result</li>
+<li>the REPL is sufficient to interpret directly those inputs, then ouputs the result</li>
 </ul>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/02-repl.png" alt="&quot;REPL" /></p>
 <p>Just playing arround without checking the docs,
@@ -239,9 +236,9 @@ rectangle </span><span style="color:#db9d63;">10
     (circle </span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">)
 )
 </span></code></pre>
-<p>I guess that <code>hc-append</code> stands for &quot;horizontally centered append&quot;, but something blink in red here: naming function will be hard, since they are so important here...
-<img src="/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png" alt="&quot;REPL" />
-... and it begins !</p>
+<p>I guess that <code>hc-append</code> stands for &quot;horizontally centered append&quot;, but something blink in red here: naming function will be hard, since they are so important here...</p>
+<p><img src="/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png" alt="&quot;REPL" /></p>
+<p>... and it begins !</p>
 <p>The infamous-lisp-parenthesis-festival that show the order of function execution.
 In fact, my sensation is that it's clean and natural for now. The language itself seems to contains very few symbols for simple instructions.</p>
 <h2 id="create-my-own-stuff">Create my own stuff</h2>
@@ -253,9 +250,9 @@ c10
 (hc-append c10 c10 c10 c10)
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/04-define.png" alt="define" /></p>
-<p><code>define</code> acts as a function that takes 2 args: a variable name, and a value. Now, c10 is available as a variable.</p>
+<p><code>define</code> acts as a function that takes 2 args: a variable name, and a value. Now, °<code>c10</code> is available as a variable.</p>
 <blockquote>
-<p>9:18 AM Because it feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down.</p>
+<p>9:18 AM It feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down: we hade the all day after all...</p>
 </blockquote>
 <p>We can now define a lot of stuff:</p>
 <pre style="background-color:#2b303b;">
@@ -267,14 +264,14 @@ face
 face
 </span></code></pre>
 <p>But we reach the point where we loose some visiblity.
-So let's use the &quot;def area&quot; for define instructions, and keep the REPL for the used expressions...</p>
+So let's use the &quot;def area&quot; for define instructions, and keep the REPL for executions...</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/05-my_stuff.png" alt="my stuff" /></p>
 <p>It's clearer now. And I have a program to save on disk: <code>quick-start.rkt</code>.
 This is not the usual approach of programming of course, I'm used to a soup where everything is mixed.
 Here, definitions stays &quot;pure&quot;, and the process of creating the program is REPL-oriented, testing stuff until it work.</p>
 <p>Few remarks:</p>
 <ul>
-<li><code>ht-append</code> can take any number of args.If it begins by a number, this one will represent the white-space between picts; it reminds me the <a href="https://www.w3schools.com/java/java_methods_overloading.asp">overloading practice</a> in OOP.</li>
+<li><code>ht-append</code> can take any number of args. If it begins by a number, this one will represent the white-space between picts; it reminds me the <a href="https://www.w3schools.com/java/java_methods_overloading.asp">overloading practice</a> in OOP.</li>
 <li><code>vc-append</code> work for vertical-centered, and so on with <code>ht</code>, <code>hb</code>, <code>vt</code>...</li>
 <li>when the mouse is over a defined name, DrRacket show an arrow to find the definition - I discover that by accident, and it's amazing</li>
 <li>there is no fatality about parenthesis hell, if we define names smartly along the way</li>
