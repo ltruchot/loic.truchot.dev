@@ -1,18 +1,138 @@
+{% import 'macros.html' as macros %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>MyBlog</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+<html>
 
-  <body>
-    <section class="section">
-      <div class="container">{% block content %} {% endblock %}</div>
-    </section>
-  </body>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+	<link rel="manifest" href="/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css' />
+	<link rel='stylesheet' href='/style.css' />
+
+	<title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+	{% if config.extra.analytics.google %}
+	<script src='https://www.googletagmanager.com/gtag/js?id={{ config.extra.analytics.google }}' async></script>
+	<script type='text/javascript'>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', '{{ config.extra.analytics.google }}');
+	</script>
+	{% endif %}
+</head>
+
+<body class='site'>
+	{% block nav %}
+	<nav class='navbar is-light' role='navigation' aria-label='main navigation'>
+		<div class='container'>
+			<div class='navbar-brand'>
+				<a class='navbar-item has-text-weight-bold' href='/'>{{ config.title }}</a>
+				<a role='button' class='navbar-burger burger' aria-label='menu' aria-expanded='false'
+					data-target='navMenu'>
+					<span aria-hidden='true'></span>
+					<span aria-hidden='true'></span>
+					<span aria-hidden='true'></span>
+				</a>
+			</div>
+
+			<div id='navMenu' class='navbar-menu'>
+				<div class='navbar-end'>
+					{% for item in config.extra.navbar_items %}
+					<a href='{{ item.url | replace(from='$BASE_URL', to=config.base_url) }}' class='navbar-item'>
+						{{ item.name }}
+					</a>
+					{% endfor %}
+					<div class='navbar-item'>
+						<div class='field has-addons'>
+							<div class='control'>
+								<input id='search-dialog' class='input is-small' type='search' placeholder='Search'>
+							</div>
+							<div class='control'>
+								<a class='button is-small'>
+									<span class='icon'><i class='fas fa-search'></i></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	{% endblock %}
+
+	<section class='modal'>
+		<div class='modal-background'></div>
+		<div class='modal-card'>
+			<header class='modal-card-head'>
+				<p class='modal-card-title'>Search</p>
+				<button class='delete' aria-label='close'></button>
+			</header>
+			<section class='modal-card-body'>
+
+				<div class='field'>
+					<p class='control has-icons-right'>
+						<input id='search' class='input' type='search' placeholder='🔎 Search the website'>
+						<span class='icon is-small is-right'>
+							<i class='fas fa-search'></i>
+						</span>
+					</p>
+				</div>
+				<div class='search-results'>
+					<div class='search-results__items'>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+
+	{% block header %}
+	{% endblock %}
+
+	{% block main %}
+	{% endblock %}
+
+	{% block footer %}
+	<footer class='footer py-4'>
+		<div class='has-text-centered'>
+			<p>
+				Built with <span class='icon'><i class='fas fa-code'></i></span> code and <span class='icon'>
+					<i class='fas fa-heart'></i></span> love
+				<br />
+				<span class='has-text-weight-bold'>
+					Powered By <span class='icon'><i class='fas fa-power-off'></i></span> Zola
+				</span>
+			</p>
+		</div>
+	</footer>
+	{% endblock %}
+
+	<script src='https://kit.fontawesome.com/201b8d5e05.js' crossorigin='anonymous'></script>
+	<script type='text/javascript' src='{{ get_url(path='elasticlunr.min.js') }}'></script>
+	<script type='text/javascript' src='{{ get_url(path='search_index.en.js') }}'></script>
+	<script type='text/javascript' src='{{ get_url(path='js/site.js') }}'></script>
+
+	{% block custom_javascript %}
+	{% endblock %}
+</body>
+
 </html>

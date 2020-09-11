@@ -1,20 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>MyBlog</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+<html>
 
-  <body>
-    <section class="section">
-      <div class="container">
-<h1 class="title">This is my blog made with Zola.</h1>
-</div>
-    </section>
-  <script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+	<link rel="manifest" href="/icons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css' />
+	<link rel='stylesheet' href='/style.css' />
+
+	<title>Loïc TRUCHOT Website</title>
+
+	
+	<script src='https://www.googletagmanager.com/gtag/js?id=UA-40583718-4' async></script>
+	<script type='text/javascript'>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-40583718-4');
+	</script>
+	
+</head>
+
+<body class='site'>
+	
+	<nav class='navbar is-light' role='navigation' aria-label='main navigation'>
+		<div class='container'>
+			<div class='navbar-brand'>
+				<a class='navbar-item has-text-weight-bold' href='/'>Loïc TRUCHOT Website</a>
+				<a role='button' class='navbar-burger burger' aria-label='menu' aria-expanded='false'
+					data-target='navMenu'>
+					<span aria-hidden='true'></span>
+					<span aria-hidden='true'></span>
+					<span aria-hidden='true'></span>
+				</a>
+			</div>
+
+			<div id='navMenu' class='navbar-menu'>
+				<div class='navbar-end'>
+					
+					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;' class='navbar-item'>
+						Home
+					</a>
+					
+					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;blog' class='navbar-item'>
+						Blog
+					</a>
+					
+					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;podcasts' class='navbar-item'>
+						Podcasts
+					</a>
+					
+					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;videos' class='navbar-item'>
+						Videos
+					</a>
+					
+					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;cheatsheets' class='navbar-item'>
+						Cheatsheets
+					</a>
+					
+					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags' class='navbar-item'>
+						Tags
+					</a>
+					
+					<div class='navbar-item'>
+						<div class='field has-addons'>
+							<div class='control'>
+								<input id='search-dialog' class='input is-small' type='search' placeholder='Search'>
+							</div>
+							<div class='control'>
+								<a class='button is-small'>
+									<span class='icon'><i class='fas fa-search'></i></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+
+	<section class='modal'>
+		<div class='modal-background'></div>
+		<div class='modal-card'>
+			<header class='modal-card-head'>
+				<p class='modal-card-title'>Search</p>
+				<button class='delete' aria-label='close'></button>
+			</header>
+			<section class='modal-card-body'>
+
+				<div class='field'>
+					<p class='control has-icons-right'>
+						<input id='search' class='input' type='search' placeholder='🔎 Search the website'>
+						<span class='icon is-small is-right'>
+							<i class='fas fa-search'></i>
+						</span>
+					</p>
+				</div>
+				<div class='search-results'>
+					<div class='search-results__items'>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+
+	
+	
+
+	
+<main class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-fifths is-offset-one-fifth">
+          <figure class="image center mb-2">
+            <img
+              class="is-rounded card m-auto"
+              src="&#x2F;common&#x2F;profil.jpeg"
+              style="max-width: 150px"
+            />
+          </figure>
+          <div class="has-text-centered">
+            <h1 class="title">Bio</h1>
+            <h2 class="subtitle">JavaScript Expert and Informatics Teacher</h2>
+            
+<p class='is-size-4'>
+	
+	
+	
+	<a class="link" href='https://www.linkedin.com/in/loïc-truchot-93924497' target='_blank'>
+		<span class='icon'>
+			<i class='fab fa-linkedin'></i>
+		</span>
+	</a>
+	
+	
+	<a class="link" href='https://github.com/ltruchot' target='_blank'>
+		<span class='icon'>
+			<i class='fab fa-github'></i>
+		</span>
+	</a>
+	
+	
+	
+
+          </div>
+          <hr />
+          <div class="content has-text-justified">
+            <p><strong>10 years</strong> of marriage with JavaScript. Not easy every day of course, but I don't regret anything.</p>
+<p>Since January 2019, I have been working as a freelance: fullstack JS half-teacher / half-senior in different companies and schools (mainly partena, itenium, lucidweb and interface3).</p>
+<p>Before that, I had a lead-dev position at Adneom (architecture, estimates, technical validation, devops, agility, boarding and developments), and I led the JS community: training, technical watch groups, meetups, hackatons...</p>
+<p>In a world that changes so quickly, where IT is everywhere, I hope everyone can learn Computer Science and earn a good salary by using it on interesting projects.</p>
+<p>DeepThought does not know the ultimate question to Life, the Universe and Everything, but offers to design an even more powerful computer, Earth, to calculate it. After ten million years of calculation, the Earth is destroyed by Vogons five minutes before the computation is complete.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+	
+	<footer class='footer py-4'>
+		<div class='has-text-centered'>
+			<p>
+				Built with <span class='icon'><i class='fas fa-code'></i></span> code and <span class='icon'>
+					<i class='fas fa-heart'></i></span> love
+				<br />
+				<span class='has-text-weight-bold'>
+					Powered By <span class='icon'><i class='fas fa-power-off'></i></span> Zola
+				</span>
+			</p>
+		</div>
+	</footer>
+	
+
+	<script src='https://kit.fontawesome.com/201b8d5e05.js' crossorigin='anonymous'></script>
+	<script type='text/javascript' src='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;elasticlunr.min.js'></script>
+	<script type='text/javascript' src='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;search_index.en.js'></script>
+	<script type='text/javascript' src='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;js&#x2F;site.js'></script>
+
+	
+	
+<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+
 </html>
