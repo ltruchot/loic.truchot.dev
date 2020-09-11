@@ -2,17 +2,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Loïc TRUCHOT Website</title>
-        <link>http://127.0.0.1:1111</link>
+        <link>https://loic.truchot.dev</link>
         <description></description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="http://127.0.0.1:1111/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://loic.truchot.dev/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 08 Sep 2021 00:00:00 +0000</lastBuildDate>
         <item>
             <title>One Day With Racket</title>
             <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
-            <link>http://127.0.0.1:1111/blog/one-day-with-racket/</link>
-            <guid>http://127.0.0.1:1111/blog/one-day-with-racket/</guid>
+            <link>https://loic.truchot.dev/blog/one-day-with-racket/</link>
+            <guid>https://loic.truchot.dev/blog/one-day-with-racket/</guid>
             <description>&lt;blockquote&gt;
 &lt;p&gt;7:56 AM. What brought me here? I&#x27;m a JavaScript Senior, and it&#x27;s often mentioned that JS was inspired by Scheme.&lt;&#x2F;p&gt;
 &lt;p&gt;Scheme is a LISP, an old family of language, very promising for A.I., where everything is a workable list, looking like &lt;code&gt;(function-name, arg1, arg2, arg3...)&lt;&#x2F;code&gt;.
@@ -29,16 +29,13 @@ After few clicks I ended in the
 &lt;h2 id=&quot;quick-introduction&quot;&gt;Quick Introduction&lt;&#x2F;h2&gt;
 &lt;p&gt;It invite me to install
 &lt;a href=&quot;https:&#x2F;&#x2F;download.racket-lang.org&#x2F;&quot;&gt;Racket&#x2F;DrRacket installer&lt;&#x2F;a&gt; (~175Mb)
-to be able to run the examples, so I do (choose CS Variant, the new recommended one).
+to be able to run the examples, so I do.
 A very simple and smooth process on Windows 10: let&#x27;s open DrRacket now.&lt;&#x2F;p&gt;
-&lt;p&gt;It&#x27;s a very simple interface with a menu,
-an empty document (named &amp;quot;definitions area&amp;quot;)
-and a REPL (&amp;quot;interactions area&amp;quot;) with some guidance.&lt;&#x2F;p&gt;
-&lt;p&gt;Introduction continue, and the documentation missed a little step:
-before copy&#x2F;past the provided samples, I had to choose the &amp;quot;racket lang&amp;quot;
+&lt;p&gt;It&#x27;s a clean interface with a menu, an empty document (named &amp;quot;definitions area&amp;quot;)and a REPL (&amp;quot;interactions area&amp;quot;) with some guidance.&lt;&#x2F;p&gt;
+&lt;p&gt;Introduction continue, and the documentation missed a little step: before copy&#x2F;past the provided samples, I had to choose the &amp;quot;racket lang&amp;quot;
 in the languages menu. Then I paste &lt;code&gt;#lang slideshow&lt;&#x2F;code&gt; in the def area, and run.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;01-getting_rdy.png&quot; alt=&quot;Getting ready&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;Our first lines of code will take place in the REPL.
+&lt;p&gt;Our first lines of code will take place in the REPL part.
 Write &lt;code&gt;(circle 10)&lt;&#x2F;code&gt; and press enter draw a 10px circle in the same area.
 You can imagine what the following stuff will do:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
@@ -53,7 +50,7 @@ So we can guess that&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;code&gt;#lang slideshow&lt;&#x2F;code&gt; contains stuff helpful to display some shapes&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;circle&lt;&#x2F;code&gt;, &lt;code&gt;rectangle&lt;&#x2F;code&gt;, &lt;code&gt;arrow&lt;&#x2F;code&gt; are function names&lt;&#x2F;li&gt;
 &lt;li&gt;we can execute thoses function by putting them between parenthesis, passing arguments separated by spaces inside the parens.&lt;&#x2F;li&gt;
-&lt;li&gt;the REPL is sufficient to interpret directly those inputs, and ouputs the result&lt;&#x2F;li&gt;
+&lt;li&gt;the REPL is sufficient to interpret directly those inputs, then ouputs the result&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;02-repl.png&quot; alt=&quot;&amp;quot;REPL&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Just playing arround without checking the docs,
@@ -75,9 +72,9 @@ rectangle &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;10
     (circle &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;20&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)
 )
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;I guess that &lt;code&gt;hc-append&lt;&#x2F;code&gt; stands for &amp;quot;horizontally centered append&amp;quot;, but something blink in red here: naming function will be hard, since they are so important here...
-&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;03-line_of_shapes.png&quot; alt=&quot;&amp;quot;REPL&quot; &#x2F;&gt;
-... and it begins !&lt;&#x2F;p&gt;
+&lt;p&gt;I guess that &lt;code&gt;hc-append&lt;&#x2F;code&gt; stands for &amp;quot;horizontally centered append&amp;quot;, but something blink in red here: naming function will be hard, since they are so important here...&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;03-line_of_shapes.png&quot; alt=&quot;&amp;quot;REPL&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;... and it begins !&lt;&#x2F;p&gt;
 &lt;p&gt;The infamous-lisp-parenthesis-festival that show the order of function execution.
 In fact, my sensation is that it&#x27;s clean and natural for now. The language itself seems to contains very few symbols for simple instructions.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;create-my-own-stuff&quot;&gt;Create my own stuff&lt;&#x2F;h2&gt;
@@ -89,9 +86,9 @@ c10
 (hc-append c10 c10 c10 c10)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;04-define.png&quot; alt=&quot;define&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;code&gt;define&lt;&#x2F;code&gt; acts as a function that takes 2 args: a variable name, and a value. Now, c10 is available as a variable.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;define&lt;&#x2F;code&gt; acts as a function that takes 2 args: a variable name, and a value. Now, °&lt;code&gt;c10&lt;&#x2F;code&gt; is available as a variable.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;9:18 AM Because it feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down.&lt;&#x2F;p&gt;
+&lt;p&gt;9:18 AM It feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down: we hade the all day after all...&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;We can now define a lot of stuff:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
@@ -103,14 +100,14 @@ face
 face
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;But we reach the point where we loose some visiblity.
-So let&#x27;s use the &amp;quot;def area&amp;quot; for define instructions, and keep the REPL for the used expressions...&lt;&#x2F;p&gt;
+So let&#x27;s use the &amp;quot;def area&amp;quot; for define instructions, and keep the REPL for executions...&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;05-my_stuff.png&quot; alt=&quot;my stuff&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;It&#x27;s clearer now. And I have a program to save on disk: &lt;code&gt;quick-start.rkt&lt;&#x2F;code&gt;.
 This is not the usual approach of programming of course, I&#x27;m used to a soup where everything is mixed.
 Here, definitions stays &amp;quot;pure&amp;quot;, and the process of creating the program is REPL-oriented, testing stuff until it work.&lt;&#x2F;p&gt;
 &lt;p&gt;Few remarks:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ht-append&lt;&#x2F;code&gt; can take any number of args.If it begins by a number, this one will represent the white-space between picts; it reminds me the &lt;a href=&quot;https:&#x2F;&#x2F;www.w3schools.com&#x2F;java&#x2F;java_methods_overloading.asp&quot;&gt;overloading practice&lt;&#x2F;a&gt; in OOP.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ht-append&lt;&#x2F;code&gt; can take any number of args. If it begins by a number, this one will represent the white-space between picts; it reminds me the &lt;a href=&quot;https:&#x2F;&#x2F;www.w3schools.com&#x2F;java&#x2F;java_methods_overloading.asp&quot;&gt;overloading practice&lt;&#x2F;a&gt; in OOP.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;vc-append&lt;&#x2F;code&gt; work for vertical-centered, and so on with &lt;code&gt;ht&lt;&#x2F;code&gt;, &lt;code&gt;hb&lt;&#x2F;code&gt;, &lt;code&gt;vt&lt;&#x2F;code&gt;...&lt;&#x2F;li&gt;
 &lt;li&gt;when the mouse is over a defined name, DrRacket show an arrow to find the definition - I discover that by accident, and it&#x27;s amazing&lt;&#x2F;li&gt;
 &lt;li&gt;there is no fatality about parenthesis hell, if we define names smartly along the way&lt;&#x2F;li&gt;
@@ -911,8 +908,8 @@ I decided to dive a little more into podcast and videos. Here is what I found:&l
         <item>
             <title>Cure Impostor Syndrome with Functional Programming</title>
             <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-            <link>http://127.0.0.1:1111/blog/cure-impostor-syndrome-with-functional-programming/</link>
-            <guid>http://127.0.0.1:1111/blog/cure-impostor-syndrome-with-functional-programming/</guid>
+            <link>https://loic.truchot.dev/blog/cure-impostor-syndrome-with-functional-programming/</link>
+            <guid>https://loic.truchot.dev/blog/cure-impostor-syndrome-with-functional-programming/</guid>
             <description>&lt;p&gt;Ten years of web development made me feel like Neo, before he met Morpheus. Something was wrong in this world. I had some clues, but I couldn&#x27;t explain exactly what it was.&lt;&#x2F;p&gt;
 &lt;p&gt;My everyday language was JavaScript. I eventually decided to become a teacher and explain how to make real-world webapps to beginners and juniors.&lt;&#x2F;p&gt;
 &lt;p&gt;I didn&#x27;t switch careers because I felt established, in fact, it was the opposite. I wanted to be a teacher so I could upgrade my skills, question them, and cure my own impostor syndrome.&lt;&#x2F;p&gt;
