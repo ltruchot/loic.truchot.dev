@@ -14,31 +14,25 @@ slug ="one-day-with-racket"
 
 ## Find Basic Documentation
 
-Among the thousands of languages available, we can often find the main web site of a particular one just typing \*\*\*-lang.org: rust-lang.org, elm-lang.org, etc.
+There is thousands of programming languages available, and plenty of websites for each. We can often find the official documentation for one of these, just typing: \<language\>-lang.org: rust-lang.org, elm-lang.org, etc.
 
-Arriving to https://racket-lang.org, I'm happy to discover a clean and modern website with living contents.
-
-Before diving in the deep docs, I hope to find a clear introduction.
-After few clicks I ended in the
+Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into the in-depth documentation, I hope to find a clear introduction.
+After a few clicks I reach the
 [Quick Introduction to Racket with Pictures](https://docs.racket-lang.org/quick/index.html).
 
 ## Quick Introduction
 
-It invite me to install
-[Racket/DrRacket installer](https://download.racket-lang.org/) (~175Mb)
-to be able to run the examples, so I do.
-A very simple and smooth process on Windows 10: let's open DrRacket now.
+I've to install [Racket/DrRacket installer](https://download.racket-lang.org/) (~175Mb) to be able to run the examples. A very simple and smooth process on Windows 10: let's open DrRacket now.
 
-It's a clean interface with a menu, an empty document (named "definitions area")and a REPL ("interactions area") with some guidance.
+It's a clean IDE interface with a menu, an empty document (named "definitions area") and a REPL ("interactions area") with some hints.
 
-Introduction continue, and the documentation missed a little step: before copy/past the provided samples, I had to choose the "racket lang"
-in the languages menu. Then I paste `#lang slideshow` in the def area, and run.
+This introduction continue, but the documentation missed a small step: before copying / pasting the samples provided, I had to choose the "racket lang" in the "languages" menu. Then I paste `#lang slideshow` in the def area, and press the "run" button.
 
 ![Getting ready](/blog/2021-09-08-one_day_with_racket/img/01-getting_rdy.png)
 
 Our first lines of code will take place in the REPL part.
-Write `(circle 10)` and press enter draw a 10px circle in the same area.
-You can imagine what the following stuff will do:
+Write `(circle 10)` and press \[Enter\] draw a 10px circle in the same area.
+You can imagine what the following commands will do:
 
 ```rkt
 (circle 10)
@@ -50,15 +44,14 @@ You can imagine what the following stuff will do:
 It draws shapes (and makes coffee)!
 So we can guess that
 
-- `#lang slideshow` contains stuff helpful to display some shapes
+- `#lang slideshow` contains useful functions to display certain shapes
 - `circle`, `rectangle`, `arrow` are function names
-- we can execute thoses function by putting them between parenthesis, passing arguments separated by spaces inside the parens.
-- the REPL is sufficient to interpret directly those inputs, then ouputs the result
+- we can execute theses functions by putting them in parenthesis, passing arguments separated by spaces.
+- the REPL is enough to directly interpret these inputs, then ouputs the result
 
-!["REPL](/blog/2021-09-08-one_day_with_racket/img/02-repl.png)
+![REPL](/blog/2021-09-08-one_day_with_racket/img/02-repl.png)
 
-Just playing arround without checking the docs,
-I finally makes some voluntary error to see how the interpreter is helpful
+I just play without checking the docs and I ultimately make deliberate errors to see how useful the interpreter is.
 
 ```rkt
 (triangle 30)
@@ -66,11 +59,11 @@ I finally makes some voluntary error to see how the interpreter is helpful
 rectangle 10
 ```
 
-- Errors about undefined stuff seems easy to grab
-- Errors about arguments are little more scary: the technical word "arity" refers to the expected number of arguments of a function.
-- Missing parens didn't show me an error, simply an unexpected result that I don't understand for now
+- Errors concerning undefined identifier seems easy to catch
+- Errors on the arguments are little more frightening: the technical word "arity" refers to the expected number of arguments of a function
+- Missing parenthesis did not give me an error, just an unexpected result that I suspect to be "this function as a value" (not executed)
 
-Diving deeper, we discover that we can append several shapes on a line...
+By diving deeper, we discover that we can add several shapes on the same line...
 
 ```rkt
 (hc-append
@@ -79,14 +72,16 @@ Diving deeper, we discover that we can append several shapes on a line...
 )
 ```
 
-I guess that `hc-append` stands for "horizontally centered append", but something blink in red here: naming function will be hard, since they are so important here...
+I'm assuming `hc-append` means "horizontally-centered append", but something is flashing red here: any function name will be a big concern, as they are so central here...
 
 !["REPL](/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png)
 
 ... and it begins !
 
-The infamous-lisp-parenthesis-festival that show the order of function execution.
-In fact, my sensation is that it's clean and natural for now. The language itself seems to contains very few symbols for simple instructions.
+The famous LISP parenthesis festival that shows the order of execution of functions begins.
+Despite its reputation, I feel like it's clean and natural at the moment. The language itself seems to contain very few symbols, mostly for simple instructions.
+
+------------ trad ---------------
 
 ## Create my own stuff
 

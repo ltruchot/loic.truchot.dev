@@ -2,17 +2,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Loïc TRUCHOT Website</title>
-        <link>https://loic.truchot.dev</link>
+        <link>http://127.0.0.1:1111</link>
         <description></description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https://loic.truchot.dev/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="http://127.0.0.1:1111/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 08 Sep 2021 00:00:00 +0000</lastBuildDate>
         <item>
             <title>One Day With Racket</title>
             <pubDate>Wed, 08 Sep 2021 00:00:00 +0000</pubDate>
-            <link>https://loic.truchot.dev/blog/one-day-with-racket/</link>
-            <guid>https://loic.truchot.dev/blog/one-day-with-racket/</guid>
+            <link>http://127.0.0.1:1111/blog/one-day-with-racket/</link>
+            <guid>http://127.0.0.1:1111/blog/one-day-with-racket/</guid>
             <description>&lt;blockquote&gt;
 &lt;p&gt;7:56 AM. What brought me here? I&#x27;m a JavaScript Senior, and it&#x27;s often mentioned that JS was inspired by Scheme.&lt;&#x2F;p&gt;
 &lt;p&gt;Scheme is a LISP, an old family of language, very promising for A.I., where everything is a workable list, looking like &lt;code&gt;(function-name, arg1, arg2, arg3...)&lt;&#x2F;code&gt;.
@@ -908,8 +908,8 @@ I decided to dive a little more into podcast and videos. Here is what I found:&l
         <item>
             <title>Cure Impostor Syndrome with Functional Programming</title>
             <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
-            <link>https://loic.truchot.dev/blog/cure-impostor-syndrome-with-functional-programming/</link>
-            <guid>https://loic.truchot.dev/blog/cure-impostor-syndrome-with-functional-programming/</guid>
+            <link>http://127.0.0.1:1111/blog/cure-impostor-syndrome-with-functional-programming/</link>
+            <guid>http://127.0.0.1:1111/blog/cure-impostor-syndrome-with-functional-programming/</guid>
             <description>&lt;p&gt;Ten years of web development made me feel like Neo, before he met Morpheus. Something was wrong in this world. I had some clues, but I couldn&#x27;t explain exactly what it was.&lt;&#x2F;p&gt;
 &lt;p&gt;My everyday language was JavaScript. I eventually decided to become a teacher and explain how to make real-world webapps to beginners and juniors.&lt;&#x2F;p&gt;
 &lt;p&gt;I didn&#x27;t switch careers because I felt established, in fact, it was the opposite. I wanted to be a teacher so I could upgrade my skills, question them, and cure my own impostor syndrome.&lt;&#x2F;p&gt;
