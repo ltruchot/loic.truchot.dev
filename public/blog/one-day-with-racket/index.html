@@ -57,27 +57,27 @@
 			<div id='navMenu' class='navbar-menu'>
 				<div class='navbar-end'>
 					
-					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;' class='navbar-item'>
+					<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;' class='navbar-item'>
 						Home
 					</a>
 					
-					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;blog' class='navbar-item'>
+					<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;blog' class='navbar-item'>
 						Blog
 					</a>
 					
-					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;podcasts' class='navbar-item'>
+					<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;podcasts' class='navbar-item'>
 						Podcasts
 					</a>
 					
-					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;videos' class='navbar-item'>
+					<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;videos' class='navbar-item'>
 						Videos
 					</a>
 					
-					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;cheatsheets' class='navbar-item'>
+					<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;cheatsheets' class='navbar-item'>
 						Cheatsheets
 					</a>
 					
-					<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags' class='navbar-item'>
+					<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;tags' class='navbar-item'>
 						Tags
 					</a>
 					
@@ -141,11 +141,11 @@
 	<span class='icon'>
 		<i class='far fa-clock'></i>
 	</span>
-	30 min,
+	31 min,
 	<span class='icon'>
 		<i class='fas fa-pencil-alt'></i>
 	</span>
-	5991 words
+	6013 words
 </p>
 
 					
@@ -185,23 +185,18 @@ It allows you to easily define Domain Specific Languages (DSL), with your own ke
 So let's do some Racket at least one day in our developer life!</p>
 </blockquote>
 <h2 id="find-basic-documentation">Find Basic Documentation</h2>
-<p>Among the thousands of languages available, we can often find the main web site of a particular one just typing ***-lang.org: rust-lang.org, elm-lang.org, etc.</p>
-<p>Arriving to https://racket-lang.org, I'm happy to discover a clean and modern website with living contents.</p>
-<p>Before diving in the deep docs, I hope to find a clear introduction.
-After few clicks I ended in the
+<p>There is thousands of programming languages available, and plenty of websites for each. We can often find the official documentation for one of these, just typing: &lt;language&gt;-lang.org: rust-lang.org, elm-lang.org, etc.</p>
+<p>Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into the in-depth documentation, I hope to find a clear introduction.
+After a few clicks I reach the
 <a href="https://docs.racket-lang.org/quick/index.html">Quick Introduction to Racket with Pictures</a>.</p>
 <h2 id="quick-introduction">Quick Introduction</h2>
-<p>It invite me to install
-<a href="https://download.racket-lang.org/">Racket/DrRacket installer</a> (~175Mb)
-to be able to run the examples, so I do.
-A very simple and smooth process on Windows 10: let's open DrRacket now.</p>
-<p>It's a clean interface with a menu, an empty document (named &quot;definitions area&quot;)and a REPL (&quot;interactions area&quot;) with some guidance.</p>
-<p>Introduction continue, and the documentation missed a little step: before copy/past the provided samples, I had to choose the &quot;racket lang&quot;
-in the languages menu. Then I paste <code>#lang slideshow</code> in the def area, and run.</p>
+<p>I've to install <a href="https://download.racket-lang.org/">Racket/DrRacket installer</a> (~175Mb) to be able to run the examples. A very simple and smooth process on Windows 10: let's open DrRacket now.</p>
+<p>It's a clean IDE interface with a menu, an empty document (named &quot;definitions area&quot;) and a REPL (&quot;interactions area&quot;) with some hints.</p>
+<p>This introduction continue, but the documentation missed a small step: before copying / pasting the samples provided, I had to choose the &quot;racket lang&quot; in the &quot;languages&quot; menu. Then I paste <code>#lang slideshow</code> in the def area, and press the &quot;run&quot; button.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/01-getting_rdy.png" alt="Getting ready" /></p>
 <p>Our first lines of code will take place in the REPL part.
-Write <code>(circle 10)</code> and press enter draw a 10px circle in the same area.
-You can imagine what the following stuff will do:</p>
+Write <code>(circle 10)</code> and press [Enter] draw a 10px circle in the same area.
+You can imagine what the following commands will do:</p>
 <pre style="background-color:#2b303b;">
 <code><span style="color:#abb2bf;">(circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)
 (circle </span><span style="color:#db9d63;">50</span><span style="color:#abb2bf;">)
@@ -211,36 +206,36 @@ You can imagine what the following stuff will do:</p>
 <p>It draws shapes (and makes coffee)!
 So we can guess that</p>
 <ul>
-<li><code>#lang slideshow</code> contains stuff helpful to display some shapes</li>
+<li><code>#lang slideshow</code> contains useful functions to display certain shapes</li>
 <li><code>circle</code>, <code>rectangle</code>, <code>arrow</code> are function names</li>
-<li>we can execute thoses function by putting them between parenthesis, passing arguments separated by spaces inside the parens.</li>
-<li>the REPL is sufficient to interpret directly those inputs, then ouputs the result</li>
+<li>we can execute theses functions by putting them in parenthesis, passing arguments separated by spaces.</li>
+<li>the REPL is enough to directly interpret these inputs, then ouputs the result</li>
 </ul>
-<p><img src="/blog/2021-09-08-one_day_with_racket/img/02-repl.png" alt="&quot;REPL" /></p>
-<p>Just playing arround without checking the docs,
-I finally makes some voluntary error to see how the interpreter is helpful</p>
+<p><img src="/blog/2021-09-08-one_day_with_racket/img/02-repl.png" alt="REPL" /></p>
+<p>I just play without checking the docs and I ultimately make deliberate errors to see how useful the interpreter is.</p>
 <pre style="background-color:#2b303b;">
 <code><span style="color:#abb2bf;">(triangle </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">)
 (rectangle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)
 rectangle </span><span style="color:#db9d63;">10
 </span></code></pre>
 <ul>
-<li>Errors about undefined stuff seems easy to grab</li>
-<li>Errors about arguments are little more scary: the technical word &quot;arity&quot; refers to the expected number of arguments of a function.</li>
-<li>Missing parens didn't show me an error, simply an unexpected result that I don't understand for now</li>
+<li>Errors concerning undefined identifier seems easy to catch</li>
+<li>Errors on the arguments are little more frightening: the technical word &quot;arity&quot; refers to the expected number of arguments of a function</li>
+<li>Missing parenthesis did not give me an error, just an unexpected result that I suspect to be &quot;this function as a value&quot; (not executed)</li>
 </ul>
-<p>Diving deeper, we discover that we can append several shapes on a line...</p>
+<p>By diving deeper, we discover that we can add several shapes on the same line...</p>
 <pre style="background-color:#2b303b;">
 <code><span style="color:#abb2bf;">(hc-append
     (rectangle </span><span style="color:#db9d63;">20 20</span><span style="color:#abb2bf;">)
     (circle </span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">)
 )
 </span></code></pre>
-<p>I guess that <code>hc-append</code> stands for &quot;horizontally centered append&quot;, but something blink in red here: naming function will be hard, since they are so important here...</p>
+<p>I'm assuming <code>hc-append</code> means &quot;horizontally-centered append&quot;, but something is flashing red here: any function name will be a big concern, as they are so central here...</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png" alt="&quot;REPL" /></p>
 <p>... and it begins !</p>
-<p>The infamous-lisp-parenthesis-festival that show the order of function execution.
-In fact, my sensation is that it's clean and natural for now. The language itself seems to contains very few symbols for simple instructions.</p>
+<p>The famous LISP parenthesis festival that shows the order of execution of functions begins.
+Despite its reputation, I feel like it's clean and natural at the moment. The language itself seems to contain very few symbols, mostly for simple instructions.</p>
+<p>------------ trad ---------------</p>
 <h2 id="create-my-own-stuff">Create my own stuff</h2>
 <p>We only had use some already baked functions. How to make our owns ?</p>
 <p>The next part of the quick-start show us how to do with the <code>define</code> identifier:</p>
@@ -1076,7 +1071,7 @@ I decided to dive a little more into podcast and videos. Here is what I found:</
 					
 					
 					<div class='level-item has-text-centered'>
-						<a href='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;blog&#x2F;cure-impostor-syndrome-with-functional-programming&#x2F;' class='button is-black is-outlined'>
+						<a href='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;blog&#x2F;cure-impostor-syndrome-with-functional-programming&#x2F;' class='button is-black is-outlined'>
 							Cure Impostor Syndrome with Functional Programming<span class='icon ml-2'><i
 									class='fas fa-arrow-circle-right'></i></span>
 						</a>
@@ -1113,13 +1108,13 @@ I decided to dive a little more into podcast and videos. Here is what I found:</
 	
 
 	<script src='https://kit.fontawesome.com/201b8d5e05.js' crossorigin='anonymous'></script>
-	<script type='text/javascript' src='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;elasticlunr.min.js'></script>
-	<script type='text/javascript' src='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;search_index.en.js'></script>
-	<script type='text/javascript' src='http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;js&#x2F;site.js'></script>
+	<script type='text/javascript' src='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;elasticlunr.min.js'></script>
+	<script type='text/javascript' src='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;search_index.en.js'></script>
+	<script type='text/javascript' src='https:&#x2F;&#x2F;loic.truchot.dev&#x2F;js&#x2F;site.js'></script>
 
 	
 
 
-<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+</body>
 
 </html>
