@@ -32,7 +32,7 @@ navbar_items = [
 	{ url = "$BASE_URL/blog", name = "Blog" },
 	{ url = "$BASE_URL/podcasts", name = "Podcasts" },
 	{ url = "$BASE_URL/videos", name = "Videos" },
-	{ url = "$BASE_URL/cheatsheets", name = "Cheatsheets" },
+	{ url = "$BASE_URL/cv", name = "CV" },
 	{ url = "$BASE_URL/tags", name = "Tags" }
 ]
 

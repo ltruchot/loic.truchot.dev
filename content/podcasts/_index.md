@@ -9,7 +9,7 @@ Since September 2020, I have been working on my own podcast: **JavaScript en For
 
 - Spotify: https://open.spotify.com/show/513Qnxxm8Y0mUPM9Z4xamP
 - Google Podcasts:
-- Apple:
+- Apple Podcasts:
 
 ## My favorite podcasts: a curated list
 
@@ -30,7 +30,7 @@ Since September 2020, I have been working on my own podcast: **JavaScript en For
 
 #### In English
 
-- **Thoughts on functional programming**, _Eric Normand_
-- **Corecursive**, _Adam Gordon Bell_: Any CS subjects (but often related to Functional Programming)
-- **Functional Geekery**, _Proctor_
-- **LambdaCast**, _LambdaCast_
+- **Thoughts on functional programming**, _Eric Normand_: An open monologue on functional programming, full of relevant advice, analogies and examples
+- **Corecursive**, _Adam Gordon Bell_: Lots of prestigious guests on all CS topics (but often related to functional programming)
+- **Functional Geekery**, _Proctor_: Lots of prestigious guests only about functional programming
+- **LambdaCast**, _LambdaCast_: Discover FP topic by topic, abstraction by abstraction
