@@ -13,8 +13,24 @@ Since September 2020, I have been working on my own podcast: **JavaScript en For
 
 ## My favorite podcasts: a curated list
 
+### Programming & IT in general
+
+#### In French
+
+- **Script**, _Bigaston_: Introduction niveau débutant à des langages de programmation
+
+#### In English
+
+- **Programming**, _Minko Gechev_: Very formal Computer Science subjects, one by one
+- **The Women In Tech Show**, _Edaena Salinas_: Any CS + techs subjects by interviewing women
+- **Ladybug**: Programming subject, explained by women
+-
+
 ### Functional Programming
 
-### Programming in general
+#### In English
 
-### Others
+- **Thoughts on functional programming**, _Eric Normand_
+- **Corecursive**, _Adam Gordon Bell_: Any CS subjects (but often related to Functional Programming)
+- **Functional Geekery**, _Proctor_
+- **LambdaCast**, _LambdaCast_
