@@ -1,6 +1,6 @@
 +++
-title = "Pdcasts"
-description = "My personal podcast and a curated list of my different favorite podcasts"
+title = "Podcasts"
+description = "My personal podcasts and an organized list of my favorite podcasts"
 +++
 
 Since September 2020, I have been working on my own podcast: **JavaScript en Forêt**. It's **in French**, and it describe JavaScript and my thoughts on it, for students and the curious.
