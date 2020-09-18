@@ -11,4 +11,4 @@ Before that, I had a lead-dev position at Adneom (architecture, estimates, techn
 
 In a world that changes so quickly, where IT is everywhere, I hope everyone can learn Computer Science and earn a good salary by using it on interesting projects.
 
-DeepThought does not know the ultimate question to Life, the Universe and Everything, but offers to design an even more powerful computer, Earth, to calculate it. After ten million years of calculation, the Earth is destroyed by Vogons five minutes before the computation is complete.
+This site presents my different activities in the IT field. It is primarily intended for my students as a teacher, and for employers who wish to discover my profile.

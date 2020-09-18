@@ -901,6 +901,87 @@ I decided to dive a little more into podcast and videos. Here is what I found:&l
 </description>
         </item>
         <item>
+            <title>CV</title>
+            <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+            <link>https://loic.truchot.dev/cv/</link>
+            <guid>https://loic.truchot.dev/cv/</guid>
+            <description>&lt;h2 id=&quot;professional-websites&quot;&gt;Professional websites&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[Since 2019] As a freelancer (Smart, Itenium)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.partena-professional.be&#x2F;&quot;&gt;Partena Professional&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lucidweb.pro&#x2F;&quot;&gt;Lucidweb Pro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;[2015 - 2019] As an employee (Adneom)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;We Are Tennis&lt;&#x2F;li&gt;
+&lt;li&gt;ITQI&lt;&#x2F;li&gt;
+&lt;li&gt;FFBB (app), EmaSphere (app), Aston, Promar, BX1, Becheck, Sweepen, Adneom App&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;[2015] As a freelancer (Noesis, Smart)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Soixante Circuits&lt;&#x2F;li&gt;
+&lt;li&gt;Souther Laos&lt;&#x2F;li&gt;
+&lt;li&gt;CommSystems&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;[2013 - 2015] As an employee (SII)&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;side-projects&quot;&gt;Side projects&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[2020] &lt;a href=&quot;https:&#x2F;&#x2F;loic.truchot.dev&quot;&gt;Personal blog (here!)&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;[2020] &lt;a href=&quot;https:&#x2F;&#x2F;aiku.wtf&quot;&gt;Aiku: le poète artificiel&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;[2019]&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;open-source-contributions&quot;&gt;Open source contributions&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[2013 - 2020] &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ltruchot&quot;&gt;Main github profile&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+        </item>
+        <item>
+            <title>Podcast</title>
+            <pubDate>Tue, 15 Sep 2020 00:00:00 +0000</pubDate>
+            <link>https://loic.truchot.dev/podcast/</link>
+            <guid>https://loic.truchot.dev/podcast/</guid>
+            <description>&lt;p&gt;Since September 2020, I have been working on my own podcast: &lt;strong&gt;JavaScript en Forêt&lt;&#x2F;strong&gt;. It&#x27;s &lt;strong&gt;in French&lt;&#x2F;strong&gt;, and it describe JavaScript and my thoughts on it, for students and the curious.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;javascript-en-foret&quot;&gt;JavaScript en Forêt&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Spotify: &lt;a href=&quot;https:&#x2F;&#x2F;open.spotify.com&#x2F;show&#x2F;513Qnxxm8Y0mUPM9Z4xamP&quot;&gt;https:&#x2F;&#x2F;open.spotify.com&#x2F;show&#x2F;513Qnxxm8Y0mUPM9Z4xamP&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Google Podcasts:&lt;&#x2F;li&gt;
+&lt;li&gt;Apple Podcasts: &lt;a href=&quot;https:&#x2F;&#x2F;podcasts.apple.com&#x2F;be&#x2F;podcast&#x2F;javascript-en-for%C3%AAt&#x2F;id1531845055&quot;&gt;https:&#x2F;&#x2F;podcasts.apple.com&#x2F;be&#x2F;podcast&#x2F;javascript-en-for%C3%AAt&#x2F;id1531845055&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Podcloud: &lt;a href=&quot;https:&#x2F;&#x2F;podcloud.fr&#x2F;podcast&#x2F;javascript-en-foret&quot;&gt;https:&#x2F;&#x2F;podcloud.fr&#x2F;podcast&#x2F;javascript-en-foret&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;my-favorite-podcasts-a-curated-list&quot;&gt;My favorite podcasts: a curated list&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;programming-and-it&quot;&gt;Programming and IT&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;in-french&quot;&gt;In French&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Script&lt;&#x2F;strong&gt;, &lt;em&gt;Bigaston&lt;&#x2F;em&gt;: Introduction niveau débutant à des langages de programmation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h4 id=&quot;in-english&quot;&gt;In English&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Programming&lt;&#x2F;strong&gt;, &lt;em&gt;Minko Gechev&lt;&#x2F;em&gt;: Very formal Computer Science subjects, one by one&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The Women In Tech Show&lt;&#x2F;strong&gt;, &lt;em&gt;Edaena Salinas&lt;&#x2F;em&gt;: Any CS + techs subjects by interviewing women&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Ladybug&lt;&#x2F;strong&gt;: Programming subject, explained by women&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;functional-programming&quot;&gt;Functional Programming&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;in-english-1&quot;&gt;In English&lt;&#x2F;h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Thoughts on functional programming&lt;&#x2F;strong&gt;, &lt;em&gt;Eric Normand&lt;&#x2F;em&gt;: An open monologue on functional programming, full of relevant advice, analogies and examples&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Corecursive&lt;&#x2F;strong&gt;, &lt;em&gt;Adam Gordon Bell&lt;&#x2F;em&gt;: Lots of prestigious guests on all CS topics (but often related to functional programming)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Functional Geekery&lt;&#x2F;strong&gt;, &lt;em&gt;Proctor&lt;&#x2F;em&gt;: Lots of prestigious guests only about functional programming&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;LambdaCast&lt;&#x2F;strong&gt;, &lt;em&gt;LambdaCast&lt;&#x2F;em&gt;: Discover FP topic by topic, abstraction by abstraction&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+        </item>
+        <item>
             <title>Cure Impostor Syndrome with Functional Programming</title>
             <pubDate>Sat, 29 Jun 2019 00:00:00 +0000</pubDate>
             <link>https://loic.truchot.dev/blog/cure-impostor-syndrome-with-functional-programming/</link>

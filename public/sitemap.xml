@@ -16,8 +16,10 @@
     </url>
     <url>
         <loc>https://loic.truchot.dev/cv/</loc>
+        <lastmod>2020-09-16</lastmod>
     </url>
     <url>
-        <loc>https://loic.truchot.dev/podcasts/</loc>
+        <loc>https://loic.truchot.dev/podcast/</loc>
+        <lastmod>2020-09-15</lastmod>
     </url>
 </urlset>

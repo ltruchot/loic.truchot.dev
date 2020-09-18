@@ -1,19 +1,21 @@
 +++
-title = "Podcasts"
-description = "My personal podcasts and an organized list of my favorite podcasts"
+title = "Podcast"
+description = "My personal podcast and an organized list of my favorite podcasts"
+date = 2020-09-15
 +++
 
 Since September 2020, I have been working on my own podcast: **JavaScript en Forêt**. It's **in French**, and it describe JavaScript and my thoughts on it, for students and the curious.
 
 ## JavaScript en Forêt
 
-- Spotify: https://open.spotify.com/show/513Qnxxm8Y0mUPM9Z4xamP
+- Spotify: [https://open.spotify.com/show/513Qnxxm8Y0mUPM9Z4xamP](https://open.spotify.com/show/513Qnxxm8Y0mUPM9Z4xamP)
 - Google Podcasts:
-- Apple Podcasts:
+- Apple Podcasts: [https://podcasts.apple.com/be/podcast/javascript-en-for%C3%AAt/id1531845055](https://podcasts.apple.com/be/podcast/javascript-en-for%C3%AAt/id1531845055)
+- Podcloud: [https://podcloud.fr/podcast/javascript-en-foret](https://podcloud.fr/podcast/javascript-en-foret)
 
 ## My favorite podcasts: a curated list
 
-### Programming & IT in general
+### Programming and IT
 
 #### In French
 
@@ -24,7 +26,6 @@ Since September 2020, I have been working on my own podcast: **JavaScript en For
 - **Programming**, _Minko Gechev_: Very formal Computer Science subjects, one by one
 - **The Women In Tech Show**, _Edaena Salinas_: Any CS + techs subjects by interviewing women
 - **Ladybug**: Programming subject, explained by women
--
 
 ### Functional Programming
 
