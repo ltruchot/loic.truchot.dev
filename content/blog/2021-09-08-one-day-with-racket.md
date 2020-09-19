@@ -1,38 +1,38 @@
 +++
 title="One Day With Racket"
-description="Not enough parenthesis!"
+description="Not enough parentheses!"
 slug ="one-day-with-racket"
 +++
 
-> 7:56 AM. What brought me here? I'm a JavaScript Senior, and it's often mentioned that JS was inspired by Scheme.
+> 7:56AM. What brought me here? I'm a JavaScript Senior, and it's often mentioned that JS was inspired by Scheme.
 >
-> Scheme is a LISP, an old family of language, very promising for A.I., where everything is a workable list, looking like `(function-name, arg1, arg2, arg3...)`.
-> It allows you to easily define Domain Specific Languages (DSL), with your own keywords and identifiers.
+> Scheme is a dialect of LISP (an old family of languages), where everything is a workable list, looking like `(function-name, arg1, arg2, arg3...)`.
+> It is very promising for A.I., and allows you to easily define Domain Specific Languages (DSL) with your own keywords and identifiers.
 >
-> Scheme is a classic academic LISP from MIT, and Racket is a scholar's attempt to make LISP even more universally learnable (Logo is another well-known).
-> So let's do some Racket at least one day in our developer life!
+> Scheme is a classic academic LISP from MIT, and Racket is a scholar's attempt at making LISP even more universally accessible (Logo is another well-known dialect).
+> So, let's do some Racket at least one day in our developer life!
 
 ## Find Basic Documentation
 
-There is thousands of programming languages available, and plenty of websites for each. We can often find the official documentation for one of these, just typing: \<language\>-lang.org: rust-lang.org, elm-lang.org, etc.
+There are thousands of programming languages available, and plenty of websites for each of them. We can often find the official documentation for a particular one by just typing: \<language\>-lang.org: rust-lang.org, elm-lang.org, etc.
 
-Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into the in-depth documentation, I hope to find a clear introduction.
-After a few clicks I reach the
+Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into in-depth documentation, I hope to find a clear introduction of the language.  
+After a few clicks, I reach 
 [Quick Introduction to Racket with Pictures](https://docs.racket-lang.org/quick/index.html).
 
 ## Quick Introduction
 
-I've to install [Racket/DrRacket installer](https://download.racket-lang.org/) (~175Mb) to be able to run the examples. A very simple and smooth process on Windows 10: let's open DrRacket now.
+It seems I have to install [Racket/DrRacket installer](https://download.racket-lang.org/) (~175Mb) to be able to run the examples. A very simple and smooth process on Windows 10. Let's open it now.
 
-It's a clean IDE interface with a menu, an empty document (named "definitions area") and a REPL ("interactions area") with some hints.
+It's a clean IDE interface with a menu, an empty document (named "definitions area") and a REPL ("interactions area") with some hints displayed.
 
-This introduction continue, but the documentation missed a small step: before copying / pasting the samples provided, I had to choose the "racket lang" in the "languages" menu. Then I paste `#lang slideshow` in the def area, and press the "run" button.
+The introduction continues, but the documentation missed a small step: before copying and pasting the samples provided, I had to choose "racket lang" in the "languages" menu. Then I had to paste `#lang slideshow` in the def area, and press the "run" button.
 
 ![Getting ready](/blog/2021-09-08-one_day_with_racket/img/01-getting_rdy.png)
 
 Our first lines of code will take place in the REPL part.
-Write `(circle 10)` and press \[Enter\] draw a 10px circle in the same area.
-You can imagine what the following commands will do:
+Writing `(circle 10)` and pressing \[Enter\] draws a 10px circle in the same area.  
+Guess what the following commands will do?
 
 ```rkt
 (circle 10)
@@ -41,17 +41,17 @@ You can imagine what the following commands will do:
 (arrow 20 10)
 ```
 
-It draws shapes (and makes coffee)!
-So we can guess that
+It draws shapes (and makes coffee)!  
+So we can guess that:
 
 - `#lang slideshow` contains useful functions to display certain shapes
 - `circle`, `rectangle`, `arrow` are function names
-- we can execute theses functions by putting them in parenthesis, passing arguments separated by spaces.
-- the REPL is enough to directly interpret these inputs, then ouputs the result
+- we can execute these functions by putting them in parentheses, passing arguments separated by spaces.
+- the REPL is enough to directly interpret these inputs, then ouput the result.
 
 ![REPL](/blog/2021-09-08-one_day_with_racket/img/02-repl.png)
 
-I just play without checking the docs and I ultimately make deliberate errors to see how useful the interpreter is.
+I play around without checking the docs, and ultimately make deliberate errors to see how useful the interpreter is.
 
 ```rkt
 (triangle 30)
@@ -59,9 +59,9 @@ I just play without checking the docs and I ultimately make deliberate errors to
 rectangle 10
 ```
 
-- Errors concerning undefined identifier seems easy to catch
-- Errors on the arguments are little more frightening: the technical word "arity" refers to the expected number of arguments of a function
-- Missing parenthesis did not give me an error, just an unexpected result that I suspect to be "this function as a value" (not executed)
+- Errors concerning undefined identifier seem easy to catch.
+- Errors linked to arguments are a little more frightening: the technical word "arity" refers to the expected number of arguments of a function.
+- Missing parentheses did not give me an error, just an unexpected result that I suspect to mean "this function as a value" (not executed).
 
 By diving deeper, we discover that we can add several shapes on the same line...
 
@@ -72,21 +72,22 @@ By diving deeper, we discover that we can add several shapes on the same line...
 )
 ```
 
-I'm assuming `hc-append` means "horizontally-centered append", but something is flashing red here: any function name will be a big concern, as they are so central here...
+@FIXME : 
+I'm assuming `hc-append` means "horizontal-centered append", but something is flashing red here: any function name will be a big concern, as they are so central here...
 
 !["REPL](/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png)
 
-... and it begins !
+... and so it begins!
 
-The famous LISP parenthesis festival that shows the order of execution of functions begins.
+The famous LISP parentheses festival that shows the order of execution of functions begins.  
 Despite its reputation, I feel like it's clean and natural at the moment. The language itself seems to contain very few symbols, mostly for simple instructions.
 
 ## Create my own stuff
 
-For now, we had used some already baked functions.
-How to make our owns ?
+Until now, we used some already baked functions.
+But how to make our own?
 
-The quick-start guide show us how to do it, with the `define` identifier:
+The quick-start guide shows us how how to do it with the `define` identifier:
 
 ```rkt
 (define c10 (circle 10))
@@ -96,9 +97,9 @@ c10
 
 ![define](/blog/2021-09-08-one_day_with_racket/img/04-define.png)
 
-`define` acts as a function that takes 2 args: a variable name, and a value. Now, `c10` is available as a classic variable.
+`define` acts as a function that takes 2 arguments: a variable name, and a value. Now `c10` is available as a classic variable.
 
-> 9:18 AM It feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down: we have the all day after all...
+> 9:18AM. It feels astonishingly simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down. After all, I've got the whole day...
 
 We can define a lot of stuff:
 
@@ -111,24 +112,23 @@ face
 face
 ```
 
-But we reach the point where we loose some visiblity.
-So let's use the "def area" for define instructions, and keep the REPL for executions...
+But we reach the point where we lose some visiblity, so let's use the "def area" to define instructions, and keep the REPL to execute them...
 
 ![my stuff](/blog/2021-09-08-one_day_with_racket/img/05-my_stuff.png)
 
-It's clearer now. And I have a program to save on disk: `quick-start.rkt`.
-This is not the usual approach of programming, of course. I'm used to a soup where everything is mixed.
-Here, definitions stays "pure", and the process of creating the program is REPL-oriented, playing with code until it work.
+It's clearer now, and I get a program I can save on my disk: `quick-start.rkt`.  
+This is not the usual approach of programming, of course. I'm used to a "soup" where everything is mixed.  
+Here, definitions stay "pure", and the process of creating the program is REPL-oriented, playing with code until it works.
 
-Few remarks:
+A few remarks:
 
-- `ht-append` can take any number of args. If 1st arg is a number, it represent the white-space between picts; it reminds me the [overloading practice](https://www.w3schools.com/java/java_methods_overloading.asp) in OOP.
-- `vc-append` stands for vertical-centered, and so on with `hb-append`, `vt-append`...
-- when the mouse is over a defined name, DrRacket show an arrow to find its definition - I discovered that by accident, and it's amazing
-- there is no fatality about parenthesis hell, if we define names smartly along the way
-- Racket already feel like a DSL maker . I can imagine a function to make a triangle, an other to do a square, an other to combine them and make a little house, and a house function just to wrap all of this... I reminds me the [SHRDLU](https://en.wikipedia.org/wiki/SHRDLU) initiative in A.I.
+- `ht-append` can take any number of arguments. If the 1st argument is a number, it represents the white-space between picts. It reminds me of the [overloading practice](https://www.w3schools.com/java/java_methods_overloading.asp) in OOP.
+- `vc-append` stands for vertical-centered, and so on with `hb-append` (horizontal-bottom), `vt-append` (vertical-top)...
+- when the mouse is over a defined name, DrRacket shows an arrow to find its definition - I discovered that by accident, and it's amazing!
+- there is no fatality about parentheses hell, as long as we define names smartly along the way.
+- Racket already feels like a DSL maker. I can imagine a function that creates a triangle, another to make a square, another to combine them and make a little house, and a house function just to wrap all of this... It reminds me of the [SHRDLU](https://en.wikipedia.org/wiki/SHRDLU) initiative in A.I.
 
-What about defining my own function ? I.e. there is no `square` function in this package, so let's create one
+What about defining my own function? i.e. there is no `square` function in this package, so let's create one.
 
 Nothing too new:
 
@@ -137,32 +137,32 @@ Nothing too new:
   (rectangle n n))
 ```
 
-In place of taking a var name, define takes a function name + some args, surrounded by parenthesis.
-Then, a second pair of parenthesis contains the actual code to run on execution.
+In place of taking a variable name, define takes a function name + some arguments surrounded by parentheses.  
+Then, a second pair of parentheses contains the actual code to run on execution.  
 And here is my little 30px square:
 
 ![square](/blog/2021-09-08-one_day_with_racket/img/06-square.png)
 
 ## My first challenge
 
-> 10:10 AM - I just decided to challenge my-self. Can I create a function able to draw colored cars ?
+> 10:10AM. I just decided to challenge myself. Can I create a function able to draw coloured cars?
 
-I don't want to only stick to the tutorial. If I find the documentation for `circle` and `hc-append`, I'm pretty sure I will know all the shapes available, and all the ways to combine them.
+I don't want to only stick to the tutorial. If I found `circle` and `hc-append` in the documentation, I'm pretty sure I will find the other shapes available, and all the ways to combine them.
 
-Here we are, no surprise:
+Here we go, unsurprisingly:
 
 ![docs](/blog/2021-09-08-one_day_with_racket/img/07-docs.png)
 
-I need is a kind of `disk` for the wheel, and it exists. Now, how to put a white disk in a slightly bigger black disk ?
+All I need is a kind of `disk` for the wheel, and it exists. Now, how would I put a white disk in a slightly bigger black disk?  
 
-It appears there is a `colorize` function that take any "pict" (our shapes) and an [x11 color](https://docs.racket-lang.org/draw/color-database___.html) as 2d argument.
+It appears there is a `colorize` function that takes any "pict" (our shape) and [x11 color](https://docs.racket-lang.org/draw/color-database___.html) as a 2d argument.
 
 ```rkt
 (disk 30) ; a disk, black by default
 (colorize (disk 25) "lightgray") ; a gray disk
 ```
 
-We can even put them together with the `cc-superimpose` function, a way to super impose on center - center!
+We can even put them together with the `cc-superimpose` function, a way to superimpose on center - center!
 
 ```rkt
 (define black-disk
@@ -174,7 +174,7 @@ We can even put them together with the `cc-superimpose` function, a way to super
 (cc-superimpose black-disk gray-disk)
 ```
 
-So my final definitions could be
+So my final definitions could be:
 
 ```rkt
 (define tire
@@ -193,15 +193,15 @@ So my final definitions could be
     (vc-append body wheels))
 ```
 
-and let's try:
+And let's try:
 
 ![cars](/blog/2021-09-08-one_day_with_racket/img/08-cars.png)
 
-OMG, so easy. What is this strange feeling ? Am I a wizard or something ? It work so well, and it was just some instinct + few RTFM work: thank you DrRacket!
+OMG, so easy. What is this strange feeling? Am I a wizard or something? It works so well, and it was just some instinct and a little RTFM work. Thank you DrRacket!
 
-As you can see, I tried to define a function in a function for the body of my car. I was not sure it will work, but it did!
+As you can see, I tried to define a function in a function for the body of my car. I was not sure it would work, but it did!
 
-Going further in the documentation, it appears that's the job of the `let`/`let*` identifier too (the `*` authorize several `let` to use each others)
+Going further in the documentation, it appears that's the job of the `let`/`let*` identifier too (the `*` authorizes several `let` to use each other).
 
 ```rkt
 #lang slideshow
@@ -224,13 +224,13 @@ Going further in the documentation, it appears that's the job of the `let`/`let*
     (vc-append compartment body wheels)))
 ```
 
-This little recfacto limit the scope of my definitions: that's always a good practice. I can going further, while putting everything in the car definition.
+This little recfactoring limits the scope of my definitions, and that's always good practice. I can go further, putting everything in the car definition.
 
 ![use let*](/blog/2021-09-08-one_day_with_racket/img/09-violet_car.png)
 
 ## First citizen
 
-One of the big strenght of JavaScript is the "function as value", which imply that a function can take another one as argument (aka higher-order functions).
+One of the big strenghts of JavaScript is the "function as value", which implies that a function can take another one as an argument (also known as higher-order functions).
 
 ```javascript
 function example(callback) {
@@ -240,7 +240,7 @@ function example(callback) {
 example(() => console.log("world!"));
 ```
 
-And of course you can put functions in variables, or even make a function that return an other one (aka curriying, thank EcmaGod for the arrow functions).
+And of course you can put functions in variables, or even make a function that returns another one (aka currying, thanks EcmaGod for the arrow function).
 
 ```javascript
 const car = (size) => (color) => {
@@ -253,16 +253,16 @@ bigCar("red");
 smallCar("violet");
 ```
 
-This is the heritage of LISP, so in Racket we can also pass function to another as argument, and so on. Functions are values likes the others (aka first-class citizen functions)
+This is the heritage of LISP, so in Racket we can also pass a function to another as an argument, and so on. Functions are values like the others (aka first-class citizen function)
 
-Ok, in which case this will happen ?
+Ok, but in which case will this happen?
 
-> 10:51 AM - I have an idea to find a case. I want to be able to ask the program a specific number of colored cars or houses. I suspect it will request use of "functions as value".
+> 10:51AM. I have an idea of a good use case. I want to be able to ask the program a specific number of colored cars or houses. I suspect it will request using "functions as value".
 
 Let's make a house first. I had to dive in the documentation to find `rotate`, `inset`, `pi`, `sqrt`, without any surprise.
 
-Before you read this code, be prepared:
-In LISP, math operators are functions, defined and working like any other. So:
+Before you read this code, be prepared: in LISP, math operators are functions, defined and working like any other.  
+So:
 
 ```rkt
 (+ 1 2) ; returns 3
@@ -272,7 +272,7 @@ In LISP, math operators are functions, defined and working like any other. So:
 ; and so on.
 ```
 
-In other word, no more "infix" operators (symbol in between the 2 operands): an addition is no more than a simple function and it signature is `(number, number) -> number`.
+In other words, no more "infix" operators (symbol in between the 2 operands): an addition is no more than a simple function and its signature is `(number, number) -> number`.
 
 ```rkt
 (define (house color)
@@ -296,11 +296,11 @@ In other word, no more "infix" operators (symbol in between the 2 operands): an 
     (cb-superimpose structure door)))
 ```
 
-This is improvisation, but it work! Even if this piece of code appears complex, I can swear it was easy to write ! And now, let's just use `(house "color")` everywhere...
+This is improvisation, but it works! Even if this piece of code appears complex, I swear it was easy to write! And now, let's just use `(house "color")` everywhere...
 
 ![blue house](/blog/2021-09-08-one_day_with_racket/img/10-blue_house.png)
 
-Know let's write this very special function. I just want to say "draw 3 blue houses" and get my stuff. The signature will looks like `(n, color, thing) -> pict`.
+Now let's write this very special function. I just want to say "draw 3 blue houses" and get them. The signature would look like `(n, color, thing) -> pict`.
 
 ```rkt
 ; dumb color identifiers
@@ -313,13 +313,13 @@ Know let's write this very special function. I just want to say "draw 3 blue hou
 (draw 1 red car)
 ```
 
-It work and we can see here that `thing` is a "function as values", where draw is an "higher order function": a function in charge the execute another.
+It works and we can see here that `thing` is a "function as value", where `draw` is an "higher order function": a function in charge of executing another.
 
 The next challenge is to do something with this `n` parameter. I need a "for loop", but guess what, it's not [idiomatic](Programming idiom) Racket!
 
-Indeed, Racket is not a big set of reserved imperative keyword like other languages are. In contrary, it's a very few set of powerful identifiers (`define`, `let`...) sufficient to create our own language (And indeed, some forms of "for" or "while" exists in Racket langs/libraries/modules) as defined functions.
+Indeed, Racket is not a big set of reserved imperative keywords like other languages are. On the contrary, it's a very small set of powerful identifiers (`define`, `let`...), just enough to create our own language (And indeed, some forms of "for" or "while" exist in Racket langs/libraries/modules as defined functions).
 
-Basic iteration will be build on top of recursion. In JavaScript, a recursion looks like:
+Basic iteration will be built on top of recursion. In JavaScript, recursion looks like this:
 
 ```javascript
 const recursiveFunction = (n) => {
@@ -333,13 +333,13 @@ const recursiveFunction = (n) => {
 recursiveFunction(10);
 ```
 
-The loop occurs because the function call itself until a condition is reached - or "while" a condition still valid (just like any loop in fact - but recursion shows that functions can be loops, and "for" or "while" is an optional tool).
+The loop occurs because the function calls itself until a condition is met - or "while" a condition is still valid (just like any loop in fact - but recursion shows that functions can be loops, and "for" or "while" are an optional tool).
 
-Let's try this recursion in Racket. Before that, we will need few new tools that I easily found in the documentation:
+Let's try recursion in Racket. Before that, we will need a few new tools that I easily found in the documentation:
 
-- `print` that write in the console like `console.log` in JS
+- `print` that writes in the console like `console.log` in JS
 - `string-append` for string concatenation
-- `number->string` to cast a number in string
+- `number->string` to cast a number as a string
 
 ```rkt
 (define (recursive-function n)
@@ -350,7 +350,7 @@ Let's try this recursion in Racket. Before that, we will need few new tools that
 
 Last but not least:
 
-- `if` is a function like all the others, it takes 3 args: a "test" (condition), a "then" (consequent) and a "else" (alternative)
+- `if` is a function like all the others, it takes 3 args: a "test" (condition), a "then" (consequent) and an "else" (alternative)
 
 ```
 (print (if
@@ -359,9 +359,9 @@ Last but not least:
         "wtf" ))
 ```
 
-- `begin` is a function to execute several functions one by one, and just keep the result of the last on.
+- `begin` is a function that executes several functions one by one, and just keeps the result of the last one.
 
-Ok, let's put all the piece together
+Ok, let's put all the pieces together:
 
 ```rkt
 (define (recursive-function n)
@@ -380,13 +380,11 @@ Ok, let's put all the piece together
 
 ![recursion](/blog/2021-09-08-one_day_with_racket/img/11-recursion.png)
 
-If we want to append recursively pictures to a previous pictures,
-we have to begin with some kind of "empty" picture.
+If we want to append a picture to previous pictures recursively, we have to begin with some kind of "empty" picture.
 
-Indeed, a function that add "42" to nothing (null / undefined) will break: it must at least add "1" to a "0".
+Indeed, a function that adds "42" to nothing (null / undefined) will break: it must at least add "1" to "0".  
 
-This empty-picture base-case is named [blank](https://docs.racket-lang.org/pict/Basic_Pict_Constructors.html?q=pict#%28def._%28%28lib._pict%2Fmain..rkt%29._blank%29%29)
-in the library.
+This empty-picture base-case is named [blank](https://docs.racket-lang.org/pict/Basic_Pict_Constructors.html?q=pict#%28def._%28%28lib._pict%2Fmain..rkt%29._blank%29%29) in the library.
 
 And now, we can apply recursion to our example:
 
@@ -403,7 +401,7 @@ And now, we can apply recursion to our example:
 
 ![draw me](/blog/2021-09-08-one_day_with_racket/img/12-draw_me.png)
 
-Hey, what is this unknown [pict (blank)] ? It's a way to provide an optional parameters with a default value.
+Hey, what is this unknown `[pict (blank)]`? It's a way to provide an optional parameter with a default value.
 
 In ES6, it could be mirrored with:
 
@@ -413,30 +411,29 @@ function draw(n, color, thing, pict = new Pict()) {
 }
 ```
 
-assuming there is a `Pict` constructor that return an empty pict.
+assuming there is a `Pict` constructor that returns an empty pict.
 
-In fact, our case is a beautiful illustration of what mathematician calls a `Monoid`. We have a special algebra for `pict` where we can add them infinitely, producing a new `pict`, beginning thoses operations with the `blank` neutral element.
+In fact, our case is a beautiful illustration of what mathematicians call a `Monoid`. We have special algebra for `pict` where we can add them infinitely, producing a new `pict`, starting those operations with the `blank` neutral element.
 
-This case is so common in Computer Science
-(addition with 0 as neutral, multiplication with 1 as neutral, concat with "" as neutral, etc.) that the type/class `Monoid` itself exists in different languages and frameworks.
+This case is so common in Computer Science (addition with 0 as neutral, multiplication with 1 as neutral, concatenation with "" as neutral, etc.) that the type/class `Monoid` itself exists in different languages and frameworks.
 
 ## First Conclusions
 
-> 2:16 PM - Sorry but I'm starving. it's time for a lunch.
+> 2:16 PM - Sorry, but I'm starving. It's time for lunch.
 >
-> 3:15 PM - Wow. We have made a lot this morning, but time flies. Let' take stock, then move on to the next idea: a animated game.
+> 3:15 PM - Wow. We did a lot this morning, but time flies. Let's take stock, then move on to the next idea: an animated game.
 
-Racket (and so LISP) appears to be incredibely simple to write. Final expressions like `draw me a sheep` are easy to read too, very close to natural language if definitions are done that way.
+Racket (and therefore LISP) appears to be incredibly simple to write. Final expressions like `draw me a sheep` are equally easy to read, very close to natural (human) language if definitions are done that way.
 
-Nonetheless, sometimes it still difficult for me to read implementation details, especially when a definition goes crazy. So I recommend to do little steps and focus on quality and modularization of ideas from the beginning.
+Nonetheless, sometimes it still is difficult for me to read implementation details, especially when a definition goes crazy. So I recommend to take little steps, focusing on quality and modularization of ideas from the beginning.
 
-The first big secret that Racket teach me is the following: you can do more with less. It sounds like Taoism, but indeed clarity grows because the field is almost empty. Very few building blocks, but they contains an unlimited power, by the law of combinations (like so much other fields in nature).
+The first big secret that Racket teaches me is the following: you can do more with less. It sounds like Taoism, but indeed clarity grows because the field is almost empty. Very few building blocks, but they contain an unlimited power, by the law of combination (like so much other fields in nature).
 
-If you dive in a definition, you will see other definitions that look the same. Declarativness is always preserved (and I advocate for that in all language, so I'm filled).
+If you dive in a definition, you will see other definitions that look the same. Declarativeness is always preserved (and I advocate for that in all languages, so I'm thrilled).
 
-Imperativeness can be always avoided, it's not idiomatic here. And because everything is finally a simple list of stuff that begin with an identifier, you can understand the all language mechanics in few hours.
+Imperativeness can always be avoided, it's not idiomatic here. And because everything is finally a simple list of stuff that begins with an identifier, you can understand the whole language mechanics in a few hours.
 
-Which identifier exists or not is not the real question: you take the fewest - or a enormous backed-in DSL - as you wish.
+Wether or not an identifier exists is not the real question: you take as little (or an enormous backed-in DSL) as you wish.
 
 - (define x y)
 - (define (x y) z)
@@ -446,28 +443,27 @@ Which identifier exists or not is not the real question: you take the fewest - 
 - (map (lambda (x) (\* x x)) a-list)
 - and so on
 
-We know that LISP stands for **LIS**t **P**rocessor and we understand why. We see clearly why it's a good language for learning basics of CS, and even why [Uncle Bob](https://fr.wikipedia.org/wiki/Robert_C._Martin) itself says that maybe in the future a lot a disparate language will converge on some kind of LISP.
+We know that LISP stands for **LIS**t **P**rocessor and we understand why. We see clearly why it's a good language to learn the basics of CS, and even why [Uncle Bob](https://fr.wikipedia.org/wiki/Robert_C._Martin) himself says that maybe in the future a lot of disparate languages will converge on some kind of LISP.
 
-If one day hardware capacity is no more a limitation, it can be indeed the only language to produce any DSL you want, that all developer could understand around the world without struggling with new weird language mechanics, but focus on a syntax + algebra that describe perfectly a domain...
+If one day hardware capacity is no more a limitation, it indeed become the only language to produce any DSL you want, that every developer could understand around the world without struggling with new weird language mechanics, while focusing on a syntax and algebra that perfectly describe a domain...
 
-## Go Back To Work
+## Back To Work
 
-Now 2 new crazy challenges:
+Now, 2 new crazy challenges:
 
 - What about asking for "4 big blue houses"?
-- How to make stuff moving in time?
+- How to make stuff move in time?
 
 ### Scaling
 
-Diving the docs, I discovered that that Racket is strongly typed.
+Back to the docs! I discover that Racket is strongly typed.
 WTF? I didn't write any type since the beginning!
 
 Indeed, it's dynamically typed, but it's not weakly typed: those are 2 different concepts.
-In JavaScript "number" is a weak type for all kinds of numbers.
-In racket, a number have a stonger type, like "integer"... but still being automatically assigned (like in JS).
+In JavaScript "number" is a weak type, for all kinds of numbers.
+In racket, a number has a stonger type, like "integer"... but still is automatically assigned (like in JS).
 
-One very smart thing about the `pict-lib` provided by `#lang/slideshow`,
-is that almost all function takes `pict` typed value and return a `pict` as well. That's why we can combine them, and reuse them. More generally, that's how you make a good DSL, and not only a framework/library.
+One very smart thing about the `pict-lib` provided by `#lang/slideshow`, is that almost all functions take a `pict` typed value and return a `pict` as well. That's why we can combine them, and reuse them. More generally, that's how you make a good DSL, and not only a framework/library.
 
 So this should work perfectly:
 
@@ -483,7 +479,7 @@ So this should work perfectly:
 
 Now let's enhance our legacy code. If we want to be able to ask for a big, small or normal-sized house we will need some kind of `switch` or `else if` statement.
 
-That switch is feasable using [case](https://docs.racket-lang.org/guide/case.html) where else-if is more like [cond](https://docs.racket-lang.org/reference/if.html)
+That switch is feasable using [case](https://docs.racket-lang.org/guide/case.html) whereas else-if is more like [cond](https://docs.racket-lang.org/reference/if.html)
 
 ```rkt
 (define
@@ -513,22 +509,22 @@ That switch is feasable using [case](https://docs.racket-lang.org/guide/case.htm
 ### Moving
 
 The future snake will be moving in a 2d plane.
-Is it even possible with our current `lang/slideshow` ? There is indeed an [animation documentation](https://docs.racket-lang.org/pict/Animation_Helpers.html), but it appears to be highly related to slideshow stuff.
+Is it even possible with our current `lang/slideshow`? There is indeed an [animation documentation](https://docs.racket-lang.org/pict/Animation_Helpers.html), but it appears to be highly related to slideshow stuff.
 
-And it's not only about moving: we will need a window, a game loop, collision stuff and so own.
+And it's not only about moving: we will need a window, a game loop, collision stuff and so on.
 Let's take some time to choose a better `lang` than slideshow for this advanced visual stuff...
 
-> It's already 4:45 PM. Do we have a chance to run something before midnight ? Differents tools appears to make games, dependant on new stuff.
-> Like this [racket/gui](https://docs.racket-lang.org/gui/index.html), but it will force us to learn a new way to draw: the `draw-lib`...
-> I continue but [Searching](https://pkgd.racket-lang.org/pkgn/search?q=game) takes time. I even found a [fully working snake game](https://github.com/Bogdanp/hebi/blob/master/hebi.rkt), but the code is too avanced for me...
+> It's already 4:45 PM - Will we get a chance to get something running before midnight? Differents tools appear to make games, dependant on new stuff.
+> A bit like this [racket/gui](https://docs.racket-lang.org/gui/index.html), but it will force us to learn a new way to draw: the `draw-lib`...
+> I continue but [searching](https://pkgd.racket-lang.org/pkgn/search?q=game) takes time. I even find a [fully working snake game](https://github.com/Bogdanp/hebi/blob/master/hebi.rkt), but the code is too avanced for me...
 
-> 5:09. Finaly, my choice falls for the [r-cade packages](https://docs.racket-lang.org/r-cade/index.html) - it seems to contains everything we need, and claim to have snake-game example (that I will avoid now, but comparate at the end as correct version)
+> 5:09 PM - In the end, my choice falls on the [r-cade packages](https://docs.racket-lang.org/r-cade/index.html) - it seems to contain everything we need, and claims to have a snake-game example (that I will avoid for now, but will compare with in the end)
 
 ## A Snake Game
 
 ### R-cade Setup
 
-Let's try the simplest example game
+Let's try the simplest example game:
 
 ```rkt
 #lang racket
@@ -543,10 +539,10 @@ Let's try the simplest example game
 (run game-loop 128 128)
 ```
 
-Oh no! `r-cade` is not know by DrRacket. Hopefully the error provide me an install link... that work directly.
+Oh no! `r-cade` is not know by DrRacket. Thankfully the error provides me with a link to install it... which works directly.
 
-Oh no! `r-cade` needs some dependencies on windows to run!
-It's well documented [here](https://r-cade.io/setup). I install [csfml](https://www.sfml-dev.org/download/csfml/) (I unzip in a freshly made `C:\other_program\csfml` folder to be sure to not pollute my computer), and add the path to the windows Path environment variable.
+Oh no! `r-cade` needs some dependencies on windows to run!  
+It's well documented [here](https://r-cade.io/setup). I therefore install [csfml](https://www.sfml-dev.org/download/csfml/) (I unzip it in a freshly made `C:\other_program\csfml` folder to be sure not to pollute my computer), and add the path to the Windows Path environment variable.
 
 ![env csfml](/blog/2021-09-08-one_day_with_racket/img/15-env_csfml.png)
 
@@ -554,42 +550,41 @@ I had to install [OpenAL](https://www.openal.org/downloads/) as well, then fully
 
 ![r-cade](/blog/2021-09-08-one_day_with_racket/img/16-r-cade.png)
 
-### Snake Specification
+### Snake Specifications
 
 What is a Snake Game? Here is my very opinionated vision of a simplified version:
 
-- a 20x20 grid, made of tiles that have x/y coordinate
-- a tile can be
+- a 20x20 grid, made of tiles that have x/y coordinates
+- a tile can be:
 
   - a wall tile (all edges)
   - an apple tile
   - a part of the snake: a snake-tile
   - a blank-tile
 
-- the snake
+- the snake:
 
   - is made of 1+ consecutive snake-tiles
-  - is always moving in the previous setted direction (each 500ms)
+  - is always moving in the previously set direction (every 500ms)
   - the head can take any cardinal direction (NESW)
-  - the body follow the head
-  - when the head collide an apple-tile
-    - the apple disapear
-    - the snake grow by 1 snake-tiles
-  - when the head collide a wall-tile or snake tile: game over
+  - the body follows the head
+  - when the head collides an apple-tile:
+    - the apple disapears
+    - the snake grows by 1 snake-tile
+  - when the head collides a wall-tile or snake-tile: Game Over.
 
-- apples
-  - there is always one in a randow position in the field
-  - if it's ate, it disappear a new one pop on a ramdom empty tile
-  - if there is no more empty tile: game over
+- apples:
+  - there is always one in a random position in the field
+  - if it's eaten, it disappears and a new one pops on a ramdom empty tile
+  - if there is no empty tile left: Game Over
 
-### implementation
+### Implementation
 
 #### Window And Walls
 
-Let's try to make a 20x20 window with 4 walls
-Sadly, I now nothing about videogame development.
-My first reflex is just to draw walls.
-Indeed,
+Let's try to make a 20x20 window with 4 walls.  
+Sadly, I know nothing about videogame development.  
+My first reflex is just to draw walls as such:
 
 ```rkt
 #lang racket
@@ -603,23 +598,23 @@ Indeed,
   (run game-loop grid-size grid-size)
 ```
 
-will draw on top-left a 1x20 sized rectangle, filled with a brown color.
+This will draw on top-left a 1x20 sized rectangle, filled with a brown color.
 
 ![r-cade rect](/blog/2021-09-08-one_day_with_racket/img/17-r-cade_rect.png)
 
-Do you remember `begin`, that allow series of functions?
+Do you remember about `begin`, allowing a series of functions?
 
-I execute first the function `color` to pick a color in a [16 color palette](https://docs.racket-lang.org/r-cade/index.html?q=r-cade#%28def._%28%28lib._r-cade%2Fmain..rkt%29._color%29%29) (4 = braun) for the next steps.
+I execute first the function `color` to pick a color in a [16 colors palette](https://docs.racket-lang.org/r-cade/index.html?q=r-cade#%28def._%28%28lib._r-cade%2Fmain..rkt%29._color%29%29) (4 = brown) for the next steps.
 
-`rect` takes `x y` coordinates, `h w` sizes, and this strange `#:fill #t`. It's a "fill" unordered named argument (how smart!) that takes the value `True` or `False`: `#t` or `#f` in racket.
+`rect` takes `x y` coordinates, `h w` sizes, and this strange `#:fill #t`. It's a "fill" unordered named argument (how smart!) that takes the value `True` or `False`: `#t` or `#f` in Racket.
 
-I can continue with other walls, apples and snake. But this method is a dead-lock because it don't track anything. It just produce a picture without state, without life.
+I then continue with other walls, apples and a snake. But this method is a dead end because it doesn't track anything. It just produces a picture without state, without life.
 
-What I really want is a representation of the state of the game, that can change and be redrawn. A grid with the state of all it tiles.
+What I really want is a representation of the state of the game, that can change and be re-drawn. A grid with the state of all its tiles.
 
-I opt for a grid that is a list of list: (rows) containing tiles (cells). A tile will be a tuple (a list with few ordered members): (coord-x coord-y tile-type), like `(12 3 "apple")`.
+I opt for a grid that is a list of lists: (rows) containing tiles (cells). A tile will be a tuple (a list with a few ordered members): (coord-x coord-y tile-type), like `(12 3 "apple")`.
 
-Each game frame of the main loop will draw this grid findind the current state of each tile.
+Each game frame of the main loop will draw this grid, finding the current state of each tile.
 
 ```rkt
 ;; grid values
@@ -631,12 +626,12 @@ Each game frame of the main loop will draw this grid findind the current state o
      (build-list grid-size (lambda (x) (list x y "blank"))))))
 ```
 
-Here `build-list n value-as-lambda` create a list of n items with cohesive values. Thoses values are based on a `lambda`: an anonymous and temporary function to call for create the value. The lambda takes the current index as argument. In fact, we operate in nested lists to obtain this full grid of `(x y tile-type)` tuples.
+Here `build-list n value-as-lambda` creates a list of n items with cohesive values. Thoses values are based on a `lambda`: an anonymous and temporary function to call for the creation of the value. The lambda takes the current index as argument. In fact, we operate in nested lists to obtain this full grid of `(x y tile-type)` tuples.
 
-Now, my walls definition:
+Now, my wall's definition:
 
 ```rkt
-; wall definitions
+; wall definition
 (define max-grid-index (- grid-size 1))
 (define wall-coords
   (let ([top (build-list grid-size (lambda (x)(list x 0)))]
@@ -648,11 +643,11 @@ Now, my walls definition:
     (append top bottom left right)))
 ```
 
-Nothing new exept this `append` used to concatenate lists.
-But were is the glue? How to update the grid ?
+Nothing new here except for this `append` used to concatenate lists.
+But where is the glue? How do I update the grid ?
 
-In functional programming in general, you avoid state, mutability and side effect. But my approach of this game imply a changing state: the grid.
-`(set! var-name new-value)` is the way to procede. `for-each`, `list-update`, `list-set` are identifiers coming from [list docs](https://docs.racket-lang.org/reference/pairs.html)
+In functional programming in general, you avoid state, mutability and side effects. But my approach of this game implies a changing state: the grid.
+`(set! var-name new-value)` is the way to proceed. `for-each`, `list-update`, `list-set` are identifiers coming from [list docs](https://docs.racket-lang.org/reference/pairs.html).
 
 ```rkt
 ; -- update 1 tile in grid
@@ -673,7 +668,7 @@ In functional programming in general, you avoid state, mutability and side effec
    coords))
 ```
 
-What we need now is some function to draw that on the window:
+What we need now is a function to draw that on the window:
 
 ```rkt
 ; draw definitions
@@ -710,21 +705,21 @@ What we need now is some function to draw that on the window:
 (run game-loop grid-size grid-size)
 ```
 
-We just produce brown rectangles (or other colors) for each related info we have in the grid.
+We just produced a brown rectangle (or other colors) for each related info we have in the grid.
 
 ![r-cade walls](/blog/2021-09-08-one_day_with_racket/img/18-r-cade_walls.png)
 
-> hum... 8:12 PM. Let's take a final dinner-pause. I feel some doubts about my capacity to end up this challenge...
-> But hope drives me !
-> I want to brag in work tomorrow at work, so failing is not an option.
+> hmm... 8:12 PM - Let's take a final pause for dinner. I have some doubts about my ability to finish this challenge in time...
+> But I have hope acting as fuel!
+> I want to brag at work tomorrow, so failing is not an option.
 
 #### The Snake
 
 ##### Show it
 
-I wanted a centered snake, so I change my grid size to 21. The center should be (10 10) and I calculate it (because I want to be able to change the size of wy grid).
+I want a centered snake, so I change my grid size to 21. The center should be (10 10) and I calculate it (because I want to be able to change the size of my grid).
 
-If I want it to move 2 times per seconds, I have to change the framerate too.
+If I want it to move 2 times per second, I have to change the framerate too.
 
 ```rkt
 (define grid-size 21)
@@ -744,9 +739,9 @@ If I want it to move 2 times per seconds, I have to change the framerate too.
 
 ##### Move it
 
-Make it move will happen just after each draw, for the next. What we want to do is make the head of the snake follow a direction each redraw, until an event.
+A move will happen just after each draw. What we want to do is make the head of the snake follow a direction with each re-draw, until a given event.
 
-For now, it simply goes up:
+For now, it simply goes like:
 
 ```rkt
 (define (snake-position-update)
@@ -764,8 +759,8 @@ For now, it simply goes up:
   (draw-grid grid))
 ```
 
-What about a collision with a wall ?
-We can use `quit` that stops the game when it occurs.
+What about a collision with a wall?  
+We can use `quit`, which stops the game when it occurs.
 
 ```rkt
 (define (snake-position-update)
@@ -781,8 +776,7 @@ We can use `quit` that stops the game when it occurs.
 
 ##### Control it
 
-I suspect an awesome lang like r-cade to embed every thing we need
-to change the direction of the snake when press arrows.
+I suspect an awesome lang like r-cade to embed everything we need to change the direction of the snake when an arrow is pressed.
 
 ```rkt
 (define snake-direction "top")
@@ -798,10 +792,9 @@ to change the direction of the snake when press arrows.
     (move direction)))
 ```
 
-Isn't it self explanatory ?
-When `snake-action` will be called.
-We will check which button is currently pressed and move in the related direction.
-We have to plug that is the loop and wait to see the effect!
+Isn't it self explanatory?  
+When `snake-action` is called, we check which button is currently pressed and move in the related direction.  
+We have to plug the loop and wait to see the effect!
 
 ```rkt
 (define (game-loop)
@@ -811,8 +804,8 @@ We have to plug that is the loop and wait to see the effect!
   (draw-grid grid))
 ```
 
-Ready for the final step, make the move itself dependant to this direction.
-We just have to adujst the next `x` and `y` differently according to this direction.
+I'm getting ready for the final step: making the move itself depend on this direction.
+We just have to adujst the next `x` and `y` differently accordingly.
 
 ```rkt
 ;; snake update
@@ -841,8 +834,7 @@ We just have to adujst the next `x` and `y` differently according to this direct
 
 ![r-cade move](/blog/2021-09-08-one_day_with_racket/img/20-r-cade_move.png)
 
-And... it work well, despite the fact that the loop reiterate every 500ms,
-which is not sufficient to get all the input when I press too quickly the buttons.
+And... it works well, despite the fact that the loop reiterates every 500ms, which is not enough to get all the inputs if I press the buttons too quickly.
 
 ```rkt
 ; game definitions
@@ -862,17 +854,17 @@ which is not sufficient to get all the input when I press too quickly the button
 (run game-loop grid-size grid-size #:fps 60)
 ```
 
-To ensure every `keypress` events are taken, I revert the fps to 60,
-then I define a game-speed that will slow the view update process.
+To ensure every `keypress` event is taken, I revert the fps to 60,
+then define a game-speed that will slow the view's update process.
 `when` is what you find when you search for "if without else in racket".
-The `modulo` makes sleeps the update all turns excepts the chosen one.
+The `modulo` makes the update "sleep" every turn except during the chosen one.
 
-> It's 10:20 PM and we still don't have beat the main complexity of the snake problem.
-> I can't sleep with that it mind, so I'll continue. As usual in informatics: devil is in the details, and estimation is fortune-telling.
+> It's 10:20 PM and we still don't have reached the main complexity of the snake problem.
+> I can't sleep with that it mind, so I'll continue. As usual in computer science: devil is in the details, and estimation is fortune telling.
 
-#### The apples
+#### Apples
 
-The specs I made says that there is always only one apple in the fields, that could be eaten by the snake: in this case a new one will pop. But it have to pop on a non-blank tile, so I suspect I will need something like:
+The specs I made says that there is always only one apple in the field, that could get eaten by the snake: in this case a new one will pop. But it has to pop on a blank tile, so I suspect I will need something like:
 
 ```rkt
 ;;; read 1 tile
@@ -887,7 +879,7 @@ The specs I made says that there is always only one apple in the fields, that co
     (equal? type "blank")))
 ```
 
-We will need some randomisation here. You can imagine it exists in `racket`:
+We will also need some randomisation here. You can imagine it exists in `racket`:
 
 ```rkt
 ; apples
@@ -905,20 +897,20 @@ We will need some randomisation here. You can imagine it exists in `racket`:
 
 ![r-cade apple](/blog/2021-09-08-one_day_with_racket/img/21-r-cade_apple.png)
 
-The recursion act as a loop here: until the coords are not blank, let's retry.
+Recursion acts as a loop here: until the coordinates are not a blank tile, try again.
 
-When it's ok, we get the result. We just make sure to draw one before the start, here we go.
+When it's a blank tile, we get the result. We just need to make sure to draw one before the start. Here we go.
 
 #### Collisions
 
-When the snake meet an apple
+When the snake meets an apple
 
 - the apple is removed
-- the snake grow
-- a new apple pop
+- the snake grows
+- a new apple pops
 
-The first and the second step could be a common step: we decide to replace the apple with a snake part.
-I will change the name of `snake-update-position` to `game-update` that reflect better the situation.
+The first and second step could be a common step: we decide to replace the apple with a snake part.
+I will change the name of `snake-update-position` to `game-update` which reflects the situation better.
 
 ```rkt
 (define (game-update)
@@ -946,8 +938,8 @@ I will change the name of `snake-update-position` to `game-update` that reflect 
             [else (quit)]))))
 ```
 
-Works well... if we forget that the snake should grow.
-And this part sounds to me like the real complexity: now the snake have to be a list of following coords and not a point.
+Works well... until we remember that the snake should grow.  
+And this part sounds to me like it's the real complexity: now the snake has to be a list of coordinates following each other and not just a point.
 
 > Late, so late, I'm tired. Let's try, but I can't promise anything.
 
@@ -987,11 +979,11 @@ with
 
 Indeed, `first` returns the first element of a list.
 
-Amazingly it work directly!
+Amazingly it works directly!
 
-Now, the part that makes me afraid. To grow the snake, we will add a tail to the list just after the moment it eat an apple.
+Now, the part that makes me afraid. For the snake to grow, we will add a tail to the list just after the moment it eats an apple.
 
-The snake is now a list of coordinates, that follow each others. When the snake will move, a new coordinate will replace the head of this list, and the tail of this list will disappear. So the re-draw will reflect this list shift.
+The snake is now a list of coordinates, following each other. When the snake will move, a new coordinate will replace the head of this list, and the tail of this list will disappear. So the re-draw will reflect this list shift.
 
 ```rkt
 (cond [(is-tile-blank new-coords)
@@ -1010,14 +1002,14 @@ The snake is now a list of coordinates, that follow each others. When the snake 
       [else (quit)])))
 ```
 
-`append` to "update immutably" the list and `drop-right` to do the remove job. In other word, we do some insert first/remove last, treating our snake as a [linked list](https://en.wikipedia.org/wiki/Linked_list).
+Here we have `append` to update the list "immutably" and `drop-right` to do the "remove" job. In other words, we do some insert first/remove last, treating our snake like a [linked list](https://en.wikipedia.org/wiki/Linked_list).
 
 ![r-cade size](/blog/2021-09-08-one_day_with_racket/img/22-r-cade_size.png)
 
-The very last defect is the fact that, when we press the opposite direction of the current one, the game quit.
-Indeed, the head of the snake eat itself, because the tail of the snake is here.
+The very last shortcoming is the fact that when we press the opposite direction of the current one, the game quits.  
+Indeed, the snake eats itself, because the tail of the snake is here.
 
-We want to prevent the user to go back, so we can add a condition that say depending your current direction, you can't go back.
+We want to prevent the user to go back, so we add a condition that says "depending your current direction, you can't go back".  
 The logic looks like:
 
 ```rkt
@@ -1050,24 +1042,24 @@ Then in `game-update`, when the move is really made:
       [else (quit)])))
 ```
 
-Here we are! A real snake game, made with racket, working corretly!
-Happiness fills my soul and tired body.
+Here we are! A real snake game, made with racket, working properly!
+Happiness fills my soul and my tired body.
 
 ![r-cade final-snake](/blog/2021-09-08-one_day_with_racket/img/23-r-cade_final-snake.png)
 
 > 00:01 it was a long, but also an amazing and rewarding experience.
-> Racket bring simplicity, expressiveness and well-made baked-in community DSLs on the table.
+> Racket brings simplicity, expressiveness and well-made baked-in community DSLs on the table.
 >
-> Before publishing this article, I'll take the time to refacto my final code that you can find on [this github repo](https://github.com/ltruchot/1day/tree/master/racket).
+> Before publishing this article, I'll take the time to refactor my final code. You can find it on [this github repository](https://github.com/ltruchot/1day/tree/master/racket).
 >
-> I'll find as well resources to go further, shared in this article. Thank you for your reading me, following me, sharing that and for you patience during this looooong journey.
+> I'll also find resources to go further to share. Thank you for your reading me, following me, sharing this piece and for your patience during this looooong journey.
 >
 > Hope to see you soon!
 
 ## Resources to go further
 
 I just discovered this language and this LISP world, but after one day with racket,
-I decided to dive a little more into podcast and videos. Here is what I found.
+I decided to dive a little more into podcasts and videos. Here is what I found.
 
 - On YouTube:
 
