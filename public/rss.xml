@@ -875,7 +875,7 @@ Racket brings simplicity, expressiveness and well-made baked-in community DSLs o
 &lt;p&gt;Hope to see you soon!&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Loïc TRUCHOT
-&lt;em&gt;proofreading &amp;amp; revisions by (Jordane Frechet)[https:&#x2F;&#x2F;twitter.com&#x2F;joruonk]&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;em&gt;proofreading &amp;amp; revisions by &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;joruonk&quot;&gt;Jordane Frechet&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;resources-to-go-further&quot;&gt;Resources to go further&lt;&#x2F;h2&gt;
 &lt;p&gt;I just discovered this language and this LISP world, but after one day with racket,
 I decided to dive a little more into podcasts and videos. Here is what I found.&lt;&#x2F;p&gt;

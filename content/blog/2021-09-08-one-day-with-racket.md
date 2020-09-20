@@ -1054,8 +1054,9 @@ Happiness fills my soul and my tired body.
 > I'll also find resources to go further to share. Thank you for your reading me, following me, sharing this piece and for your patience during this looooong journey.
 >
 > Hope to see you soon!
+>
+> Loïc TRUCHOT
 
-Loïc TRUCHOT
 _proofreading & revisions by [Jordane Frechet](https://twitter.com/joruonk)_
 
 ## Resources to go further
