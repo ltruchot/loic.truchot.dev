@@ -1057,7 +1057,7 @@ Happiness fills my soul and my tired body.
 >
 > Loïc TRUCHOT
 
-_proofreading & revisions by [Jordane Frechet](https://twitter.com/joruonk)_
+_Proofreading & revisions by [Jordane Frechet](https://twitter.com/joruonk)_
 
 ## Resources to go further
 
