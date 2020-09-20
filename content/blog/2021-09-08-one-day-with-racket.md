@@ -17,7 +17,7 @@ slug ="one-day-with-racket"
 There are thousands of programming languages available, and plenty of websites for each of them. We can often find the official documentation for a particular one by just typing: \<language\>-lang.org: rust-lang.org, elm-lang.org, etc.
 
 Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into in-depth documentation, I hope to find a clear introduction of the language.  
-After a few clicks, I reach 
+After a few clicks, I reach
 [Quick Introduction to Racket with Pictures](https://docs.racket-lang.org/quick/index.html).
 
 ## Quick Introduction
@@ -152,7 +152,7 @@ Here we go, unsurprisingly:
 
 ![docs](/blog/2021-09-08-one_day_with_racket/img/07-docs.png)
 
-All I need is a kind of `disk` for the wheel, and it exists. Now, how would I put a white disk in a slightly bigger black disk?  
+All I need is a kind of `disk` for the wheel, and it exists. Now, how would I put a white disk in a slightly bigger black disk?
 
 It appears there is a `colorize` function that takes any "pict" (our shape) and [x11 color](https://docs.racket-lang.org/draw/color-database___.html) as a 2d argument.
 
@@ -381,7 +381,7 @@ Ok, let's put all the pieces together:
 
 If I want to append a picture to previous pictures recursively, I have to begin with some kind of "empty" picture.
 
-Indeed, a function that adds "42" to nothing (null / undefined) will break: it must at least add "1" to "0".  
+Indeed, a function that adds "42" to nothing (null / undefined) will break: it must at least add "1" to "0".
 
 This empty-picture base-case is named [blank](https://docs.racket-lang.org/pict/Basic_Pict_Constructors.html?q=pict#%28def._%28%28lib._pict%2Fmain..rkt%29._blank%29%29) in the library.
 
@@ -1055,6 +1055,9 @@ Happiness fills my soul and my tired body.
 >
 > Hope to see you soon!
 
+Loïc TRUCHOT
+_proofreading & revisions by [https://twitter.com/joruonk](Jordane Frechet)_
+
 ## Resources to go further
 
 I just discovered this language and this LISP world, but after one day with racket,
@@ -1064,5 +1067,4 @@ I decided to dive a little more into podcasts and videos. Here is what I found.
 
   - [Language-Oriented Programming with Racket - Matthias Felleisen](https://www.youtube.com/watch?v=z8Pz4bJV3Tk)
   - [Lisp with Uncle Bob Martin](https://youtu.be/wr4eqx3UYPc?t=319)
-
-- ## Podcasts
+  - [Lisp: A language for stratified design](https://www.youtube.com/watch?v=GbZpTHg0KfQ)
