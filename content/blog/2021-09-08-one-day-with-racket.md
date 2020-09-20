@@ -4,7 +4,7 @@ description="Not enough parentheses!"
 slug ="one-day-with-racket"
 +++
 
-> 7:56AM. What brought me here? I'm a JavaScript Senior, and it's often mentioned that JS was inspired by Scheme.
+> 7:56 AM - What brought me here? I'm a JavaScript Senior, and it's often mentioned that JS was inspired by Scheme.
 >
 > Scheme is a dialect of LISP (an old family of languages), where everything is a workable list, looking like `(function-name, arg1, arg2, arg3...)`.
 > It is very promising for A.I., and allows you to easily define Domain Specific Languages (DSL) with your own keywords and identifiers.
@@ -98,7 +98,7 @@ c10
 
 `define` acts as a function that takes 2 arguments: a variable name, and a value. Now `c10` is available as a classic variable.
 
-> 9:18AM. It feels astonishingly simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down. After all, I've got the whole day...
+> 9:18 AM - It feels astonishingly simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down. After all, I've got the whole day...
 
 I can define a lot of stuff very easily:
 
@@ -144,7 +144,7 @@ And here is my little 30px square:
 
 ## My first challenge
 
-> 10:10AM. I just decided to challenge myself. Can I create a function able to draw coloured cars?
+> 10:10 AM - I just decided to challenge myself. Can I create a function able to draw coloured cars?
 
 I don't want to only stick to the tutorial. If I found `circle` and `hc-append` in the documentation, I'm pretty sure I will find the other shapes available, and all the ways to combine them.
 
@@ -256,7 +256,7 @@ This is the heritage of LISP, so in Racket we can also pass a function to anothe
 
 Ok, but in which case will this happen?
 
-> 10:51AM. I have an idea of a good use case. I want to be able to ask the program a specific number of colored cars or houses. I suspect it will request using "functions as value".
+> 10:51 AM - I have an idea of a good use case. I want to be able to ask the program a specific number of colored cars or houses. I suspect it will request using "functions as value".
 
 Let's make a house first. I had to dive in the documentation to find `rotate`, `inset`, `pi`, `sqrt`, without any surprise.
 
@@ -1046,7 +1046,7 @@ Happiness fills my soul and my tired body.
 
 ![r-cade final-snake](/blog/2021-09-08-one_day_with_racket/img/23-r-cade_final-snake.png)
 
-> 00:01 it was a long, but also an amazing and rewarding experience.
+> 00:01 AM - it was a long, but also an amazing and rewarding experience.
 > Racket brings simplicity, expressiveness and well-made baked-in community DSLs on the table.
 >
 > Before publishing this article, I'll take the time to refactor my final code. You can find it on [this github repository](https://github.com/ltruchot/1day/tree/master/racket).
