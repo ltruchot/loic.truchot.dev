@@ -72,7 +72,7 @@ By diving deeper, I discover that I can add several shapes on the same line...
 )
 ```
 
-I'm assuming `hc-append` means "horizontal-centered append", but something already seems inevitable: any function name will be important, as they are so curial here.
+I'm assuming `hc-append` means "horizontal-centered append", but something already seems inevitable: any function name will be important, as they are so crucial here.
 
 !["REPL](/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png)
 
