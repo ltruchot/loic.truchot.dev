@@ -1056,7 +1056,7 @@ Happiness fills my soul and my tired body.
 > Hope to see you soon!
 
 Loïc TRUCHOT
-_proofreading & revisions by (Jordane Frechet)[https://twitter.com/joruonk]_
+_proofreading & revisions by [Jordane Frechet](https://twitter.com/joruonk)_
 
 ## Resources to go further
 
