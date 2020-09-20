@@ -66,7 +66,7 @@ rectangle &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;10&lt;&
     (circle &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;20&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;
 )&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;I&#x27;m assuming &lt;code&gt;hc-append&lt;&#x2F;code&gt; means &amp;quot;horizontal-centered append&amp;quot;, but something already seems inevitable: any function name will be important, as they are so curial here.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m assuming &lt;code&gt;hc-append&lt;&#x2F;code&gt; means &amp;quot;horizontal-centered append&amp;quot;, but something already seems inevitable: any function name will be important, as they are so crucial here.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;blog&#x2F;2021-09-08-one_day_with_racket&#x2F;img&#x2F;03-line_of_shapes.png&quot; alt=&quot;&amp;quot;REPL&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;...and so it begins!&lt;&#x2F;p&gt;
 &lt;p&gt;The famous LISP parentheses festival that shows the order of execution of functions has begun.&lt;br &#x2F;&gt;
