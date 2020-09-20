@@ -138,7 +138,7 @@
 			<div class='column is-three-fifths is-offset-one-fifth'>
 				<article>
 					<h1 class='title'>One Day With Racket</h1>
-					<h2 class='subtitle'>Not enough parenthesis!</h2>
+					<h2 class='subtitle'>Not enough parentheses!</h2>
 
 					
 <p class='has-text-grey'>
@@ -149,7 +149,7 @@
 	<span class='icon'>
 		<i class='fas fa-pencil-alt'></i>
 	</span>
-	6013 words
+	6198 words
 </p>
 
 					
@@ -182,344 +182,339 @@
 
 					<div class='content has-text-justified'>
 						<blockquote>
-<p>7:56 AM. What brought me here? I'm a JavaScript Senior, and it's often mentioned that JS was inspired by Scheme.</p>
-<p>Scheme is a LISP, an old family of language, very promising for A.I., where everything is a workable list, looking like <code>(function-name, arg1, arg2, arg3...)</code>.
-It allows you to easily define Domain Specific Languages (DSL), with your own keywords and identifiers.</p>
-<p>Scheme is a classic academic LISP from MIT, and Racket is a scholar's attempt to make LISP even more universally learnable (Logo is another well-known).
-So let's do some Racket at least one day in our developer life!</p>
+<p>7:56 AM - What brought me here? I'm a JavaScript Senior, and it's often mentioned that JS was inspired by Scheme.</p>
+<p>Scheme is a dialect of LISP (an old family of languages), where everything is a workable list, looking like <code>(function-name, arg1, arg2, arg3...)</code>.
+It is very promising for A.I., and allows you to easily define Domain Specific Languages (DSL) with your own keywords and identifiers.</p>
+<p>Scheme is a classic academic LISP from MIT, and Racket is a scholar's attempt at making LISP even more universally accessible (Logo is another well-known dialect).
+So, let's do some Racket at least one day in our developer life!</p>
 </blockquote>
 <h2 id="find-basic-documentation">Find Basic Documentation</h2>
-<p>There is thousands of programming languages available, and plenty of websites for each. We can often find the official documentation for one of these, just typing: &lt;language&gt;-lang.org: rust-lang.org, elm-lang.org, etc.</p>
-<p>Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into the in-depth documentation, I hope to find a clear introduction.
-After a few clicks I reach the
+<p>There are thousands of programming languages available, and plenty of websites for each of them. We can often find the official documentation for a particular one by just typing: &lt;language&gt;-lang.org: rust-lang.org, elm-lang.org, etc.</p>
+<p>Upon arriving at https://racket-lang.org, I'm happy to discover a clean and modern website with lively content. Before diving into in-depth documentation, I hope to find a clear introduction of the language.<br />
+After a few clicks, I reach
 <a href="https://docs.racket-lang.org/quick/index.html">Quick Introduction to Racket with Pictures</a>.</p>
 <h2 id="quick-introduction">Quick Introduction</h2>
-<p>I've to install <a href="https://download.racket-lang.org/">Racket/DrRacket installer</a> (~175Mb) to be able to run the examples. A very simple and smooth process on Windows 10: let's open DrRacket now.</p>
-<p>It's a clean IDE interface with a menu, an empty document (named &quot;definitions area&quot;) and a REPL (&quot;interactions area&quot;) with some hints.</p>
-<p>This introduction continue, but the documentation missed a small step: before copying / pasting the samples provided, I had to choose the &quot;racket lang&quot; in the &quot;languages&quot; menu. Then I paste <code>#lang slideshow</code> in the def area, and press the &quot;run&quot; button.</p>
+<p>It seems I have to install <a href="https://download.racket-lang.org/">Racket/DrRacket installer</a> (~175Mb) to be able to run the examples. A very simple and smooth process on Windows 10. Let's open it now.</p>
+<p>It's a clean IDE interface with a menu, an empty document (named &quot;definitions area&quot;) and a REPL (&quot;interactions area&quot;) with some hints displayed.</p>
+<p>The introduction continues, however the documentation missed a small step: before copying and pasting the samples provided, I had to choose &quot;racket lang&quot; in the &quot;languages&quot; menu. Then I had to paste <code>#lang slideshow</code> in the def area, and press the &quot;run&quot; button.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/01-getting_rdy.png" alt="Getting ready" /></p>
-<p>Our first lines of code will take place in the REPL part.
-Write <code>(circle 10)</code> and press [Enter] draw a 10px circle in the same area.
-You can imagine what the following commands will do:</p>
+<p>My first lines of code will take place in the REPL part.
+Writing <code>(circle 10)</code> and pressing [Enter] draws a 10px circle in the same area.<br />
+Guess what the following commands will do?</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)
-(circle </span><span style="color:#db9d63;">50</span><span style="color:#abb2bf;">)
-(rectangle </span><span style="color:#db9d63;">100 20</span><span style="color:#abb2bf;">)
-(arrow </span><span style="color:#db9d63;">20 10</span><span style="color:#abb2bf;">)
+<code><span style="color:#abb2bf;">(circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(circle </span><span style="color:#db9d63;">50</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(rectangle </span><span style="color:#db9d63;">100 20</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(arrow </span><span style="color:#db9d63;">20 10</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>It draws shapes (and makes coffee)!
-So we can guess that</p>
+<p>It draws shapes (and makes coffee)!<br />
+So I can also guess that:</p>
 <ul>
 <li><code>#lang slideshow</code> contains useful functions to display certain shapes</li>
 <li><code>circle</code>, <code>rectangle</code>, <code>arrow</code> are function names</li>
-<li>we can execute theses functions by putting them in parenthesis, passing arguments separated by spaces.</li>
-<li>the REPL is enough to directly interpret these inputs, then ouputs the result</li>
+<li>I can execute these functions by putting them in parentheses, passing arguments separated by spaces.</li>
+<li>the REPL is enough to directly interpret these inputs, then ouput the result.</li>
 </ul>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/02-repl.png" alt="REPL" /></p>
-<p>I just play without checking the docs and I ultimately make deliberate errors to see how useful the interpreter is.</p>
+<p>I play around without checking the docs, and ultimately make deliberate errors to see how useful the interpreter is.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(triangle </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">)
-(rectangle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)
-rectangle </span><span style="color:#db9d63;">10
+<code><span style="color:#abb2bf;">(triangle </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(rectangle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+rectangle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">
 </span></code></pre>
 <ul>
-<li>Errors concerning undefined identifier seems easy to catch</li>
-<li>Errors on the arguments are little more frightening: the technical word &quot;arity&quot; refers to the expected number of arguments of a function</li>
-<li>Missing parenthesis did not give me an error, just an unexpected result that I suspect to be &quot;this function as a value&quot; (not executed)</li>
+<li>Errors concerning undefined identifier seem easy to catch.</li>
+<li>Errors linked to arguments are a little more frightening: the technical word &quot;arity&quot; refers to the expected number of arguments of a function.</li>
+<li>Missing parentheses did not give me an error, just an unexpected result that I suspect to mean &quot;this function as a value&quot; (not executed).</li>
 </ul>
-<p>By diving deeper, we discover that we can add several shapes on the same line...</p>
+<p>By diving deeper, I discover that I can add several shapes on the same line...</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(hc-append
-    (rectangle </span><span style="color:#db9d63;">20 20</span><span style="color:#abb2bf;">)
-    (circle </span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">)
-)
+<code><span style="color:#abb2bf;">(hc-append</span><span style="color:#abb2bf;">
+    (rectangle </span><span style="color:#db9d63;">20 20</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+    (circle </span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>I'm assuming <code>hc-append</code> means &quot;horizontally-centered append&quot;, but something is flashing red here: any function name will be a big concern, as they are so central here...</p>
+<p>I'm assuming <code>hc-append</code> means &quot;horizontal-centered append&quot;, but something already seems inevitable: any function name will be important, as they are so curial here.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/03-line_of_shapes.png" alt="&quot;REPL" /></p>
-<p>... and it begins !</p>
-<p>The famous LISP parenthesis festival that shows the order of execution of functions begins.
-Despite its reputation, I feel like it's clean and natural at the moment. The language itself seems to contain very few symbols, mostly for simple instructions.</p>
-<p>------------ trad ---------------</p>
+<p>...and so it begins!</p>
+<p>The famous LISP parentheses festival that shows the order of execution of functions has begun.<br />
+Despite its reputation, I feel like it's clean and natural at the moment. The language itself seems to contain very few symbols, and mostly for simple instructions.</p>
 <h2 id="create-my-own-stuff">Create my own stuff</h2>
-<p>We only had use some already baked functions. How to make our owns ?</p>
-<p>The next part of the quick-start show us how to do with the <code>define</code> identifier:</p>
+<p>Until now, I used some premade functions.
+But how do I make my own?</p>
+<p>The quick-start guide tells me how to do it with the <code>define</code> identifier:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">c10 (circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">))
-c10
-(hc-append c10 c10 c10 c10)
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">c10 (circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+c10</span><span style="color:#abb2bf;">
+(hc-append c10 c10 c10 c10)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/04-define.png" alt="define" /></p>
-<p><code>define</code> acts as a function that takes 2 args: a variable name, and a value. Now, °<code>c10</code> is available as a variable.</p>
+<p><code>define</code> acts as a function that takes 2 arguments: a variable name, and a value. Now <code>c10</code> is available as a classic variable.</p>
 <blockquote>
-<p>9:18 AM It feel astonishely simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down: we hade the all day after all...</p>
+<p>9:18 AM - It feels astonishingly simple to manipulate graphics, so I decide to write a snake-game in Racket before the sun goes down. After all, I've got the whole day...</p>
 </blockquote>
-<p>We can now define a lot of stuff:</p>
+<p>I can define a lot of stuff very easily:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">eye (circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">nose (rectangle </span><span style="color:#db9d63;">10 20</span><span style="color:#abb2bf;">))
-(ht-append eye nose eye)
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">face (ht-append eye nose eye))
-face
-face
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">eye (circle </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">nose (rectangle </span><span style="color:#db9d63;">10 20</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(ht-append eye nose eye)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">face (ht-append eye nose eye))</span><span style="color:#abb2bf;">
+face</span><span style="color:#abb2bf;">
+face</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>But we reach the point where we loose some visiblity.
-So let's use the &quot;def area&quot; for define instructions, and keep the REPL for executions...</p>
+<p>But I reach the point where the code loses some visiblity, so I'll start using the &quot;def area&quot; to define instructions, and keep the REPL to execute them...</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/05-my_stuff.png" alt="my stuff" /></p>
-<p>It's clearer now. And I have a program to save on disk: <code>quick-start.rkt</code>.
-This is not the usual approach of programming of course, I'm used to a soup where everything is mixed.
-Here, definitions stays &quot;pure&quot;, and the process of creating the program is REPL-oriented, testing stuff until it work.</p>
-<p>Few remarks:</p>
+<p>It's clearer now, and I get a program I can save on my disk: <code>quick-start.rkt</code>.<br />
+This is not the usual approach of programming, of course. I'm used to a &quot;soup&quot; where everything is mixed.<br />
+Here, definitions stay &quot;pure&quot;, and the process of creating the program is REPL-oriented, playing with code until it works.</p>
+<p>A few remarks:</p>
 <ul>
-<li><code>ht-append</code> can take any number of args. If it begins by a number, this one will represent the white-space between picts; it reminds me the <a href="https://www.w3schools.com/java/java_methods_overloading.asp">overloading practice</a> in OOP.</li>
-<li><code>vc-append</code> work for vertical-centered, and so on with <code>ht</code>, <code>hb</code>, <code>vt</code>...</li>
-<li>when the mouse is over a defined name, DrRacket show an arrow to find the definition - I discover that by accident, and it's amazing</li>
-<li>there is no fatality about parenthesis hell, if we define names smartly along the way</li>
-<li>we already feel the potential of a DSL
-maker that is Racket. I can imagine a function to make a triangle, an other to do a square, an other to combine them and make a little house, and a house function just to wrap all of this... I reminds me the <a href="https://en.wikipedia.org/wiki/SHRDLU">SHRDLU</a> initiative in A.I.</li>
+<li><code>ht-append</code> can take any number of arguments. If the first argument is a number, it represents the white-space between picts. It reminds me of the <a href="https://www.w3schools.com/java/java_methods_overloading.asp">overloading practice</a> in OOP.</li>
+<li><code>vc-append</code> stands for vertical-centered, and so on with <code>hb-append</code> (horizontal-bottom), <code>vt-append</code> (vertical-top)...</li>
+<li>when the mouse hovers a defined name, DrRacket shows an arrow to find its definition - I discovered that by accident, and it's amazing!</li>
+<li>there is no fatality about parentheses hell, as long as I define names smartly along the way.</li>
+<li>Racket already feels like a DSL maker. I can imagine a function that creates a triangle, another to make a square, another to combine them and make a little house, and a house function just to wrap all of this... It reminds me of the <a href="https://en.wikipedia.org/wiki/SHRDLU">SHRDLU</a> initiative in A.I.</li>
 </ul>
-<p>What about define my own function ? I.e. there is no <code>square</code> function in this package, so let's create one</p>
+<p>What about defining my own function? i.e. there is no <code>square</code> function in this package, so let's create one.</p>
 <p>Nothing too new:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">square </span><span style="color:#abb2bf;">n)
-  (rectangle n n))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">square </span><span style="color:#abb2bf;">n)</span><span style="color:#abb2bf;">
+  (rectangle n n))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>In place of taking a var name, define takes a function name + some args, surrounded by parens.
-Then, a second pair of parens contains the actual code to run.
+<p>In place of taking a variable name, <code>define</code> takes a function name and some arguments surrounded by parentheses.<br />
+Then, a second pair of parentheses contains the actual code to run on execution.<br />
 And here is my little 30px square:</p>
-<p><img src="/blog/2021-09-08-one_day_with_racket/img/06-square.png" alt="my stuff" /></p>
+<p><img src="/blog/2021-09-08-one_day_with_racket/img/06-square.png" alt="square" /></p>
 <h2 id="my-first-challenge">My first challenge</h2>
 <blockquote>
-<p>10:10 AM - I just decided to challenge my-self. Can I create a function able to draw colored cars ?</p>
+<p>10:10 AM - I just decided to challenge myself. Can I create a function able to draw coloured cars?</p>
 </blockquote>
-<p>I don't want to only stick to the tutorial. If I find the documentation for <code>circle</code> and <code>hc-append</code>, I'm pretty sure I will know all the shapes available, and all the ways to combine them.
-Here we are, no surprise:</p>
+<p>I don't want to only stick to the tutorial. If I found <code>circle</code> and <code>hc-append</code> in the documentation, I'm pretty sure I will find the other shapes available, and all the ways to combine them.</p>
+<p>Here we go, unsurprisingly:</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/07-docs.png" alt="docs" /></p>
-<p>What I need is a kind of <code>disk</code> for the wheel, and it exists. Now, how to put a white disk in a slightly bigger black disk ?
-It appears there is a <code>colorize</code> function that take any &quot;pict&quot; (our shapes) and an <a href="https://docs.racket-lang.org/draw/color-database___.html">x11 color</a> as 2d arg.</p>
+<p>All I need is a kind of <code>disk</code> for the wheel, and it exists. Now, how would I put a white disk in a slightly bigger black disk?</p>
+<p>It appears there is a <code>colorize</code> function that takes any &quot;pict&quot; (our shape) and <a href="https://docs.racket-lang.org/draw/color-database___.html">x11 color</a> as a 2d argument.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; a disk, black by default
-</span><span style="color:#abb2bf;">(colorize (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;lightgray&quot;</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; a gray disk
+<code><span style="color:#abb2bf;">(disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; a disk, black by default</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(colorize (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;lightgray&quot;</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; a gray disk</span><span style="font-style:italic;color:#5f697a;">
 </span></code></pre>
-<p>We can even put them together with the <code>cc-superimpose</code> function, a way to super impose on center - center!</p>
+<p>I can even put them together with the <code>cc-superimpose</code> function, a way to superimpose on center - center!</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">black-disk
-    (disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">gray-disk
-    (colorize
-        (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">)
-        </span><span style="color:#9acc76;">&quot;white&quot;</span><span style="color:#abb2bf;">))
-(cc-superimpose black-disk gray-disk)
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">black-disk</span><span style="color:#abb2bf;">
+    (disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">gray-disk</span><span style="color:#abb2bf;">
+    (colorize</span><span style="color:#abb2bf;">
+        (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+        </span><span style="color:#9acc76;">&quot;white&quot;</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(cc-superimpose black-disk gray-disk)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>So my final definitions could be</p>
+<p>So my final definitions could be:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">tire
-    (disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">hubcap
-    (colorize (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;white&quot;</span><span style="color:#abb2bf;">))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheel
-    (cc-superimpose tire hubcap))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheels
-    (hc-append </span><span style="color:#db9d63;">100</span><span style="color:#abb2bf;"> wheel wheel))
-(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">car </span><span style="color:#abb2bf;">color)
-    (</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">body
-        (colorize
-            (filled-rectangle </span><span style="color:#db9d63;">180 20</span><span style="color:#abb2bf;">)
-            color))
-    (vc-append body wheels))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">tire</span><span style="color:#abb2bf;">
+    (disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">hubcap</span><span style="color:#abb2bf;">
+    (colorize (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;white&quot;</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheel</span><span style="color:#abb2bf;">
+    (cc-superimpose tire hubcap))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheels</span><span style="color:#abb2bf;">
+    (hc-append </span><span style="color:#db9d63;">100</span><span style="color:#abb2bf;"> wheel wheel))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">car </span><span style="color:#abb2bf;">color)</span><span style="color:#abb2bf;">
+    (</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">body</span><span style="color:#abb2bf;">
+        (colorize</span><span style="color:#abb2bf;">
+            (filled-rectangle </span><span style="color:#db9d63;">180 20</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+            color))</span><span style="color:#abb2bf;">
+    (vc-append body wheels))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>and let's try</p>
+<p>And let's try it:</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/08-cars.png" alt="cars" /></p>
-<p>OMG, so easy. What is this strange feeling ? Am I a wizard or something ? It work so well, and it was just some instinct + few RTFM work: thank you DrRacket!</p>
-<p>As you can see, I tried to define a function in a function for the body of my car. I was not sure it will work, but it did!</p>
-<p>Going further in the documentation, it appears that's the job of the <code>let</code>/<code>let*</code> identifier too (the <code>*</code> authorize several <code>let</code> to use each others)</p>
+<p>OMG, so easy. What is this strange feeling? Am I a wizard or something? It works so well, and it was just some instinct and a little RTFM work. Thank you DrRacket!</p>
+<p>As you can see, I tried to define a function in a function for the body of my car. I was not sure it would work, but it did!</p>
+<p>Going further in the documentation, it appears that's the job of the <code>let</code>/<code>let*</code> identifier too (the <code>*</code> authorizes several <code>let</code> to use each other).</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">#lang slideshow
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheel
-  (let([tire (disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">)]
-       [hubcap
-        (colorize (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;white&quot;</span><span style="color:#abb2bf;">)])
-    (cc-superimpose tire hubcap)))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheels
-  (hc-append </span><span style="color:#db9d63;">100</span><span style="color:#abb2bf;"> wheel wheel))
-(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">car </span><span style="color:#abb2bf;">color)
-  (let* ([1st-part
-          (filled-rectangle </span><span style="color:#db9d63;">90 20</span><span style="color:#abb2bf;">)]
-         [2nd-part
-          (filled-rectangle </span><span style="color:#db9d63;">180 20</span><span style="color:#abb2bf;">)]
-         [compartment
-          (colorize 1st-part color)]
-         [body (colorize
-                2nd-part color)])
-    (vc-append compartment body wheels)))
+<code><span style="color:#abb2bf;">#lang slideshow</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheel</span><span style="color:#abb2bf;">
+  (let([tire (disk </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+       [hubcap</span><span style="color:#abb2bf;">
+        (colorize (disk </span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;white&quot;</span><span style="color:#abb2bf;">)])</span><span style="color:#abb2bf;">
+    (cc-superimpose tire hubcap)))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wheels</span><span style="color:#abb2bf;">
+  (hc-append </span><span style="color:#db9d63;">100</span><span style="color:#abb2bf;"> wheel wheel))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">car </span><span style="color:#abb2bf;">color)</span><span style="color:#abb2bf;">
+  (let* ([1st-part</span><span style="color:#abb2bf;">
+          (filled-rectangle </span><span style="color:#db9d63;">90 20</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [2nd-part</span><span style="color:#abb2bf;">
+          (filled-rectangle </span><span style="color:#db9d63;">180 20</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [compartment</span><span style="color:#abb2bf;">
+          (colorize 1st-part color)]</span><span style="color:#abb2bf;">
+         [body (colorize</span><span style="color:#abb2bf;">
+                2nd-part color)])</span><span style="color:#abb2bf;">
+    (vc-append compartment body wheels)))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>This little recfacto limit the scope of my definition: that's always a good practice, and I can of course going further, while putting everything in the car definition.</p>
+<p>This little recfactoring limits the scope of my definitions, and that's always good practice. I can go further, and put everything in the car definition.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/09-violet_car.png" alt="use let*" /></p>
 <h2 id="first-citizen">First citizen</h2>
-<p>One of the big strenght of JavaScript is the &quot;function as value&quot;, in other word the fact that a function can take another one as argument (aka higher-order functions).</p>
+<p>One of the big strenghts of JavaScript is the &quot;function as value&quot;, which implies that a function can take another one as an argument (also known as higher-order functions).</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#cd74e8;">function </span><span style="color:#5cb3fa;">example</span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">callback</span><span style="color:#abb2bf;">) {
-  console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;hello&quot;</span><span style="color:#abb2bf;">);
-  </span><span style="color:#eb6772;">callback</span><span style="color:#abb2bf;">();
-}
-</span><span style="color:#eb6772;">example</span><span style="color:#abb2bf;">(() </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;world!&quot;</span><span style="color:#abb2bf;">));
+<code><span style="color:#cd74e8;">function </span><span style="color:#5cb3fa;">example</span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">callback</span><span style="color:#abb2bf;">) {</span><span style="color:#abb2bf;">
+  console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;hello&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+  </span><span style="color:#eb6772;">callback</span><span style="color:#abb2bf;">();</span><span style="color:#abb2bf;">
+}</span><span style="color:#abb2bf;">
+</span><span style="color:#eb6772;">example</span><span style="color:#abb2bf;">(() </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;world!&quot;</span><span style="color:#abb2bf;">));</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>And of course you can put functions in variables, or even make a function that return an other one (aka curriying, thank God for the arrow functions).</p>
+<p>And of course you can put functions in variables, or even make a function that returns another one (aka currying, thanks EcmaGod for the arrow function).</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">car = </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">size</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">color</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">{
-  console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">`It&#39;s a </span><span style="color:#abb2bf;">${</span><span style="color:#adb7c9;">size</span><span style="color:#abb2bf;">} ${</span><span style="color:#adb7c9;">color</span><span style="color:#abb2bf;">}</span><span style="color:#9acc76;"> car!`</span><span style="color:#abb2bf;">);
-};
-</span><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">bigCar = </span><span style="color:#eb6772;">car</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;big&quot;</span><span style="color:#abb2bf;">);
-</span><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">smallCar = </span><span style="color:#eb6772;">car</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;small&quot;</span><span style="color:#abb2bf;">);
-</span><span style="color:#eb6772;">bigCar</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;blue&quot;</span><span style="color:#abb2bf;">);
-</span><span style="color:#eb6772;">bigCar</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;red&quot;</span><span style="color:#abb2bf;">);
-</span><span style="color:#eb6772;">smallCar</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;violet&quot;</span><span style="color:#abb2bf;">);
+<code><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">car = </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">size</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">color</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">{</span><span style="color:#abb2bf;">
+  console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">`It&#39;s a </span><span style="color:#abb2bf;">${</span><span style="color:#adb7c9;">size</span><span style="color:#abb2bf;">} ${</span><span style="color:#adb7c9;">color</span><span style="color:#abb2bf;">}</span><span style="color:#9acc76;"> car!`</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+};</span><span style="color:#abb2bf;">
+</span><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">bigCar = </span><span style="color:#eb6772;">car</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;big&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+</span><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">smallCar = </span><span style="color:#eb6772;">car</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;small&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+</span><span style="color:#eb6772;">bigCar</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;blue&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+</span><span style="color:#eb6772;">bigCar</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;red&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+</span><span style="color:#eb6772;">smallCar</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;violet&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>This is the heritage of LISP, so in Racket we can also pass function to another as argument, and so on. Functions are values likes the others (aka first-class citizen functions)</p>
-<p>Ok, in wich case this will happen ?</p>
+<p>This is the heritage of LISP, so in Racket we can also pass a function to another as an argument, and so on. Functions are values like the others (aka first-class citizen function)</p>
+<p>Ok, but in which case will this happen?</p>
 <blockquote>
-<p>10:51 AM - I have an idea. I want to be able to ask the program a specific number of colored cars or houses. I suspect it will request use of &quot;functions as value&quot;.</p>
+<p>10:51 AM - I have an idea of a good use case. I want to be able to ask the program a specific number of colored cars or houses. I suspect it will request using &quot;functions as value&quot;.</p>
 </blockquote>
-<p>Let's make a house. I had to dive in the documentation to find <code>rotate</code>, <code>inset</code>, <code>pi</code>, <code>sqrt</code>, without any surprise.
-Before you read this code, be prepared:
-In LISP, math operators are functions, defined and working like any other. So:</p>
+<p>Let's make a house first. I had to dive in the documentation to find <code>rotate</code>, <code>inset</code>, <code>pi</code>, <code>sqrt</code>, without any surprise.</p>
+<p>Before you read this code, be prepared: in LISP, math operators are functions, defined and working like any other.<br />
+So:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(+ </span><span style="color:#db9d63;">1 2</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns 3
-</span><span style="color:#abb2bf;">(* </span><span style="color:#db9d63;">4 3</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns 12
-</span><span style="color:#abb2bf;">(/ </span><span style="color:#db9d63;">8 2</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns 4
-</span><span style="color:#abb2bf;">(= </span><span style="color:#db9d63;">5 5</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns true (#t) since it checks number equality
-; and so on.
+<code><span style="color:#abb2bf;">(+ </span><span style="color:#db9d63;">1 2</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns 3</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(* </span><span style="color:#db9d63;">4 3</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns 12</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(/ </span><span style="color:#db9d63;">8 2</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns 4</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(= </span><span style="color:#db9d63;">5 5</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; returns true (#t) since it checks number equality</span><span style="font-style:italic;color:#5f697a;">
+; and so on.</span><span style="font-style:italic;color:#5f697a;">
 </span></code></pre>
-<p>In other word, no more &quot;infix&quot; operators (symbol in between the 2 operands): an addition is no more than a simple function and it signature is <code>(number, number) -&gt; number</code>.</p>
+<p>In other words, no more &quot;infix&quot; operators (symbol in between the 2 operands): an addition is no more than a simple function and its signature is <code>(number, number) -&gt; number</code>.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">house </span><span style="color:#abb2bf;">color)
-  (let* ([size </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">]
-         </span><span style="font-style:italic;color:#5f697a;">; diagonal to assemble well sized home and roof
-</span><span style="color:#abb2bf;">         [diag (* (sqrt </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) size)]
-         </span><span style="font-style:italic;color:#5f697a;">; base rectangles for roof, home, door
-</span><span style="color:#abb2bf;">         [rect1 (filled-rectangle </span><span style="color:#db9d63;">30 30</span><span style="color:#abb2bf;">)]
-         [rect2 (filled-rectangle diag diag)]
-         [rect3 (filled-rectangle </span><span style="color:#db9d63;">10 20</span><span style="color:#abb2bf;">)]
-         </span><span style="font-style:italic;color:#5f697a;">; roof is a rotated/clipped square
-         ; (in other word, a triangle)
-</span><span style="color:#abb2bf;">         [roof (let* ([colored (colorize rect1 color)]
-                      [rotated (rotate colored (/ pi </span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">))])
-                 (inset rotated </span><span style="color:#db9d63;">0 0 0</span><span style="color:#abb2bf;"> -</span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">))]
-         [home (colorize rect2 color)]
-         </span><span style="font-style:italic;color:#5f697a;">; structure is just a roof on a home
-</span><span style="color:#abb2bf;">         [structure  (vc-append roof home)]
-         [door (colorize rect3 </span><span style="color:#9acc76;">&quot;gray&quot;</span><span style="color:#abb2bf;">)])
-    </span><span style="font-style:italic;color:#5f697a;">;let&#39;s add a door on bottom
-</span><span style="color:#abb2bf;">    (cb-superimpose structure door)))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">house </span><span style="color:#abb2bf;">color)</span><span style="color:#abb2bf;">
+  (let* ([size </span><span style="color:#db9d63;">30</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+         </span><span style="font-style:italic;color:#5f697a;">; diagonal to assemble well sized home and roof</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">         [diag (* (sqrt </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) size)]</span><span style="color:#abb2bf;">
+         </span><span style="font-style:italic;color:#5f697a;">; base rectangles for roof, home, door</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">         [rect1 (filled-rectangle </span><span style="color:#db9d63;">30 30</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [rect2 (filled-rectangle diag diag)]</span><span style="color:#abb2bf;">
+         [rect3 (filled-rectangle </span><span style="color:#db9d63;">10 20</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         </span><span style="font-style:italic;color:#5f697a;">; roof is a rotated/clipped square</span><span style="font-style:italic;color:#5f697a;">
+         ; (in other word, a triangle)</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">         [roof (let* ([colored (colorize rect1 color)]</span><span style="color:#abb2bf;">
+                      [rotated (rotate colored (/ pi </span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">))])</span><span style="color:#abb2bf;">
+                 (inset rotated </span><span style="color:#db9d63;">0 0 0</span><span style="color:#abb2bf;"> -</span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+         [home (colorize rect2 color)]</span><span style="color:#abb2bf;">
+         </span><span style="font-style:italic;color:#5f697a;">; structure is just a roof on a home</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">         [structure  (vc-append roof home)]</span><span style="color:#abb2bf;">
+         [door (colorize rect3 </span><span style="color:#9acc76;">&quot;gray&quot;</span><span style="color:#abb2bf;">)])</span><span style="color:#abb2bf;">
+    </span><span style="font-style:italic;color:#5f697a;">;let&#39;s add a door on center-bottom</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">    (cb-superimpose structure door)))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>This is improvisation, but it work! Even if this piece of code appears complexe, I can sware it was easy to write ! And now, let's just use <code>(house &quot;color&quot;)</code> everywhere...</p>
+<p>This is improvisation, but it works! Even if this piece of code appears complex, I swear it was easy to write! And now, let's just use <code>(house &quot;color&quot;)</code> everywhere...</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/10-blue_house.png" alt="blue house" /></p>
-<p>Know let's image this very special function. I just want to say &quot;draw 3 blue houses&quot; and get my stuff, some signature like <code>(n color thing) -&gt; pict</code></p>
+<p>Now let's write this very special function. I just want to say &quot;draw 3 blue houses&quot; and get them. The signature would look like <code>(n, color, thing) -&gt; pict</code>.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; dumb color identifiers
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">blue &quot;blue</span><span style="color:#9acc76;">&quot;)
-(define red &quot;</span><span style="color:#abb2bf;">red&quot;)
-</span><span style="font-style:italic;color:#5f697a;">; draw function
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw </span><span style="color:#abb2bf;">n color thing)
-    (hc-append (thing color)))
-(draw </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;"> blue house)
-(draw </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;"> red car)
+<code><span style="font-style:italic;color:#5f697a;">; dumb color identifiers</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">blue &quot;blue&quot;)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">red &quot;red&quot;)</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; draw function</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw </span><span style="color:#abb2bf;">n color thing)</span><span style="color:#abb2bf;">
+    (hc-append (thing color)))</span><span style="color:#abb2bf;">
+(draw </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;"> blue house)</span><span style="color:#abb2bf;">
+(draw </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;"> red car)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>It work and we can see here that <code>thing</code> are &quot;functions as values&quot;, where draw is an &quot;higher order function&quot;, a function in charge the execute other functions.</p>
-<p>The next challenge is to do something with this <code>n</code> parameter. I need a &quot;for loop&quot;, but guess what, it's not idiomatic Racket! Indeed, Racket is not a big set of reserved imperative keyword like other languages are. In contrary, it's a very few set of powerful identifiers (<code>define</code>, <code>let</code>...) sufficient to create our own language (And indeed, some forms of &quot;for&quot; or &quot;while&quot; exists in Racket langs/libraries/modules) as defined functions.</p>
-<p>Basic iteration will be build on top of recursion. In JavaScript, a recursion looks like:</p>
+<p>It works, and I can see here that <code>thing</code> is a &quot;function as value&quot;, where <code>draw</code> is an &quot;higher order function&quot;: a function in charge of executing another.</p>
+<p>The next challenge is to do something with this <code>n</code> parameter. I need a &quot;for loop&quot;, but guess what, it's not [idiomatic](Programming idiom) Racket!</p>
+<p>Indeed, Racket is not a big set of reserved imperative keywords like other languages are. On the contrary, it's a very small set of powerful identifiers (<code>define</code>, <code>let</code>...), just enough to create our own language (And indeed, some forms of &quot;for&quot; or &quot;while&quot; exist in Racket langs/libraries/modules as defined functions).</p>
+<p>Basic iteration will be built on top of recursion. In JavaScript, recursion looks like this:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">recursiveFunction = </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">{
-  </span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n &lt;= </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) {
-    console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;the end!&quot;</span><span style="color:#abb2bf;">);
-  } </span><span style="color:#cd74e8;">else </span><span style="color:#abb2bf;">{
-    console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;n is now &quot; </span><span style="color:#adb7c9;">+ n</span><span style="color:#abb2bf;">);
-    </span><span style="color:#eb6772;">recursiveFunction</span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n - </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">);
-  }
-};
-</span><span style="color:#eb6772;">recursiveFunction</span><span style="color:#abb2bf;">(</span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">);
+<code><span style="color:#cd74e8;">const </span><span style="color:#adb7c9;">recursiveFunction = </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">{</span><span style="color:#abb2bf;">
+  </span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n &lt;= </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) {</span><span style="color:#abb2bf;">
+    console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;the end!&quot;</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+  } </span><span style="color:#cd74e8;">else </span><span style="color:#abb2bf;">{</span><span style="color:#abb2bf;">
+    console.</span><span style="color:#5ebfcc;">log</span><span style="color:#abb2bf;">(</span><span style="color:#9acc76;">&quot;n is now &quot; </span><span style="color:#adb7c9;">+ n</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+    </span><span style="color:#eb6772;">recursiveFunction</span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n - </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
+  }</span><span style="color:#abb2bf;">
+};</span><span style="color:#abb2bf;">
+</span><span style="color:#eb6772;">recursiveFunction</span><span style="color:#abb2bf;">(</span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">);</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>The loop occurs because the function call itself until a condition is reached - or &quot;while&quot; a condition still valid (just like any loop in fact - but recursion shows that functions can be loops, and &quot;for&quot; or &quot;while&quot; is an optional tool).</p>
-<p>Let's try this recursion in Racket. Before that will need few new tools that I easily found in the documentation:</p>
+<p>The loop occurs because the function calls itself until a condition is met - or &quot;while&quot; a condition is still valid (just like any loop in fact - but recursion shows that functions can be loops, and &quot;for&quot; or &quot;while&quot; are an optional tool).</p>
+<p>Let's try recursion in Racket. Before that, I'll need a few new tools that I easily found in the documentation:</p>
 <ul>
-<li><code>print</code> that write in the console like <code>console.log</code></li>
+<li><code>print</code> that writes in the console like <code>console.log</code> in JS</li>
 <li><code>string-append</code> for string concatenation</li>
-<li><code>number-&gt;string</code> to cast a number in string</li>
+<li><code>number-&gt;string</code> to cast a number as a string</li>
 </ul>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">recursive-function </span><span style="color:#abb2bf;">n)
-  (</span><span style="color:#cd74e8;">print </span><span style="color:#abb2bf;">(string-append
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">recursive-function </span><span style="color:#abb2bf;">n)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">print </span><span style="color:#abb2bf;">(string-append</span><span style="color:#abb2bf;">
           </span><span style="color:#9acc76;">&quot;n is now &quot;</span><span style="color:#abb2bf;">
-          (number-&gt;string n))))
+          (number-&gt;string n))))</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p>Last but not least:</p>
 <ul>
-<li><code>if</code> is a function like all the others, it takes 3 args: a &quot;test&quot;, a &quot;then&quot; and a &quot;else&quot;</li>
+<li><code>if</code> is a function like all the others, it takes 3 arguments: a &quot;test&quot; (condition), a &quot;then&quot; (consequent) and an &quot;else&quot; (alternative)</li>
 </ul>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(print (if
-        (= 3 3)
-        &quot;3 is 3&quot;
-        &quot;wtf&quot; ))
+<code><span style="color:#abb2bf;">(print (if</span><span style="color:#abb2bf;">
+        (= 3 3)</span><span style="color:#abb2bf;">
+        &quot;3 is 3&quot;</span><span style="color:#abb2bf;">
+        &quot;wtf&quot; ))</span><span style="color:#abb2bf;">
 </span></code></pre>
 <ul>
-<li><code>begin</code> is a function to excute several functions one by one, and just keep the result of the last
-Ok, let's put all the piece together</li>
+<li><code>begin</code> is a function that executes several functions one by one, and just keeps the result of the last one.</li>
 </ul>
+<p>Ok, let's put all the pieces together:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">recursive-function </span><span style="color:#abb2bf;">n)
-  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([msg1 </span><span style="color:#9acc76;">&quot;the end!&quot;</span><span style="color:#abb2bf;">]
-        [msg2 (string-append
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">recursive-function </span><span style="color:#abb2bf;">n)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([msg1 </span><span style="color:#9acc76;">&quot;the end!&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+        [msg2 (string-append</span><span style="color:#abb2bf;">
                </span><span style="color:#9acc76;">&quot;n is now &quot;</span><span style="color:#abb2bf;">
-               (number-&gt;string n))])
-    (</span><span style="color:#cd74e8;">if
-</span><span style="color:#abb2bf;">     (&lt;= n </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)
-     (</span><span style="color:#cd74e8;">print </span><span style="color:#abb2bf;">msg1)
-     (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">print </span><span style="color:#abb2bf;">msg2)
-            (recursive-function (- n </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))))))
-(recursive-function </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)
+               (number-&gt;string n))])</span><span style="color:#abb2bf;">
+    (if</span><span style="color:#abb2bf;">
+     (&lt;= n </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+     (</span><span style="color:#cd74e8;">print </span><span style="color:#abb2bf;">msg1)</span><span style="color:#abb2bf;">
+     (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">print </span><span style="color:#abb2bf;">msg2)</span><span style="color:#abb2bf;">
+            (recursive-function (- n </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))))))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+(recursive-function </span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/11-recursion.png" alt="recursion" /></p>
-<p>If we want to append recursively pictures to a previous pictures,
-we have to begin with some kind of &quot;empty&quot; picture.
-Indeed, a function that add &quot;1&quot; to nothing will break: 
-it must add 1 at least to a 0. This empty case is named <a href="https://docs.racket-lang.org/pict/Basic_Pict_Constructors.html?q=pict#%28def._%28%28lib._pict%2Fmain..rkt%29._blank%29%29">blank</a>
-in the library.</p>
-<p>And now, we can apply recursion to our example:</p>
+<p>If I want to append a picture to previous pictures recursively, I have to begin with some kind of &quot;empty&quot; picture.</p>
+<p>Indeed, a function that adds &quot;42&quot; to nothing (null / undefined) will break: it must at least add &quot;1&quot; to &quot;0&quot;.</p>
+<p>This empty-picture base-case is named <a href="https://docs.racket-lang.org/pict/Basic_Pict_Constructors.html?q=pict#%28def._%28%28lib._pict%2Fmain..rkt%29._blank%29%29">blank</a> in the library.</p>
+<p>And now, I can apply recursion to my example:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; draw function
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw </span><span style="color:#abb2bf;">n color thing [pict (blank)])
-  (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(&gt; n </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)</span><span style="font-style:italic;color:#5f697a;">;if n &gt; 0
-</span><span style="color:#abb2bf;">      (draw (- n </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)</span><span style="font-style:italic;color:#5f697a;">; continue to draw
-</span><span style="color:#abb2bf;">            color
-            thing
-            (hc-append pict (thing color)))
-      pict))</span><span style="font-style:italic;color:#5f697a;">; else return the pict
+<code><span style="font-style:italic;color:#5f697a;">; draw function</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw </span><span style="color:#abb2bf;">n color thing [pict (blank)])</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(&gt; n </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; n greater than 0</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">      (draw (- n </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)</span><span style="font-style:italic;color:#5f697a;">; continue to combine picts</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">            color</span><span style="color:#abb2bf;">
+            thing</span><span style="color:#abb2bf;">
+            (hc-append pict (thing color)))</span><span style="color:#abb2bf;">
+      pict))</span><span style="font-style:italic;color:#5f697a;">; else return the final pict</span><span style="font-style:italic;color:#5f697a;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/12-draw_me.png" alt="draw me" /></p>
-<p>Hey, what is this unknown [pict (blank)] ? It's a way to provide an optional
-parameters with a default value.
-In ES6, it could be mirrored with:</p>
+<p>Hey, what is this unknown <code>[pict (blank)]</code>? It's a way to provide an optional parameter with a default value.</p>
+<p>In ES6, it could be mirrored with:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#cd74e8;">function </span><span style="color:#5cb3fa;">draw</span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n</span><span style="color:#abb2bf;">, </span><span style="color:#adb7c9;">color</span><span style="color:#abb2bf;">, </span><span style="color:#adb7c9;">thing</span><span style="color:#abb2bf;">, </span><span style="color:#adb7c9;">pict = new </span><span style="color:#eb6772;">Pict</span><span style="color:#abb2bf;">()) {}
+<code><span style="color:#cd74e8;">function </span><span style="color:#5cb3fa;">draw</span><span style="color:#abb2bf;">(</span><span style="color:#adb7c9;">n</span><span style="color:#abb2bf;">, </span><span style="color:#adb7c9;">color</span><span style="color:#abb2bf;">, </span><span style="color:#adb7c9;">thing</span><span style="color:#abb2bf;">, </span><span style="color:#adb7c9;">pict = new </span><span style="color:#eb6772;">Pict</span><span style="color:#abb2bf;">()) {</span><span style="color:#abb2bf;">
+  </span><span style="font-style:italic;color:#5f697a;">// ...</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">}</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>assuming there is a Pict constructor that return an empty pict.</p>
-<p>In fact, our case is a beautiful illustration
-of what mathematician calls a <code>Monoid</code>.
-We have a special algebra for <code>pict</code>
-where we can add them infinitely, producing a new <code>pict</code>, beginnig with operation
-with the <code>blank</code> neutral element. This case is so common in Computer Science
-(addition with 0 as neutral, multiplication with 1 as neutral, etc.)
-that the type/class <code>Monoid</code> itself exists in different languages and frameworks.</p>
+<p>...assuming there is a <code>Pict</code> constructor that returns an empty pict.</p>
+<p>In fact, this case is a beautiful illustration of what mathematicians call a <code>Monoid</code>. There's special algebra for <code>pict</code> where I can add them infinitely, producing a new <code>pict</code>, starting those operations with the <code>blank</code> neutral element.</p>
+<p>This case is so common in Computer Science (addition with 0 as neutral, multiplication with 1 as neutral, concatenation with &quot;&quot; as neutral, etc.) that the type/class <code>Monoid</code> itself exists in different languages and frameworks.</p>
 <h2 id="first-conclusions">First Conclusions</h2>
 <blockquote>
-<p>2:16 PM - Sorry but I'm starving. it's time for a lunch,</p>
-<p>3:15 PM - Wow. We have made a lot this morning, but time flies. Let' take stock, then move on to the next id: a animated game.</p>
+<p>2:16 PM - Sorry, but I'm starving. It's time for lunch.</p>
+<p>3:15 PM - Wow. We did a lot this morning, but time flies. Let's take stock, and move on to the next idea: an animated game.</p>
 </blockquote>
-<p>Racket (and so LISP) appears to be incredibely simple to write. Final instructions like <code>draw me a sheep</code> are easy to read too, very close to natural language if definitions are done that way.</p>
-<p>Nonetheless it still difficult for me to read implementation details, especially when definition goes crazy. So I recommend to do little steps and focus on quality and modularization of ideas from the beginning.</p>
-<p>The first big secret that Racket teach me is the following: you can do more with less. It sounds like Taoism, but indeed clarity grows because the field is almost empty. Very few building blocks, but they contains an unlimited power, by the law of combinations (like so much other fields).</p>
-<p>If you dive in a definition, you will see other definitions that look the same, so declarativness is always preserved (and I advocate for that in all language, so I'm filled).</p>
-<p>Imperativeness can be always avoided. And because everything is finally a simple list of stuff that begin with an identifier, you can understand the all language mechanics in few minutes. Which identifier exists or not is not the real question: you take take the fewest or a enormous backed-in DSL to start, as you wish.</p>
+<p>Racket (and therefore LISP) appears to be incredibly simple to write. Final expressions like <code>draw me a sheep</code> are equally easy to read, very close to natural (human) language if definitions are done that way.</p>
+<p>Nonetheless, sometimes it still is difficult for me to read implementation details, especially when a definition goes crazy. So I recommend to take it one step at a time, focusing on quality and modularization of ideas from the beginning.</p>
+<p>The first big secret that Racket teaches me is the following: you can do more with less. It sounds like Taoism, but indeed clarity grows because the field is almost empty. There are very few building blocks, but they contain an unlimited power, by the law of combination (like so much other fields in nature).</p>
+<p>If you dive in a definition, you will see other definitions that look the same. Declarativeness is always preserved (and I advocate for that in all languages, so I'm thrilled).</p>
+<p>Imperativeness can always be avoided, it's not idiomatic here. And because everything is finally a simple list of stuff that begins with an identifier, you can understand the whole language mechanics in a few hours.</p>
+<p>Wether or not an identifier exists is not the real question: you take as little (or an enormous backed-in DSL) as you wish.</p>
 <ul>
 <li>(define x y)</li>
 <li>(define (x y) z)</li>
@@ -529,541 +524,537 @@ that the type/class <code>Monoid</code> itself exists in different languages and
 <li>(map (lambda (x) (* x x)) a-list)</li>
 <li>and so on</li>
 </ul>
-<p>We know that LISP stands for <strong>LIS</strong>t <strong>P</strong>rocessor and know we understand why. We see clearly why it's a good language for learning basics of CS, and even why Uncle Bob itself says that maybe in the future a lot a disparate language will converge on some kind of LISP.</p>
-<p>If one day hardware capacity is no more a limitation, it can be indeed the only language to produce any DSL you want, that all developer could understand around the world without struggling with new weird language mechanics, but focus on a syntax+algebra that describe perfectly a domain...</p>
-<h2 id="go-back-to-work">Go Back To Work</h2>
-<p>Now 2 new crazy challenges:</p>
+<p>I know that LISP stands for <strong>LIS</strong>t <strong>P</strong>rocessor and I understand why. I clearly get why it's a good language to learn the basics of CS, and even why <a href="https://fr.wikipedia.org/wiki/Robert_C._Martin">Uncle Bob</a> himself says that maybe in the future, a lot of disparate languages will converge on some kind of LISP.</p>
+<p>If one day hardware capacity is no more a limitation, it indeed can become the only language to produce any DSL you want, that every developer could understand around the world without struggling with new weird language mechanics, while focusing on a syntax and algebra that perfectly describe a domain...</p>
+<h2 id="back-to-work">Back To Work</h2>
+<p>Now, 2 new crazy challenges:</p>
 <ul>
 <li>What about asking for &quot;4 big blue houses&quot;?</li>
-<li>How to make stuff moving in time?</li>
+<li>How to make stuff move in time?</li>
 </ul>
 <h3 id="scaling">Scaling</h3>
-<p>Diving the docs, I discovered that that Racket is strongly typed.
+<p>Back to the docs! I discover that Racket is strongly typed.
 WTF? I didn't write any type since the beginning!</p>
-<p>Indeed, it's dynamically typed,
-but it's not loosely typed: those are 2 different concepts.
-In JavaScript &quot;number&quot; is a lose type for all kinds of numbers.
-In racket, a number have a stonger type, like &quot;integer&quot;,
-but it still being automatically assigned (like in JS).</p>
-<p>One very smart thing about the <code>pict-lib</code> provided by <code>#lang/slideshow</code>,
-is that almost all function takes <code>pict</code> typed value and return a <code>pict</code> as well.
-That's why we can combine them, and reuse them.</p>
-<p>So</p>
+<p>Indeed, it's dynamically typed, but it's not weakly typed: those are 2 different concepts.
+In JavaScript &quot;number&quot; is a weak type, for all kinds of numbers.
+In racket, a number has a stonger type, like &quot;integer&quot;... but still is automatically assigned (like in JS).</p>
+<p>One very smart thing about the <code>pict-lib</code> provided by <code>#lang/slideshow</code>, is that almost all functions take a <code>pict</code> typed value and return a <code>pict</code> as well. That's why I can combine them, and reuse them. More generally, that's how you make a good DSL, and not only a framework/library.</p>
+<p>So this should work perfectly:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(scale (house &quot;orangered&quot;) 2)
-(scale (rotate
-        (car &quot;powderblue&quot;)
-        (/ pi 5))
-       0.5)
+<code><span style="color:#abb2bf;">(scale (house &quot;orangered&quot;) 2)</span><span style="color:#abb2bf;">
+(scale (rotate</span><span style="color:#abb2bf;">
+        (car &quot;powderblue&quot;)</span><span style="color:#abb2bf;">
+        (/ pi 5))</span><span style="color:#abb2bf;">
+       0.5)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>should work perfectly.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/13-scale1.png" alt="scale 1" /></p>
-<p>Now let's enhance our legacy code. If we want to be able to ask for a big, small or normal-sized house we will need some kind of <code>switch</code> or <code>else if</code> statement. I discovered in the docs that switch is feasable using <a href="https://docs.racket-lang.org/guide/case.html">case</a> where else-if is more like <a href="https://docs.racket-lang.org/reference/if.html">cond</a></p>
+<p>Now I'll enhance my legacy code. If I want to be able to ask for a big, small or normal-sized house I'll need some kind of <code>switch</code> or <code>else if</code> statement.</p>
+<p>That switch can be done using <a href="https://docs.racket-lang.org/guide/case.html">case</a> whereas else-if is more like <a href="https://docs.racket-lang.org/reference/if.html">cond</a></p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw </span><span style="color:#abb2bf;">n
-              size
-              color
-              thing
-              [pict (blank)])
-  (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(&gt; n </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)
-      (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([scale-size
-             (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">size [(</span><span style="color:#9acc76;">&quot;small&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">.</span><span style="color:#db9d63;">5</span><span style="color:#abb2bf;">]
-               [(</span><span style="color:#9acc76;">&quot;big&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">]
-               [else </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">]
-               )])
-        (draw (- n </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)
-              size
-              color
-              thing
-              (hc-append pict
-                         (scale
-                          (thing color)
-                          scale-size))))
-      pict))
+<code><span style="color:#abb2bf;">(define</span><span style="color:#abb2bf;">
+  (draw n size color thing [pict (blank)])</span><span style="color:#abb2bf;">
+  (if</span><span style="color:#abb2bf;">
+   (&gt; n </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) </span><span style="font-style:italic;color:#5f697a;">; condition</span><span style="font-style:italic;color:#5f697a;">
+   ; if true</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">   (let*</span><span style="color:#abb2bf;">
+       ([scale-size</span><span style="color:#abb2bf;">
+         (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">size</span><span style="color:#abb2bf;">
+           [(</span><span style="color:#9acc76;">&quot;small&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">.</span><span style="color:#db9d63;">5</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+           [(</span><span style="color:#9acc76;">&quot;big&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+           [else </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+           )]</span><span style="color:#abb2bf;">
+        [next-pict (hc-append</span><span style="color:#abb2bf;">
+                    pict</span><span style="color:#abb2bf;">
+                    (scale</span><span style="color:#abb2bf;">
+                     (thing color)</span><span style="color:#abb2bf;">
+                     scale-size))])</span><span style="color:#abb2bf;">
+     (draw (- n </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) size color thing next-pict))</span><span style="color:#abb2bf;">
+   </span><span style="font-style:italic;color:#5f697a;">; if false</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">   pict))</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/14-scale2.png" alt="scale 2" /></p>
 <h3 id="moving">Moving</h3>
-<p>The future snake will be moving in the plane.
-Is it even possible with our current <code>lang/slideshow</code> ? There is indeed an <a href="https://docs.racket-lang.org/pict/Animation_Helpers.html">animation documentation</a>, but it appears to be highly related to slideshow stuff.
-And after moving, we will need a window, a game loop, collision stuff and so own.
-Let's take some time to choose a better <code>lang</code> than slideshow for this advanced visual stuff ?</p>
+<p>The future snake will be moving in a 2d plane.
+Is it even possible with my current <code>lang/slideshow</code>? There is indeed an <a href="https://docs.racket-lang.org/pict/Animation_Helpers.html">animation documentation</a>, but it appears to be highly related to slideshow stuff.</p>
+<p>And it's not only about moving: I'll need a window, a game loop, collision stuff and so on.
+Let's take some time to choose a better <code>lang</code> than slideshow for this advanced visual stuff...</p>
 <blockquote>
-<p>It's already 4:45 PM. Do we have a chance to run something before midnight ? Differents tools appears to make games, dependant on new stuff.
-Like this <a href="https://docs.racket-lang.org/gui/index.html">racket/gui</a> that will force us to learn a new way to draw: the <code>draw-lib</code>...
-<a href="https://pkgd.racket-lang.org/pkgn/search?q=game">Searching</a> takes time but I thing I've now all the resource I need.
-I even found a <a href="https://github.com/Bogdanp/hebi/blob/master/hebi.rkt">fully working snake game</a>, but the code is too avanced for me...
-5:09. At the end, my choice falls for the <a href="https://docs.racket-lang.org/r-cade/index.html">r-cade packages</a> - it seems to contains everything we need, and claim to have snake-game example (that I will avoid now, but comparate at the end as correct version)</p>
+<p>It's already 4:45 PM - Will I get a chance to get something running before midnight? Differents tools appear to make games, dependant on new stuff.
+A bit like this <a href="https://docs.racket-lang.org/gui/index.html">racket/gui</a>, but it will force me to learn a new way to draw: the <code>draw-lib</code>...
+I continue but <a href="https://pkgd.racket-lang.org/pkgn/search?q=game">searching</a> takes time. I even find a <a href="https://github.com/Bogdanp/hebi/blob/master/hebi.rkt">fully working snake game</a>, but the code is too avanced for me...</p>
+</blockquote>
+<blockquote>
+<p>5:09 PM - In the end, my choice falls on the <a href="https://docs.racket-lang.org/r-cade/index.html">r-cade packages</a> - it seems to contain everything I need, and claims to have a snake-game example (that I will avoid for now, but will compare with in the end)</p>
 </blockquote>
 <h2 id="a-snake-game">A Snake Game</h2>
 <h3 id="r-cade-setup">R-cade Setup</h3>
-<p>Let's try the simplest example game</p>
+<p>Let's try the simplest example game:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">#lang racket
-(</span><span style="color:#cd74e8;">require </span><span style="color:#abb2bf;">r-cade)
-
-</span><span style="font-style:italic;color:#5f697a;">; main function, called once per frame
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)
-  (cls) </span><span style="font-style:italic;color:#5f697a;">; clear view each frame
-</span><span style="color:#abb2bf;">  (text </span><span style="color:#db9d63;">2 2</span><span style="color:#abb2bf;"> (frame))) </span><span style="font-style:italic;color:#5f697a;">; show frame number as text
-
-; 128px window runing a loop at 60frame/s speed
-</span><span style="color:#abb2bf;">(run game-loop </span><span style="color:#db9d63;">128 128</span><span style="color:#abb2bf;">)
+<code><span style="color:#abb2bf;">#lang racket</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">require </span><span style="color:#abb2bf;">r-cade)</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; main function, called once per frame</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (cls) </span><span style="font-style:italic;color:#5f697a;">; clear view each frame</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">  (text </span><span style="color:#db9d63;">2 2</span><span style="color:#abb2bf;"> (frame))) </span><span style="font-style:italic;color:#5f697a;">; print view each frame, with the frame number as text</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; 128px window runing a loop at 60frame/s speed</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(run game-loop </span><span style="color:#db9d63;">128 128</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Oh no! <code>r-cade</code> is not know by DrRacket. Hopefully the error provide me an install link... that work directly.</p>
-<p>Oh no! <code>r-cade</code> needs some dependencies on windows to run!
-It's well documented <a href="https://r-cade.io/setup">here</a>. I install <a href="https://www.sfml-dev.org/download/csfml/">csfml</a> (I unzip in a freshly made <code>C:\other_program\csfml</code> folder to be sure to not pollute my computer), and add the path to the windows Path environment variable.</p>
+<p>Oh no! <code>r-cade</code> is not know by DrRacket. Thankfully the error provides me with a link to install it... which works directly.</p>
+<p>Oh no! <code>r-cade</code> needs some dependencies on windows to run!<br />
+It's well documented <a href="https://r-cade.io/setup">here</a>. I therefore install <a href="https://www.sfml-dev.org/download/csfml/">csfml</a> (I unzip it in a freshly made <code>C:\other_program\csfml</code> folder to be sure not to pollute my computer), and add the path to the Windows Path environment variable.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/15-env_csfml.png" alt="env csfml" /></p>
 <p>I had to install <a href="https://www.openal.org/downloads/">OpenAL</a> as well, then fully restart DrRacket to be able to run my sample.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/16-r-cade.png" alt="r-cade" /></p>
-<h3 id="snake-specification">Snake Specification</h3>
-<p>What is a Snake Game? Here is wy very personal breaking parts for a simplified snake game</p>
+<h3 id="snake-specifications">Snake Specifications</h3>
+<p>What is a Snake Game? Here is my very opinionated vision of a simplified version:</p>
 <ul>
 <li>
-<p>a 20x20 grid, of tile that have x/y coordinate</p>
+<p>a 20x20 grid, made of tiles that have x/y coordinates</p>
 </li>
 <li>
-<p>a tile can be</p>
+<p>a tile can be:</p>
 <ul>
-<li>a wall-tile (all edges)</li>
-<li>an apple-tile</li>
-<li>a part of the snake, snake-tile</li>
-<li>an blank-tile</li>
+<li>a wall tile (all edges)</li>
+<li>an apple tile</li>
+<li>a part of the snake: a snake-tile</li>
+<li>a blank-tile</li>
 </ul>
 </li>
 <li>
-<p>the snake</p>
+<p>the snake:</p>
 <ul>
 <li>is made of 1+ consecutive snake-tiles</li>
-<li>is always moving in the previous setted direction (each 500ms)</li>
+<li>is always moving in the previously set direction (every 500ms)</li>
 <li>the head can take any cardinal direction (NESW)</li>
-<li>the body follow the head</li>
-<li>when the head collide an apple-tile
+<li>the body follows the head</li>
+<li>when the head collides an apple-tile:
 <ul>
-<li>the apple disapear</li>
-<li>the snake grow by 1 snake-tiles</li>
+<li>the apple disapears</li>
+<li>the snake grows by 1 snake-tile</li>
 </ul>
 </li>
-<li>when the head collide a wall-tile or snake tile: game over</li>
+<li>when the head collides a wall-tile or snake-tile: Game Over.</li>
 </ul>
 </li>
 <li>
-<p>apples</p>
+<p>apples:</p>
 <ul>
-<li>there is always one in a randow position in the field</li>
-<li>if it's ate, it disappear a new one pop on a ramdom empty tile</li>
-<li>if there is no more empty tile: game over</li>
+<li>there is always one in a random position in the field</li>
+<li>if it's eaten, it disappears and a new one pops on a ramdom empty tile</li>
+<li>if there is no empty tile left: Game Over</li>
 </ul>
 </li>
 </ul>
-<h3 id="implementation">implementation</h3>
+<h3 id="implementation">Implementation</h3>
 <h4 id="window-and-walls">Window And Walls</h4>
-<p>Let's try to make a 20x20 window with 4 walls
-Sadly, I now nothing in videogame development.
-My first reflex is just to draw walls.
-Indeed,</p>
+<p>Let's try to make a 20x20 window with 4 walls.<br />
+Sadly, I know nothing about videogame development.<br />
+My first reflex is just to draw walls as such:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">#lang racket
-(</span><span style="color:#cd74e8;">require </span><span style="color:#abb2bf;">r-cade)
-(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)
-  (cls)
-  (</span><span style="color:#cd74e8;">begin
-</span><span style="color:#abb2bf;">    (color </span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">)
-    (rect </span><span style="color:#db9d63;">0 0 20 1</span><span style="color:#abb2bf;"> #:fill </span><span style="color:#db9d63;">#t</span><span style="color:#abb2bf;">)))
-    </span><span style="font-style:italic;color:#5f697a;">; and so on for all stuff to draw
-</span><span style="color:#abb2bf;">  (run game-loop grid-size grid-size)
+<code><span style="color:#abb2bf;">#lang racket</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">require </span><span style="color:#abb2bf;">r-cade)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (cls)</span><span style="color:#abb2bf;">
+  (begin</span><span style="color:#abb2bf;">
+    (color </span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+    (rect </span><span style="color:#db9d63;">0 0 20 1</span><span style="color:#abb2bf;"> #:fill </span><span style="color:#db9d63;">#t</span><span style="color:#abb2bf;">)))</span><span style="color:#abb2bf;">
+    </span><span style="font-style:italic;color:#5f697a;">; and so on for all stuff to draw</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">  (run game-loop grid-size grid-size)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>will draw on top-left a 1x20 sized rectangle, filled with a braun color.</p>
+<p>This will draw on top-left a 1x20 sized rectangle, filled with a brown color.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/17-r-cade_rect.png" alt="r-cade rect" /></p>
-<p>You remember <code>begin</code>, that chain functions.
-I execute first the function <code>color</code> to pick a color in a <a href="https://docs.racket-lang.org/r-cade/index.html?q=r-cade#%28def._%28%28lib._r-cade%2Fmain..rkt%29._color%29%29">16 color palette</a> (4 = braun) for the next steps.
-<code>rect</code> takes <code>x y</code> coordinates, <code>h w</code> sizes, and this strange <code>#:fill #t</code>. It's a &quot;fill&quot; unordered named argument (how smart!) that takes the value <code>True</code> or <code>False</code>: <code>#t</code> or <code>#f</code> in racket.</p>
-<p>I can continue with other walls, apples and snake. But this method is a dead-lock because it don't track anything. It just produce a picture without state, without life.</p>
-<p>What I really want is a representation of the state of the game, that can change and be redraw. A grid with the state of all it tiles.</p>
-<p>I opt for a grid that is a list of list (row) containing tiles (cell). A tile will be a tuple (a list with few ordered members): (coord-x coorddx tile-type), like <code>(12 0 &quot;apple&quot;)</code>.</p>
-<p>Each game frame of the main loop will draw this grid findind the current state of each tile.</p>
+<p>Do you remember about <code>begin</code>, allowing a series of functions?</p>
+<p>I execute first the function <code>color</code> to pick a color in a <a href="https://docs.racket-lang.org/r-cade/index.html?q=r-cade#%28def._%28%28lib._r-cade%2Fmain..rkt%29._color%29%29">16 colors palette</a> (4 = brown) for the next steps.</p>
+<p><code>rect</code> takes <code>x y</code> coordinates, <code>h w</code> sizes, and this strange <code>#:fill #t</code>. It's a &quot;fill&quot; unordered named argument (how smart!) that takes the value <code>True</code> or <code>False</code>: <code>#t</code> or <code>#f</code> in Racket.</p>
+<p>I then continue with other walls, apples and a snake. But this method is a dead end because it doesn't track anything. It just produces a picture without state, without life.</p>
+<p>What I really want is a representation of the state of the game, that can change and be re-drawn. A grid with the state of all its tiles.</p>
+<p>I opt for a grid that is a list of lists: (rows) containing tiles (cells). A tile will be a tuple (a list with a few ordered members): (coord-x coord-y tile-type), like <code>(12 3 &quot;apple&quot;)</code>.</p>
+<p>Each game frame of the main loop will draw this grid, finding the current state of each tile.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">;; grid values
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">grid-size </span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">)
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">grid
-  (build-list
-   grid-size
-   (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(y)
-     (build-list grid-size (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(x) (list x y </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">))))))
+<code><span style="font-style:italic;color:#5f697a;">;; grid values</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">grid-size </span><span style="color:#db9d63;">20</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">grid</span><span style="color:#abb2bf;">
+  (build-list</span><span style="color:#abb2bf;">
+   grid-size</span><span style="color:#abb2bf;">
+   (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(y)</span><span style="color:#abb2bf;">
+     (build-list grid-size (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(x) (list x y </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">))))))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Here <code>build-list n value-as-lambda</code> create a list of n items with cohesive values. Thoses values are based on a <code>lamda</code>: an anonymous and temporary function to call for create the value, and that take the current index as argument. In fact, we operate in nested list to obtain this ful grid of <code>(x y tile-type)</code> tuples.</p>
-<p>Now, my walls definition:</p>
+<p>Here <code>build-list n value-as-lambda</code> creates a list of n items with cohesive values. Thoses values are based on a <code>lambda</code>: an anonymous and temporary function to call for the creation of the value. The lambda takes the current index as argument. In fact, I operate in nested lists to obtain this full grid of <code>(x y tile-type)</code> tuples.</p>
+<p>Now, my wall's definition:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; wall definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">max-grid-index (- grid-size </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wall-coords
-  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([top (build-list grid-size (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(x)(list x </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)))]
-        [bottom (build-list grid-size (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(x)(list x max-grid-index)))]
-        [left (build-list (- grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(y)(list </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;"> (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))))]
-        [right (build-list (- grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(y)(list max-grid-index (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))))]
-
-        )
-    (append top bottom left right)))
+<code><span style="font-style:italic;color:#5f697a;">; wall definition</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">max-grid-index (- grid-size </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">wall-coords</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([top (build-list grid-size (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(x)(list x </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)))]</span><span style="color:#abb2bf;">
+        [bottom (build-list grid-size (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(x)(list x max-grid-index)))]</span><span style="color:#abb2bf;">
+        [left (build-list (- grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(y)(list </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;"> (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))))]</span><span style="color:#abb2bf;">
+        [right (build-list (- grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(y)(list max-grid-index (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))))]</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+        )</span><span style="color:#abb2bf;">
+    (append top bottom left right)))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Nothing new exept this <code>append</code> used to concatenate lists.
-But were is the glue? How to update the grid ?</p>
-<p>In functional programming in general, you avoid state, mutability and side effect. But my approach of this game imply a changing state: the grid.
-<code>(set! old new)</code> is the way to procede. <code>for-each</code>, <code>list-update</code>, <code>list-set</code> is stuff coming form <a href="https://docs.racket-lang.org/reference/pairs.html">list docs</a></p>
+<p>Nothing new here except for this <code>append</code> used to concatenate lists.
+But where is the glue? How do I update the grid ?</p>
+<p>In functional programming in general, you avoid state, mutability and side effects. But my approach of this game implies a changing state: the grid.
+<code>(set! var-name new-value)</code> is the way to proceed. <code>for-each</code>, <code>list-update</code>, <code>list-set</code> are identifiers coming from <a href="https://docs.racket-lang.org/reference/pairs.html">list docs</a>.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; update 1 tile
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">update-tile </span><span style="color:#abb2bf;">coord val)
-  (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">grid
-        (list-update
-         grid
-         (list-ref coord </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)
-         (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(row)
-           (list-update
-            row
-            (list-ref coord </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)
-            (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(tile)
-              (list-set tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;"> val)))))))
-
-</span><span style="font-style:italic;color:#5f697a;">; update several tiles
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">update-tiles </span><span style="color:#abb2bf;">coords val)
-  (for-each
-   (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(coord)(update-tile coord val))
-   coords))
+<code><span style="font-style:italic;color:#5f697a;">; -- update 1 tile in grid</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">update-tile </span><span style="color:#abb2bf;">coord val)</span><span style="color:#abb2bf;">
+  (let* ([row-idx (list-ref coord </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [cell-idx (list-ref coord </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [row (list-ref grid row-idx )]</span><span style="color:#abb2bf;">
+         [tile (list-ref row cell-idx)]</span><span style="color:#abb2bf;">
+         [updated (list-set tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;"> val)])</span><span style="color:#abb2bf;">
+    (set!</span><span style="color:#abb2bf;">
+     grid (list-set grid row-idx</span><span style="color:#abb2bf;">
+                    (list-set row cell-idx updated)))))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; -- update a list of tiles</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">update-tiles </span><span style="color:#abb2bf;">coords val)</span><span style="color:#abb2bf;">
+  (for-each</span><span style="color:#abb2bf;">
+   (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(coord)(update-tile coord val))</span><span style="color:#abb2bf;">
+   coords))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>What we need know is some stuff to draw that on the window:</p>
+<p>What I need now is a function to draw that on the window:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; draw definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">color-code </span><span style="color:#abb2bf;">tile-type)
-  (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">tile-type
-    [(</span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">]
-    [(</span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">11</span><span style="color:#abb2bf;">]
-    [(</span><span style="color:#9acc76;">&quot;apple&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">8</span><span style="color:#abb2bf;">]
-    [else </span><span style="color:#db9d63;">7</span><span style="color:#abb2bf;">]))
-
-(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw-grid </span><span style="color:#abb2bf;">grid)
-  (for-each
-   (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(row)
-     (for-each
-      (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(tile)
-        (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(color (color-code (list-ref tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">)))
-               (rect
-                (list-ref tile </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)
-                (list-ref tile </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)
-                </span><span style="color:#db9d63;">1 1</span><span style="color:#abb2bf;">
-                #:fill </span><span style="color:#db9d63;">#t</span><span style="color:#abb2bf;">))) row)) grid))
-
-</span><span style="font-style:italic;color:#5f697a;">; game definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)
-  (cls)
-  (</span><span style="color:#cd74e8;">begin
-</span><span style="color:#abb2bf;">    (draw-grid grid)))
-
-</span><span style="font-style:italic;color:#5f697a;">; procedure
-</span><span style="color:#abb2bf;">(update-tiles wall-coords </span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">)
-(run game-loop grid-size grid-size)
+<code><span style="font-style:italic;color:#5f697a;">; draw definitions</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">color-code </span><span style="color:#abb2bf;">tile-type)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">tile-type</span><span style="color:#abb2bf;">
+    [(</span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+    [(</span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">11</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+    [(</span><span style="color:#9acc76;">&quot;apple&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">8</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+    [else </span><span style="color:#db9d63;">7</span><span style="color:#abb2bf;">]))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; -- draw colored grid on screen with</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw-grid </span><span style="color:#abb2bf;">grid)</span><span style="color:#abb2bf;">
+  (for-each</span><span style="color:#abb2bf;">
+   (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(row)</span><span style="color:#abb2bf;">
+     (for-each</span><span style="color:#abb2bf;">
+      (</span><span style="color:#cd74e8;">lambda </span><span style="color:#abb2bf;">(tile)</span><span style="color:#abb2bf;">
+        (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([type (list-ref tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+              [x (list-ref tile </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+              [y (list-ref tile </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)])</span><span style="color:#abb2bf;">
+          (begin</span><span style="color:#abb2bf;">
+            (color (color-code type))</span><span style="font-style:italic;color:#5f697a;">; color setted for next function</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">            (rect x y </span><span style="color:#db9d63;">1 1</span><span style="color:#abb2bf;"> #:fill </span><span style="color:#db9d63;">#t</span><span style="color:#abb2bf;">))))</span><span style="color:#abb2bf;">
+      row))</span><span style="color:#abb2bf;">
+   grid))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; game definitions</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (cls)</span><span style="color:#abb2bf;">
+  (begin</span><span style="color:#abb2bf;">
+    (draw-grid grid)))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; procedure</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(update-tiles wall-coords </span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(run game-loop grid-size grid-size)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>We just produce braun rectangles (or other colors) for each related info we have in the grid.</p>
+<p>I just produced a brown rectangle (or other colors) for each related info we have in the grid.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/18-r-cade_walls.png" alt="r-cade walls" /></p>
 <blockquote>
-<p>hum... 8:12 PM. Let's take a final dinner-pause. I feel some doubts about my capacity to end up this challenge...
-But hope drive me !
-I want to brag in work tomorrow, so failing is not an option.</p>
+<p>hmm... 8:12 PM - Let's take a final pause for dinner. I have some doubts about my ability to finish this challenge in time...
+But I have hope acting as fuel!
+I want to brag at work tomorrow, so failing is not an option.</p>
 </blockquote>
 <h4 id="the-snake">The Snake</h4>
 <h5 id="show-it">Show it</h5>
-<p>I wanted a centered snake, so I change my grid size to 21. The center should be (10 10) and I calculate it (because I want to be able to change the size of wy grid).</p>
-<p>If I want it to move 2 times per seconds, I have to change the framerate.</p>
+<p>I want a centered snake, so I change my grid size to 21. The center should be (10 10) and I calculate it (because I want to be able to change the size of my grid).</p>
+<p>If I want it to move 2 times per second, I have to change the framerate too.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">grid-size </span><span style="color:#db9d63;">21</span><span style="color:#abb2bf;">)
-</span><span style="font-style:italic;color:#5f697a;">; ...
-; snake definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-coords
-  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([val (round (- ( / grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])
-    (list val val)))
-
-</span><span style="font-style:italic;color:#5f697a;">; procedure
-</span><span style="color:#abb2bf;">(update-tiles wall-coords </span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">)
-(update-tile snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
-(run game-loop grid-size grid-size #:fps </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">)
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">grid-size </span><span style="color:#db9d63;">21</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; ...</span><span style="font-style:italic;color:#5f697a;">
+; snake definitions</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-coords</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([val (round (- ( / grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])</span><span style="color:#abb2bf;">
+    (list val val)))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; procedure</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(update-tiles wall-coords </span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(update-tile snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(run game-loop grid-size grid-size #:fps </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/19-r-cade_snake.png" alt="r-cade snake" /></p>
 <h5 id="move-it">Move it</h5>
-<p>Make it move will happen just after each draw, for the next. What we want to do is make the head of the snake follow a direction each redraw, until an event.</p>
-<p>For now, it simply goes up:</p>
+<p>A move will happen just after each draw. What I want to do is make the head of the snake follow a direction with each re-draw, until a given event.</p>
+<p>For now, it simply goes like:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-position-update</span><span style="color:#abb2bf;">)
-  (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-         (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">[(new-coords (list (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) (- (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)))]
-           (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)
-           (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))))
-
-</span><span style="font-style:italic;color:#5f697a;">;...
-
-; game definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)
-  (cls)
-  (snake-position-update)
-  (draw-grid grid))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-position-update</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+         (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">[(new-coords (list (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) (- (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)))]</span><span style="color:#abb2bf;">
+           (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)</span><span style="color:#abb2bf;">
+           (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">;...</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; game definitions</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (cls)</span><span style="color:#abb2bf;">
+  (snake-position-update)</span><span style="color:#abb2bf;">
+  (draw-grid grid))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>What about a collision with a wall ?
-We can use <code>quit</code> that stops the game when it occurs.</p>
+<p>What about a collision with a wall?<br />
+I can use <code>quit</code>, which stops the game when it occurs.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-position-update</span><span style="color:#abb2bf;">)
-  (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-         (let* ([new-coords (list (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) (- (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]
-                [next-tile (read-tile new-coords)])
-           (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(equal? (list-ref next-tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-               (</span><span style="color:#cd74e8;">begin
-                 </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)
-                 (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))
-               (quit)))))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-position-update</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">begin </span><span style="color:#abb2bf;">(update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+         (let* ([new-coords (list (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">) (- (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+                [next-tile (read-tile new-coords)])</span><span style="color:#abb2bf;">
+           (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(equal? (list-ref next-tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+               (begin</span><span style="color:#abb2bf;">
+                 (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)</span><span style="color:#abb2bf;">
+                 (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+               (quit)))))</span><span style="color:#abb2bf;">
 </span></code></pre><h5 id="control-it">Control it</h5>
-<p>I suspect an awesome lang like r-cade to embed every thing we need
-to change the direction of the snake when press arrows.</p>
+<p>I suspect an awesome lang like r-cade to embed everything I need to change the direction of the snake when an arrow is pressed.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-direction &quot;top</span><span style="color:#9acc76;">&quot;)
-
-(define (move direction) (set! snake-direction direction))
-
-(define (snake-action)
-  (let ([direction (cond [(btn-up) &quot;</span><span style="color:#abb2bf;">up</span><span style="color:#9acc76;">&quot;]
-                         [(btn-right) &quot;</span><span style="color:#abb2bf;">right</span><span style="color:#9acc76;">&quot;]
-                         [(btn-down) &quot;</span><span style="color:#abb2bf;">down</span><span style="color:#9acc76;">&quot;]
-                         [(btn-left) &quot;</span><span style="color:#abb2bf;">left&quot;]
-                         [else snake-direction])])
-    (move direction)))
-(trace move)
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-direction &quot;top&quot;)</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">move </span><span style="color:#abb2bf;">direction) (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-direction direction))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-action</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([direction (</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(btn-up) </span><span style="color:#9acc76;">&quot;up&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+                         [(btn-right) </span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+                         [(btn-down) </span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+                         [(btn-left) </span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+                         [else snake-direction])])</span><span style="color:#abb2bf;">
+    (move direction)))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Isn't it self explanatory ?
-When <code>snake-action</code> will be called.
-We will check wich button is currently pressed and move in the related direction.
-We have to plug that is the loop and wait to see the effect!</p>
+<p>Isn't it self explanatory?<br />
+When <code>snake-action</code> is called, check which button is currently pressed and move in the related direction.<br />
+I just have to plug it in the loop and wait to see the effect!</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)
-  (cls)
-  (snake-action)
-  (snake-position-update)
-  (draw-grid grid))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (cls)</span><span style="color:#abb2bf;">
+  (snake-action)</span><span style="color:#abb2bf;">
+  (snake-position-update)</span><span style="color:#abb2bf;">
+  (draw-grid grid))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Ready for the final step, make the move itself dependant to this direction.
-We just have to adujst the next <code>x</code> and <code>y</code> differently according to this direction.</p>
+<p>I'm getting ready for the final step: making the move itself depend on this direction.
+I just have to adujst the next <code>x</code> and <code>y</code> accordingly.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">;; snake update
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-position-update</span><span style="color:#abb2bf;">)
-  (</span><span style="color:#cd74e8;">begin
-</span><span style="color:#abb2bf;">    (update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-    (let*
-        ([x (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)]
-         [y (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)]
-         [new-coords
-          (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">snake-direction
-            [(</span><span style="color:#9acc76;">&quot;top&quot;</span><span style="color:#abb2bf;">)(list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]
-            [(</span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">)(list x (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]
-            [(</span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">)(list (+ x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]
-            [(</span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">)(list (- x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]
-            [else (list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])]
-
-         [next-tile (read-tile new-coords)])
-      (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(equal? (list-ref next-tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-          (</span><span style="color:#cd74e8;">begin
-            </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)
-            (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))
-          (quit)))))
-
+<code><span style="font-style:italic;color:#5f697a;">;; snake update</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">snake-position-update</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (begin</span><span style="color:#abb2bf;">
+    (update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+    (let*</span><span style="color:#abb2bf;">
+        ([x (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [y (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [new-coords</span><span style="color:#abb2bf;">
+          (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">snake-direction</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;top&quot;</span><span style="color:#abb2bf;">)(list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">)(list x (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">)(list (+ x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">)(list (- x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]</span><span style="color:#abb2bf;">
+            [else (list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])]</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
+         [next-tile (read-tile new-coords)])</span><span style="color:#abb2bf;">
+      (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(equal? (list-ref next-tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+          (begin</span><span style="color:#abb2bf;">
+            (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)</span><span style="color:#abb2bf;">
+            (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+          (quit)))))</span><span style="color:#abb2bf;">
+</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/20-r-cade_move.png" alt="r-cade move" /></p>
-<p>And... it work well, despite the fact that the loop reiterate every 500ms,
-which is not sufficient to get all the input when I press too quickly the buttons.</p>
+<p>And... it works well, despite the fact that the loop reiterates every 500ms, which is not enough to get all the inputs if I press the buttons too quickly.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; game definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">game-speed </span><span style="color:#db9d63;">3</span><span style="color:#abb2bf;">)
-(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)
-  (cls)</span><span style="font-style:italic;color:#5f697a;">; clear screen
-</span><span style="color:#abb2bf;">  (snake-action)</span><span style="font-style:italic;color:#5f697a;">; get user inputs
-  </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">when
-</span><span style="color:#abb2bf;">      (=
-       (modulo (frame) (/ </span><span style="color:#db9d63;">60</span><span style="color:#abb2bf;"> game-speed))
-       </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)
-    (snake-position-update))</span><span style="font-style:italic;color:#5f697a;">; change snake position
-</span><span style="color:#abb2bf;">  (draw-grid grid))
-</span><span style="font-style:italic;color:#5f697a;">; procedure
-</span><span style="color:#abb2bf;">(update-tiles wall-coords </span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">)
-(update-tile snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
-(run game-loop grid-size grid-size #:fps </span><span style="color:#db9d63;">60</span><span style="color:#abb2bf;">)
+<code><span style="font-style:italic;color:#5f697a;">; game definitions</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">game-speed </span><span style="color:#db9d63;">3</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-loop</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (cls)</span><span style="font-style:italic;color:#5f697a;">; clear screen</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">  (snake-action)</span><span style="font-style:italic;color:#5f697a;">; get user inputs</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">  (when</span><span style="color:#abb2bf;">
+      (=</span><span style="color:#abb2bf;">
+       (modulo (frame) (/ </span><span style="color:#db9d63;">60</span><span style="color:#abb2bf;"> game-speed))</span><span style="color:#abb2bf;">
+       </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+    (snake-position-update))</span><span style="font-style:italic;color:#5f697a;">; change snake position</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">  (draw-grid grid))</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">; procedure</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(update-tiles wall-coords </span><span style="color:#9acc76;">&quot;wall&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(update-tile snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+(run game-loop grid-size grid-size #:fps </span><span style="color:#db9d63;">60</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>To ensure every <code>keypress</code> events are taken, I revert the fps to 60,
-then I define a game-speed that will slow the view update process.
+<p>To ensure every <code>keypress</code> event is taken, I revert the fps to 60,
+then define a game-speed that will slow the view's update process.
 <code>when</code> is what you find when you search for &quot;if without else in racket&quot;.
-The <code>modulo</code> makes sleeps the update all turns excepts the chosen one.</p>
+The <code>modulo</code> makes the update &quot;sleep&quot; every turn except during the chosen one.</p>
 <blockquote>
-<p>Believe it or not, it's 10:20 PM and we still don't have beat the main complexity of the snake problem.
-I can't sleep with that it mind, so I'll continue: but as usual in informatics: devil is in the details, and estimation is story-telling.</p>
+<p>It's 10:20 PM and I still haven't reached the main complexity of the snake problem.
+I can't sleep with that it mind, so I'll continue. As usual in computer science: devil is in the details, and estimation is fortune telling.</p>
 </blockquote>
-<h4 id="the-apples">The apples</h4>
-<p>The specs I made says that there is always only one apple in the fields, that could be eaten by the snake: in this case a new one will pop. But it have to pop in a non-blank tile, so I suspect I will need something like:</p>
+<h4 id="apples">Apples</h4>
+<p>The specs I made say that there is always only one apple in the field, that could get eaten by the snake: in this case a new one will pop. But it has to pop on a blank tile, so I suspect I will need something like:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">;;; read 1 tile
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">read-tile </span><span style="color:#abb2bf;">coord)
-  (let* ([row (list-ref grid (list-ref coord </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]
-         [tile (list-ref row (list-ref coord </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">))])
-    tile))
-</span><span style="font-style:italic;color:#5f697a;">;;; check if a tile is blank
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">is-tile-blank </span><span style="color:#abb2bf;">coords)
-  (let* ([tile (read-tile coords)]
-         [type (list-ref tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">)])
-    (equal? type </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)))
+<code><span style="font-style:italic;color:#5f697a;">;;; read 1 tile</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">read-tile </span><span style="color:#abb2bf;">coord)</span><span style="color:#abb2bf;">
+  (let* ([row (list-ref grid (list-ref coord </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+         [tile (list-ref row (list-ref coord </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">))])</span><span style="color:#abb2bf;">
+    tile))</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">;;; check if a tile is blank</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">is-tile-blank </span><span style="color:#abb2bf;">coords)</span><span style="color:#abb2bf;">
+  (let* ([tile (read-tile coords)]</span><span style="color:#abb2bf;">
+         [type (list-ref tile </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">)])</span><span style="color:#abb2bf;">
+    (equal? type </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>We will need some randomisation here. You can imagine it exists in <code>racket</code>:</p>
+<p>I will also need some randomisation here. You can imagine it exists in <code>racket</code>:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; apples
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw-random-apple</span><span style="color:#abb2bf;">)
-  (let* ([x (random </span><span style="color:#db9d63;">1 20</span><span style="color:#abb2bf;">)]
-         [y (random </span><span style="color:#db9d63;">1 20</span><span style="color:#abb2bf;">)]
-         [coords (list x y)])
-    (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(is-tile-blank coords)
-        (update-tile coords </span><span style="color:#9acc76;">&quot;apple&quot;</span><span style="color:#abb2bf;">)
-        (draw-random-apple))))
-</span><span style="font-style:italic;color:#5f697a;">;...
-</span><span style="color:#abb2bf;">(draw-random-apple)
-(run game-loop grid-size grid-size #:fps </span><span style="color:#db9d63;">60</span><span style="color:#abb2bf;">)
+<code><span style="font-style:italic;color:#5f697a;">; apples</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">draw-random-apple</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (let* ([x (random </span><span style="color:#db9d63;">1 20</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [y (random </span><span style="color:#db9d63;">1 20</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [coords (list x y)])</span><span style="color:#abb2bf;">
+    (</span><span style="color:#cd74e8;">if </span><span style="color:#abb2bf;">(is-tile-blank coords)</span><span style="color:#abb2bf;">
+        (update-tile coords </span><span style="color:#9acc76;">&quot;apple&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+        (draw-random-apple))))</span><span style="color:#abb2bf;">
+</span><span style="font-style:italic;color:#5f697a;">;...</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(draw-random-apple)</span><span style="color:#abb2bf;">
+(run game-loop grid-size grid-size #:fps </span><span style="color:#db9d63;">60</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/21-r-cade_apple.png" alt="r-cade apple" /></p>
-<p>The recursion act as a loop here:
-until the coords are not blank, let's re-draw. When it's ok, we get the result. We just make sure to draw one before the start, here we go.</p>
+<p>Recursion acts as a loop here: until the coordinates are not a blank tile, try again.</p>
+<p>When it's a blank tile, I get the result. I just need to make sure to draw one before the start. Here we go.</p>
 <h4 id="collisions">Collisions</h4>
-<p>When the snake meet an apple</p>
+<p>When the snake meets an apple:</p>
 <ul>
 <li>the apple is removed</li>
-<li>the snake grow</li>
-<li>a new apple pop</li>
+<li>the snake grows</li>
+<li>a new apple pops</li>
 </ul>
-<p>The first and the second step could be a common step: we decide to replace the apple with a snake part.
-I will change the name of <code>snake-update-position</code> to <code>game-update</code> that reflect better the situation.</p>
+<p>The first and second step could be a common step: replace the apple with a snake part.
+I will change the name of <code>snake-update-position</code> to <code>game-update</code> which reflects the situation better.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-update</span><span style="color:#abb2bf;">)
-  (</span><span style="color:#cd74e8;">begin
-</span><span style="color:#abb2bf;">    (update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-    (let*
-        ([x (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)]
-         [y (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)]
-         [new-coords
-          (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">snake-direction
-            [(</span><span style="color:#9acc76;">&quot;top&quot;</span><span style="color:#abb2bf;">)(list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]
-            [(</span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">)(list x (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]
-            [(</span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">)(list (+ x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]
-            [(</span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">)(list (- x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]
-            [else (list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])])
-      (</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(is-tile-blank new-coords)
-             (</span><span style="color:#cd74e8;">begin
-               </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)
-               (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))]
-            [(is-tile-apple new-coords)
-             (</span><span style="color:#cd74e8;">begin
-               </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)
-               (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
-               (draw-random-apple))]
-            [else (quit)]))))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">game-update</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+  (begin</span><span style="color:#abb2bf;">
+    (update-tile snake-coords </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+    (let*</span><span style="color:#abb2bf;">
+        ([x (list-ref snake-coords </span><span style="color:#db9d63;">0</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [y (list-ref snake-coords </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">)]</span><span style="color:#abb2bf;">
+         [new-coords</span><span style="color:#abb2bf;">
+          (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">snake-direction</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;top&quot;</span><span style="color:#abb2bf;">)(list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">)(list x (+ y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">)(list (+ x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]</span><span style="color:#abb2bf;">
+            [(</span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">)(list (- x </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">) y)]</span><span style="color:#abb2bf;">
+            [else (list x (- y </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])])</span><span style="color:#abb2bf;">
+      (</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(is-tile-blank new-coords)</span><span style="color:#abb2bf;">
+             (begin</span><span style="color:#abb2bf;">
+               (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)</span><span style="color:#abb2bf;">
+               (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+            [(is-tile-apple new-coords)</span><span style="color:#abb2bf;">
+             (begin</span><span style="color:#abb2bf;">
+               (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-coords)</span><span style="color:#abb2bf;">
+               (update-tile new-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+               (draw-random-apple))]</span><span style="color:#abb2bf;">
+            [else (quit)]))))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Works well... if we forget that the snak should grow.
-And this part sounds to me like the real complexity: now the snake have to be a list of following coords and not a point.</p>
+<p>Works well... until I remember that the snake should grow.<br />
+And this part sounds to me like it's the real complexity: now the snake has to be a list of coordinates following each other and not just a point.</p>
 <blockquote>
-<p>Late, so late, I'm tired. Let's try, but I can't promise anything.</p>
+<p>Late, so late, I'm tired. I'll try, but I can't promise anything.</p>
 </blockquote>
 <p>Snake as a list:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="font-style:italic;color:#5f697a;">; snake definitions
-</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-coords
-  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([val (round (- ( / grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])
-    (list (list val val))))
-(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-direction &quot;top&quot;)
+<code><span style="font-style:italic;color:#5f697a;">; snake definitions</span><span style="font-style:italic;color:#5f697a;">
+</span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-coords</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">let </span><span style="color:#abb2bf;">([val (round (- ( / grid-size </span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))])</span><span style="color:#abb2bf;">
+    (list (list val val))))</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-direction &quot;top&quot;)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p>Now, let's replace all</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(update-tile snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
+<code><span style="color:#abb2bf;">(update-tile snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p>with (see the extra &quot;s&quot; ?)</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
+<code><span style="color:#abb2bf;">(update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p>and</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(list-ref snake-coords 0)
+<code><span style="color:#abb2bf;">(list-ref snake-coords 0)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p>with</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(list-ref (first snake-coords) 0)
+<code><span style="color:#abb2bf;">(list-ref (first snake-coords) 0)</span><span style="color:#abb2bf;">
 </span></code></pre>
 <p>Indeed, <code>first</code> returns the first element of a list.</p>
-<p>Amazingly it work directly!</p>
-<p>Now, the part the make me afraid. To make grow the snake, we will add a tail to the list just after the moment it eat an apple.</p>
-<p>The snake is now a list of coordinates, that follow each others. When the snake will move, a new coordinate will replace the head of this list, and the tail of this list will disappear. So the re-draw will reflect this list shift.</p>
+<p>Amazingly, it works!</p>
+<p>Now, the part that makes me afraid. For the snake to grow, I need to add a tail to the list just after the moment it eats an apple.</p>
+<p>The snake is now a list of coordinates, following each other. When the snake moves, a new coordinate will replace the head of this list, and the tail of this list will disappear. So the re-draw will reflect this list shift.</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(is-tile-blank new-coords)
-        (</span><span style="color:#cd74e8;">begin
-</span><span style="color:#abb2bf;">          (update-tile (last snake-coords) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-          (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords
-                (drop-right
-                (append (list new-coords) snake-coords) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))
-          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))]
-      [(is-tile-apple new-coords)
-        (</span><span style="color:#cd74e8;">begin
-          </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords
-                (append (list new-coords) snake-coords))
-          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
-          (draw-random-apple))]
-      [else (quit)])))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(is-tile-blank new-coords)</span><span style="color:#abb2bf;">
+        (begin</span><span style="color:#abb2bf;">
+          (update-tile (last snake-coords) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+          (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords</span><span style="color:#abb2bf;">
+                (drop-right</span><span style="color:#abb2bf;">
+                (append (list new-coords) snake-coords) </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">))]</span><span style="color:#abb2bf;">
+      [(is-tile-apple new-coords)</span><span style="color:#abb2bf;">
+        (begin</span><span style="color:#abb2bf;">
+          (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords</span><span style="color:#abb2bf;">
+                (append (list new-coords) snake-coords))</span><span style="color:#abb2bf;">
+          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+          (draw-random-apple))]</span><span style="color:#abb2bf;">
+      [else (quit)])))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p><code>append</code> to &quot;update immutably&quot; the list and <code>drop-right</code> to do the remove job. In other word, we do some insert first/remove last, treating our snake as a <a href="https://en.wikipedia.org/wiki/Linked_list">linked list</a>.</p>
+<p>Here I have <code>append</code> to update the list &quot;immutably&quot; and <code>drop-right</code> to do the &quot;remove&quot; job. In other words, I do some insert first/remove last, treating the snake like a <a href="https://en.wikipedia.org/wiki/Linked_list">linked list</a>.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/22-r-cade_size.png" alt="r-cade size" /></p>
-<p>The very last defect is the fact that, when we press the opposite direction of the current one, the game quit.
-Indeed, the head of the snake eat itself, because the tail of the snake is here.</p>
-<p>We want to prevent the user to go back, so we can add a condition that say depending your current direction, you can't go back.
+<p>The very last shortcoming is the fact that when I press the opposite direction of the current one, the game quits.<br />
+Indeed, the snake eats itself, because the tail of the snake is here.</p>
+<p>I want to prevent the user to go back, so I'll add a condition that says &quot;depending your current direction, you can't go back&quot;.<br />
 The logic looks like:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-direction &quot;up</span><span style="color:#9acc76;">&quot;)
-(define opposite-direction &quot;</span><span style="color:#abb2bf;">down</span><span style="color:#9acc76;">&quot;)
-(define (set-opposite-direction dir)
-  (set! opposite-direction
-        (case dir
-          [(&quot;</span><span style="color:#abb2bf;">up</span><span style="color:#9acc76;">&quot;) &quot;</span><span style="color:#abb2bf;">down</span><span style="color:#9acc76;">&quot;]
-          [(&quot;</span><span style="color:#abb2bf;">right</span><span style="color:#9acc76;">&quot;) &quot;</span><span style="color:#abb2bf;">left</span><span style="color:#9acc76;">&quot;]
-          [(&quot;</span><span style="color:#abb2bf;">down</span><span style="color:#9acc76;">&quot;) &quot;</span><span style="color:#abb2bf;">up</span><span style="color:#9acc76;">&quot;]
-          [(&quot;</span><span style="color:#abb2bf;">left</span><span style="color:#9acc76;">&quot;) &quot;</span><span style="color:#abb2bf;">right&quot;])))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">snake-direction &quot;up&quot;)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define </span><span style="color:#abb2bf;">opposite-direction &quot;down&quot;)</span><span style="color:#abb2bf;">
+(</span><span style="color:#cd74e8;">define</span><span style="color:#abb2bf;"> (</span><span style="color:#5cb3fa;">set-opposite-direction </span><span style="color:#abb2bf;">dir)</span><span style="color:#abb2bf;">
+  (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">opposite-direction</span><span style="color:#abb2bf;">
+        (</span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">dir</span><span style="color:#abb2bf;">
+          [(</span><span style="color:#9acc76;">&quot;up&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+          [(</span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+          [(</span><span style="color:#9acc76;">&quot;down&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;up&quot;</span><span style="color:#abb2bf;">]</span><span style="color:#abb2bf;">
+          [(</span><span style="color:#9acc76;">&quot;left&quot;</span><span style="color:#abb2bf;">) </span><span style="color:#9acc76;">&quot;right&quot;</span><span style="color:#abb2bf;">])))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Then in <code>game-update</code>, when the move is really made:</p>
+<p>Then in <code>game-update</code>, when the move is done:</p>
 <pre style="background-color:#2b303b;">
-<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(is-tile-blank new-coords)
-        (</span><span style="color:#cd74e8;">begin
-</span><span style="color:#abb2bf;">          (update-tile (last snake-coords) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)
-          (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords (drop-right new-snake </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))
-          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
-          (set-opposite-direction snake-direction))]
-      [(is-tile-apple new-coords)
-        (</span><span style="color:#cd74e8;">begin
-          </span><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-snake)
-          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)
-          (set-opposite-direction snake-direction)
-          (draw-random-apple))]
-      [else (quit)])))
+<code><span style="color:#abb2bf;">(</span><span style="color:#cd74e8;">cond </span><span style="color:#abb2bf;">[(is-tile-blank new-coords)</span><span style="color:#abb2bf;">
+        (begin</span><span style="color:#abb2bf;">
+          (update-tile (last snake-coords) </span><span style="color:#9acc76;">&quot;blank&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+          (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords (drop-right new-snake </span><span style="color:#db9d63;">1</span><span style="color:#abb2bf;">))</span><span style="color:#abb2bf;">
+          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+          (set-opposite-direction snake-direction))]</span><span style="color:#abb2bf;">
+      [(is-tile-apple new-coords)</span><span style="color:#abb2bf;">
+        (begin</span><span style="color:#abb2bf;">
+          (</span><span style="color:#cd74e8;">set! </span><span style="color:#abb2bf;">snake-coords new-snake)</span><span style="color:#abb2bf;">
+          (update-tiles snake-coords </span><span style="color:#9acc76;">&quot;snake&quot;</span><span style="color:#abb2bf;">)</span><span style="color:#abb2bf;">
+          (set-opposite-direction snake-direction)</span><span style="color:#abb2bf;">
+          (draw-random-apple))]</span><span style="color:#abb2bf;">
+      [else (quit)])))</span><span style="color:#abb2bf;">
 </span></code></pre>
-<p>Here we are! A real snake game, made with racket, working perfectly! Happiness fills my soul and tired body.</p>
+<p>Here we go! A real snake game, made with racket, working properly!
+Happiness fills my soul and my tired body.</p>
 <p><img src="/blog/2021-09-08-one_day_with_racket/img/23-r-cade_final-snake.png" alt="r-cade final-snake" /></p>
 <blockquote>
-<p>00:01 it was a long, but also an amazing and rewarding experience.
-Racket bring simplicity, expressiveness and well-made baked-in community DSL on the table.</p>
-<p>Before publishing this article, I'll take the time to correct this notes and refacto my final code that you can find on the github repo.
-I'll find as well resources to go further, shared in this article. Thank you for your reading me, following me, sharing that and for you patience during this looooong journey.</p>
+<p>00:01 AM - it was a long, but also an amazing and rewarding experience.
+Racket brings simplicity, expressiveness and well-made baked-in community DSLs on the table.</p>
+<p>Before publishing this article, I'll take the time to refactor my final code. You can find it on <a href="https://github.com/ltruchot/1day/tree/master/racket">this github repository</a>.</p>
+<p>I'll also find resources to go further to share. Thank you for your reading me, following me, sharing this piece and for your patience during this looooong journey.</p>
 <p>Hope to see you soon!</p>
 </blockquote>
+<p>Loïc TRUCHOT
+<em>proofreading &amp; revisions by [https://twitter.com/joruonk](Jordane Frechet)</em></p>
 <h2 id="resources-to-go-further">Resources to go further</h2>
 <p>I just discovered this language and this LISP world, but after one day with racket,
-I decided to dive a little more into podcast and videos. Here is what I found:</p>
+I decided to dive a little more into podcasts and videos. Here is what I found.</p>
 <ul>
 <li>
-<p>Videos</p>
+<p>On YouTube:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=z8Pz4bJV3Tk">Language-Oriented Programming with Racket - Matthias Felleisen</a></li>
+<li><a href="https://youtu.be/wr4eqx3UYPc?t=319">Lisp with Uncle Bob Martin</a></li>
+<li><a href="https://www.youtube.com/watch?v=GbZpTHg0KfQ">Lisp: A language for stratified design</a></li>
 </ul>
-</li>
-<li><h2 id="podcasts">Podcasts</h2>
 </li>
 </ul>
 
