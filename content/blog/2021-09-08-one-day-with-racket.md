@@ -111,7 +111,7 @@ face
 face
 ```
 
-But I reach the point where the code loses some visiblity, so I'll start using the "def area" to define instructions, and keep the REPL to execute them...
+But I reach the point where the code loses some visibility, so I'll start using the "def area" to define instructions, and keep the REPL to execute them...
 
 ![my stuff](/blog/2021-09-08-one_day_with_racket/img/05-my_stuff.png)
 
@@ -223,13 +223,13 @@ Going further in the documentation, it appears that's the job of the `let`/`let*
     (vc-append compartment body wheels)))
 ```
 
-This little recfactoring limits the scope of my definitions, and that's always good practice. I can go further, and put everything in the car definition.
+This little refactoring limits the scope of my definitions, and that's always good practice. I can go further, and put everything in the car definition.
 
 ![use let*](/blog/2021-09-08-one_day_with_racket/img/09-violet_car.png)
 
 ## First citizen
 
-One of the big strenghts of JavaScript is the "function as value", which implies that a function can take another one as an argument (also known as higher-order functions).
+One of the big strengths of JavaScript is the "function as value", which implies that a function can take another one as an argument (also known as higher-order functions).
 
 ```javascript
 function example(callback) {
@@ -1061,11 +1061,10 @@ _Proofreading & revisions by [Jordane Frechet](https://twitter.com/joruonk)_
 
 ## Resources to go further
 
-I just discovered this language and this LISP world, but after one day with racket,
-I decided to dive a little more into podcasts and videos. Here is what I found.
+I just discovered this language and the LISP world, but after one day with racket, I decided to dive a little more into podcasts and videos. Here is what I found.
 
 - On YouTube:
 
   - [Language-Oriented Programming with Racket - Matthias Felleisen](https://www.youtube.com/watch?v=z8Pz4bJV3Tk)
-  - [Lisp with Uncle Bob Martin](https://youtu.be/wr4eqx3UYPc?t=319)
-  - [Lisp: A language for stratified design](https://www.youtube.com/watch?v=GbZpTHg0KfQ)
+  - [Lisp with Uncle Bob Martin - Steve Smith](https://youtu.be/wr4eqx3UYPc?t=319)
+  - [Lisp: A language for stratified design - Eric Normand](https://www.youtube.com/watch?v=GbZpTHg0KfQ)
